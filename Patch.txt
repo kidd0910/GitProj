@@ -1,0 +1,15 @@
+# 2020/02/26 #
+增加溢出範圍機制, 屬性 overflow
+調整css，html與body標籤套用vh,vw
+[/]menu部分(controller, view)
+	Load Menu
+	權限控管
+	Menu Perform
+[X]Log機制
+	2020/3/5 : Exception時沒有印出來錯誤訊息
+	2020/3/6 : 在適當的時機執行DoLog，寫內容
+[/]DB機制
+	2002/3/6 : 應該是可以了吧
+[]Grid分頁
+[]DD新設計
+	
