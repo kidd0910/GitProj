@@ -21,3 +21,7 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
+/.vs/Demo1
+/_oldLogicClass
+/AcerLibrary/obj
+/LogicClass/obj/Debug

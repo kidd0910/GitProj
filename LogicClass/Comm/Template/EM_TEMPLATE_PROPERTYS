@@ -1,0 +1,11 @@
+﻿		#Region "[COLUMN_CD] [COLUMN_NM]"
+		''' <summary>[COLUMN_NM]</summary>
+		Public Property [COLUMN_CD] As String
+			Get
+				Return Me.ColumnyMap("[COLUMN_CD]")
+			End Get
+			Set(ByVal value As String)
+				Me.ColumnyMap("[COLUMN_CD]")	=	value
+			End Set 
+		End Property
+		#End Region

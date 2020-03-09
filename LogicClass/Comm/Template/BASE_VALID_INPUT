@@ -1,0 +1,7 @@
+﻿				'=== 檢核欄位起始 ===
+				Dim	faileArguments	As	ArrayList	=	New ArrayList()
+[COLUMN_LOOP]
+				If faileArguments.Count > 0 Then
+					Throw New ArgumentException("屬性資料不可為空", Utility.ArrayListToString(faileArguments))
+				End If
+				'=== 檢核欄位結束 ===

@@ -1,0 +1,59 @@
+﻿'----------------------------------------------------------------------------------
+'File Name		: [TABLE_NAME]
+'Author			: [AUTHOR]
+'Description		: [TABLE_NAME] EMClass
+'Modification Log	:
+'
+'Vers		Date       	By		Notes
+'--------------	--------------	--------------	----------------------------------
+'0.0.1		[DATE]	[AUTHOR]    	Source Create
+'----------------------------------------------------------------------------------
+
+Imports System.Data.Common 
+Imports Acer.Apps
+Imports Acer.DB
+Imports Acer.DB.Query
+Imports Acer.Util 
+Imports Acer.Log
+Imports System.Reflection.MethodBase
+
+NameSpace [SYS].Data
+	''' <summary>
+	''' EM Class 物件
+	''' </summary>
+	Public Class [TABLE_NAME]
+		Inherits Acer.Base.EntityBase 
+		Implements Acer.Base.IEntityInterface 
+		
+		Dim	externColumn	As	String	=	""
+		
+	#Region "建構子"
+		''' <summary>
+		''' 建構子/處理屬性對應處理
+		''' </summary>
+		''' <param name="dt">DataTable 物件</param>
+		Public Sub New (ByVal dt As DataTable)
+			MyBase.New(dt)
+			Me.ColumnFilter	=	externColumn
+		End Sub
+
+		''' <summary>
+		''' 建構子/處理異動處理
+		''' </summary>
+		''' <param name="dbManager">DBManager 物件</param>
+		Public Sub New (ByVal dbManager As DBManager, ByVal logUtil As LogUtil)
+			MyBase.New(dbManager, logUtil)
+			Me.TableName	=	GetCurrentMethod.DeclaringType.Name
+			Me.SysName	=	[SYS]
+			Me.ConnName	=	"[CONN_NAME]"
+			Me.ColumnFilter	=	externColumn
+		End Sub
+	#End Region
+
+	#Region "屬性"
+[PROPERTYS]	#End Region
+	
+	#Region "自訂方法"
+	#End Region
+	End Class
+End NameSpace

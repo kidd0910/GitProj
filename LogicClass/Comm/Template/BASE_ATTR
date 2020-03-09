@@ -1,0 +1,14 @@
+﻿		#Region "[ATTR_CD] [ATTR_NM]"
+		''' <summary>
+		''' [ATTR_CD] [ATTR_NM]
+		''' </summary>
+		[RANGE] Property [ATTR_CD] As [DATA_TYPE]
+			Get
+				Return Me.[OBJ_TYPE]("[ATTR_CD]")
+			End Get
+			Set(ByVal value As [DATA_TYPE])
+				Me.[OBJ_TYPE]("[ATTR_CD]")	=	value
+			End Set
+		End Property
+		#End Region
+		

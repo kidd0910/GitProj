@@ -1,0 +1,38 @@
+﻿		#Region "[OP_CD] [OP_NM] "
+		''' <summary>
+		''' [OP_NM] 
+		''' </summary>
+		Public Function [OP_CD]() As DataTable
+			Return Me.[OP_CD](0, 0)
+		End Function
+		
+		''' <summary>
+		''' [OP_NM] 
+		''' </summary>
+		''' <remarks>
+		''' 0.0.1 作者 新增方法
+		''' </remarks>
+		Public Function [OP_CD](ByVal pageNo As Integer, ByVal pageSize As Integer) As DataTable
+			Try
+				Me.LogUtil.MethodStart(GetCurrentMethod.DeclaringType.FullName & "." & GetCurrentMethod.Name)
+				Me.LogProperty()
+
+[VALID_COLUMN]
+	
+				'=== 處理別名轉換 ===
+				Me.ParserAlias()
+				
+				[REMARK]
+				
+				Dim	sql	As	String		=	""
+				
+				Dim	dt	As	DataTable	=	Me.QueryBySql(sql, pageNo, pageSize)
+				
+				Me.ResetColumnProperty()
+				
+				Return dt
+			Finally
+				Me.LogUtil.MethodEnd(GetCurrentMethod.DeclaringType.FullName & "." & GetCurrentMethod.Name)
+			End Try
+		End Function
+		#End Region

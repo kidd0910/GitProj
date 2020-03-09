@@ -1,0 +1,9 @@
+﻿		#region [ATTR_CD] [ATTR_NM]
+		/// <summary>[ATTR_CD] [ATTR_NM]</summary> 
+		[RANGE] [DATA_TYPE] [ATTR_CD]
+		{
+			get {return ([DATA_TYPE])this.[OBJ_TYPE]["[ATTR_CD]"];}
+			set {this.[OBJ_TYPE]["[ATTR_CD]"]	=	value;}
+		}
+		#endregion
+		

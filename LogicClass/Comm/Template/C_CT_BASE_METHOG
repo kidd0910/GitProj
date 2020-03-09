@@ -1,0 +1,25 @@
+﻿		#region [OP_CD] [OP_NM]
+		/// <summary> 
+		/// [OP_NM]  
+		/// </summary>
+		/// <remarks>
+		/// 0.0.1 作者 新增方法
+		/// </remarks>
+		public void [OP_CD]()
+		{
+			try
+			{
+				this.LogUtil.MethodStart(MethodBase.GetCurrentMethod().DeclaringType.FullName + "." + MethodBase.GetCurrentMethod().Name);
+				this.LogProperty();
+
+[VALID_COLUMN]
+				[REMARK]
+				
+				this.ResetColumnProperty();
+			}
+			finally
+			{
+				this.LogUtil.MethodEnd(MethodBase.GetCurrentMethod().DeclaringType.FullName + "." + MethodBase.GetCurrentMethod().Name);
+			}
+		}
+		#endregion

@@ -1,0 +1,6 @@
+﻿				//=== 檢核欄位起始 === 
+				ArrayList	faileArguments	=	new ArrayList();
+[COLUMN_LOOP]
+				if (faileArguments.Count > 0)
+					throw new ArgumentException("屬性資料不可為空", Utility.ArrayListToString(faileArguments)); 
+				//=== 檢核欄位結束 ===

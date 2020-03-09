@@ -1,0 +1,4108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AcerLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:Acer.Ajax.ErrorLog">
+            <summary>
+            處理記錄 Javascript 訊息的物件
+            </summary>
+        </member>
+        <member name="M:Acer.Ajax.ErrorLog.DoCall">
+            <summary>
+            前端呼叫使用方法
+            </summary>
+        </member>
+        <member name="T:Acer.Ajax.LoadScript">
+            <summary>
+            載入 Javascript 元件
+            </summary>
+        </member>
+        <member name="M:Acer.Ajax.LoadScript.DoCall">
+            <summary>
+            前端呼叫使用方法
+            </summary>
+        </member>
+        <member name="M:Acer.Ajax.LoadScript.Init">
+            <summary>
+            初始化 LoadScript 原件
+            </summary>
+        </member>
+        <member name="T:Acer.Apps.APConfig">
+            <summary>
+            處理抓取設定檔 (env.conf) 相關處理動作
+            </summary>
+        </member>
+        <member name="M:Acer.Apps.APConfig.Init">
+            <summary>
+            設定檔初始化
+            </summary>
+        </member>
+        <member name="P:Acer.Apps.APConfig.RealPath">
+            <summary>
+            取得 WEB Root 實際路徑 [REAL_PATH]
+            </summary>
+        </member>
+        <member name="M:Acer.Apps.APConfig.GetProperty(System.String)">
+            <summary>
+            取得環境變數
+            </summary>
+            <param name="keyStr">欲取得的環境變數內容</param>
+            <returns>環境變數內容</returns>
+        </member>
+        <member name="M:Acer.Apps.APConfig.GetProperty(System.String,System.String)">
+            <summary>
+            取得環境變數值，若未設定則採用預設值
+            </summary>
+            <param name="keyStr"></param>
+            <param name="default_value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Apps.APConfig.GetPropertyList">
+            <summary>
+            取得參數設定清單
+            </summary>
+            <returns>參數設定清單字串 &lt;br&gt; 換行</returns>
+        </member>
+        <member name="T:Acer.Apps.DBManagerInfo">
+            <summary>
+            處理取得資料庫處理訊息, 交易狀況, 資料庫元件使用統計
+            </summary>
+        </member>
+        <member name="F:Acer.Apps.DBManagerInfo.dbManagerInfo">
+            <summary>資料庫使用情況</summary>
+        </member>
+        <member name="M:Acer.Apps.DBManagerInfo.LogCount">
+            <summary>
+            紀錄交易總數
+            </summary>
+        </member>
+        <member name="M:Acer.Apps.DBManagerInfo.AddCount(System.String)">
+            <summary>
+            累加資料庫元件使用數
+            </summary>
+            <param name="countType">元件種類</param>
+        </member>
+        <member name="M:Acer.Apps.DBManagerInfo.GetCount(System.String)">
+            <summary>
+            取得資料庫元件使用數
+            </summary>
+            <param name="countType">元件種類</param>
+            <returns>使用數</returns>
+        </member>
+        <member name="M:Acer.Apps.DBManagerInfo.DoCall">
+            <summary>
+            處理 HTTP Get request
+            處理展現統計資料的頁面
+            </summary>
+        </member>
+        <member name="T:Acer.Base.BusinessBase">
+            <summary>
+            商業邏輯物件繼承元件, 初使化資料庫容器物件
+            </summary>
+        </member>
+        <member name="M:Acer.Base.BusinessBase.#ctor(Acer.DB.DBManager,Acer.Log.LogUtil)">
+            <summary>
+            建構子/處理異動處理
+            </summary>
+            <param name="dbManager">DBManager 物件</param>
+            <param name="logUtil">logUtil 物件</param>
+            <remarks>初使化資料庫容器物件</remarks>
+        </member>
+        <member name="P:Acer.Base.BusinessBase.PropertyMap">
+            <summary>參數對應屬性</summary>
+        </member>
+        <member name="P:Acer.Base.BusinessBase.LogUtil">
+            <summary>設定 LogUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.BusinessBase.Logger">
+            <summary>設定 Logger 物件</summary>
+        </member>
+        <member name="P:Acer.Base.BusinessBase.DBManager">
+            <summary>設定 DBManager 物件</summary>
+        </member>
+        <member name="T:Acer.Base.ControlBase">
+            <summary>
+            商業邏輯物件繼承元件, 初使化資料庫容器物件
+            </summary>
+        </member>
+        <member name="F:Acer.Base.ControlBase.aliasMark">
+            <summary>別名符號</summary>
+        </member>
+        <member name="M:Acer.Base.ControlBase.#ctor(Acer.DB.DBManager,Acer.Log.LogUtil)">
+            <summary>
+            建構子/處理異動處理
+            </summary>
+            <param name="dbManager">DBManager 物件</param>
+            <param name="logUtil">logUtil 物件</param>
+            <remarks>初使化資料庫容器物件</remarks>
+        </member>
+        <member name="P:Acer.Base.ControlBase.PropertyMap">
+            <summary>參數對應屬性</summary>
+        </member>
+        <member name="P:Acer.Base.ControlBase.LogUtil">
+            <summary>設定 LogUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.ControlBase.Logger">
+            <summary>設定 Logger 物件</summary>
+        </member>
+        <member name="P:Acer.Base.ControlBase.DBManager">
+            <summary>設定 DBManager 物件</summary>
+        </member>
+        <member name="P:Acer.Base.ControlBase.PageNo">
+            <summary>設定目前頁次</summary>
+        </member>
+        <member name="P:Acer.Base.ControlBase.PageSize">
+            <summary>每頁筆數</summary>
+        </member>
+        <member name="P:Acer.Base.ControlBase.TotalRowCount">
+            <summary>總筆數</summary>
+        </member>
+        <member name="P:Acer.Base.ControlBase.SqlRetrictions">
+            <summary>表格名稱</summary>
+        </member>
+        <member name="P:Acer.Base.ControlBase.TmpCondition">
+            <summary>暫存的查詢條件</summary>
+        </member>
+        <member name="P:Acer.Base.ControlBase.OrderBys">
+            <summary>表格名稱</summary>
+        </member>
+        <member name="P:Acer.Base.ControlBase.ROWSTAMP">
+            <summary>時間戳記</summary>
+        </member>
+        <member name="P:Acer.Base.ControlBase.PKNO">
+            <summary>PKNO</summary>
+        </member>
+        <member name="M:Acer.Base.ControlBase.LogProperty">
+            <summary>
+            紀錄所塞的屬性資料
+            </summary>
+        </member>
+        <member name="M:Acer.Base.ControlBase.ResetColumnProperty">
+            <summary>
+            重設所有欄位屬性, 僅針對數字(0)及字串("")
+            </summary>
+        </member>
+        <member name="M:Acer.Base.ControlBase.ProcessQueryCondition(System.Text.StringBuilder,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            組合查詢字串
+            </summary>
+            <param name="outputBuff">回傳的字串</param>
+            <param name="oper">條件資訊</param>
+            <param name="column">欄位名稱</param>
+            <param name="var">欄位值</param>
+            <param name="needComma">是否需要引號資料</param>
+        </member>
+        <member name="M:Acer.Base.ControlBase.ProcessQueryCondition(System.Text.StringBuilder,System.String,System.String,System.String)">
+            <summary>
+            組合查詢字串
+            </summary>
+            <param name="outputBuff">回傳的字串</param>
+            <param name="oper">條件資訊</param>
+            <param name="column">欄位名稱</param>
+            <param name="var">欄位值</param>
+        </member>
+        <member name="M:Acer.Base.ControlBase.ProcessQueryCondition(System.Text.StringBuilder,System.String,System.String,System.String,System.String)">
+            <summary>
+            組合查詢字串
+            </summary>
+            <param name="outputBuff">回傳的字串</param>
+            <param name="oper">條件資訊 Ex: BT,...</param>
+            <param name="column">欄位名稱</param>
+            <param name="var1">欄位值1</param>
+            <param name="var2">欄位值2</param>
+        </member>
+        <member name="M:Acer.Base.ControlBase.ProcessQueryOrCondition(System.Text.StringBuilder,System.Text.StringBuilder)">
+            <summary>
+            處理 Or 的條件
+            </summary>
+            <param name="outputBuff">Me.TmpCondition</param>
+            <param name="currCondition">tmpBuff</param>
+        </member>
+        <member name="M:Acer.Base.ControlBase.ProcessCondition(System.String)">
+            <summary>
+            處理查詢條件
+            </summary>
+            <param name="cond">查詢條件</param>
+            <returns>查詢條件</returns>
+        </member>
+        <member name="T:Acer.Base.BatchBase">
+            <summary>
+            批次物件繼承元件, 初使化資料庫容器物件
+            </summary>
+        </member>
+        <member name="M:Acer.Base.BatchBase.#ctor(System.String)">
+            <summary>
+            建構子/處理異動處理
+            </summary>
+        </member>
+        <member name="P:Acer.Base.BatchBase.PropertyMap">
+            <summary>參數對應屬性</summary>
+        </member>
+        <member name="P:Acer.Base.BatchBase.LogUtil">
+            <summary>設定 LogUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.BatchBase.Logger">
+            <summary>Logger 讀取 Log 物件</summary>
+        </member>
+        <member name="P:Acer.Base.BatchBase.DBManager">
+            <summary>DBManager 設定 DBManager 物件</summary>
+        </member>
+        <member name="P:Acer.Base.BatchBase.DBUtil">
+            <summary>DBUtil 設定 DBUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.BatchBase.HasError">
+            <summary>HasError 是否包含錯誤</summary>
+        </member>
+        <member name="P:Acer.Base.BatchBase.JobID">
+            <summary>設定工作編號</summary>
+        </member>
+        <member name="M:Acer.Base.BatchBase.CloseBatch">
+            <summary>
+            關閉批次程式
+            </summary>
+        </member>
+        <member name="M:Acer.Base.BatchBase.HandleError(System.Exception)">
+            <summary>
+            處理 Excetion 機制
+            </summary>
+            <param name="ex">Exception</param>
+        </member>
+        <member name="T:Acer.Base.WebServiceBase">
+            <summary>
+            WebService繼承元件, 初使化資料庫容器物件
+            </summary>
+        </member>
+        <member name="P:Acer.Base.WebServiceBase.PropertyMap">
+            <summary>參數對應屬性</summary>
+        </member>
+        <member name="P:Acer.Base.WebServiceBase.LogUtil">
+            <summary>設定 LogUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.WebServiceBase.Logger">
+            <summary>Logger 讀取 Log 物件</summary>
+        </member>
+        <member name="P:Acer.Base.WebServiceBase.DBManager">
+            <summary>DBManager 設定 DBManager 物件</summary>
+        </member>
+        <member name="P:Acer.Base.WebServiceBase.DBUtil">
+            <summary>DBUtil 設定 DBUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.WebServiceBase.HasError">
+            <summary>HasError 是否包含錯誤</summary>
+        </member>
+        <member name="P:Acer.Base.WebServiceBase.JobID">
+            <summary>設定工作編號</summary>
+        </member>
+        <member name="M:Acer.Base.WebServiceBase.StartWebService">
+            <summary>
+            起始 WebService
+            </summary>
+        </member>
+        <member name="M:Acer.Base.WebServiceBase.CloseWebService">
+            <summary>
+            結束 WebService
+            </summary>
+        </member>
+        <member name="M:Acer.Base.WebServiceBase.HandleError(System.Exception)">
+            <summary>
+            處理 Excetion 機制
+            </summary>
+            <param name="ex">Exception</param>
+        </member>
+        <member name="T:Acer.Base.EntityBase">
+            <summary>
+            商業邏輯物件繼承元件, 初使化資料庫容器物件
+            </summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.#ctor(Acer.DB.DBManager,Acer.Log.LogUtil)">
+            <summary>
+            建構子/處理異動處理
+            </summary>
+            <param name="dbManager">DBManager 物件</param>
+            <param name="logUtil">logUtil 物件</param>
+            <remarks>初使化資料庫容器物件</remarks>
+        </member>
+        <member name="M:Acer.Base.EntityBase.#ctor(System.Data.DataTable)">
+            <summary>
+            建構子/處理屬性對應處理
+            </summary>
+            <param name="dt">DataTable 物件</param>
+            <remarks>初使化資料庫容器物件</remarks>
+        </member>
+        <member name="P:Acer.Base.EntityBase.PropertyMap">
+            <summary>參數對應屬性</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.ColumnyMap">
+            <summary>設定欄位集合</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.SkipProperty">
+            <summary>保留屬性資料</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.SysName">
+            <summary>設定 SysName</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.LONG_FIELD_NAME">
+            <summary>設定欄位長度過長欄名(逗後區隔)</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.SET_NULL_FIELD">
+            <summary>設定欄位空白時塞 NULL(逗後區隔)</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.FUNCTION_FIELD">
+            <summary>設定欄位套用 Function 或是自定 Exp: COLUMN = NULL, Me.FUNCTION_FIELD = "COLUMN"(逗後區隔)</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.LogUtil">
+            <summary>設定 LogUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.ColumnFilter">
+            <summary>設定 LogUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.ExecuteSQL">
+            <summary>執行的 SQL 指令</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.NotContainPKNO">
+            <summary>欄位未包含 PKNO</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.Logger">
+            <summary>設定 Logger 物件</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.ConnName">
+            <summary>連線字串屬性</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.DBManager">
+            <summary>設定 DBManager 物件</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.TableName">
+            <summary>表格名稱</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.Hint">
+            <summary>SQL Hint</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.BatchExecuteSize">
+            <summary>BatchExecuteSize 一次執行 SQL 的數量(預設 500)</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.TOTAL_ROW_COUNT">
+            <summary>總筆數</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.SelectColumns">
+            <summary>查詢的欄位</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.GroupBys">
+            <summary>設定的群組條件</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.OrderBys">
+            <summary>設定的排序條件</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.CurrentUserId">
+            <summary>
+            取得目前使用者資料
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:Acer.Base.EntityBase.UPD_USER_ID">
+            <summary>更新者帳號</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.UPD_DATE">
+            <summary>更新日期</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.UPD_TIME">
+            <summary>更新時間</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.ROWSTAMP">
+            <summary>時間戳記</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.PKNO">
+            <summary>PKNO</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.IsManualPKNO">
+            <summary>
+            是否手動輸入 PKNO
+            </summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.SqlRetrictions">
+            <summary>表格名稱</summary>
+        </member>
+        <member name="P:Acer.Base.EntityBase.TableCoumnInfo">
+            <summary>設定欄位資訊, string(){(0)為 Table Name, (1)為別名, 接下來為欄位名稱}</summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.ParserAlias">
+            <summary>
+            處理轉換別名資訊
+            </summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.ProcessCondition(System.String)">
+            <summary>
+            處理查詢條件
+            </summary>
+            <param name="cond">查詢條件</param>
+            <returns>查詢條件</returns>
+        </member>
+        <member name="M:Acer.Base.EntityBase.ResetColumnProperty">
+            <summary>
+            重設所有欄位屬性
+            </summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.SetTransactionMode(System.Boolean)">
+            <summary>
+            設定處理交易方式
+            </summary>
+            <param name="manualTransaction">是否自行設定處理交易</param>
+        </member>
+        <member name="M:Acer.Base.EntityBase.SetTransactionGroup(System.String)">
+            <summary>
+            設定處理交易群組方式
+            </summary>
+            <param name="groupName">設定處理交易群組方式</param>
+        </member>
+        <member name="M:Acer.Base.EntityBase.LogProperty">
+            <summary>
+            紀錄所塞的屬性資料
+            </summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.GetSequence">
+            <summary>
+            取得 Table 流水號 PKNO
+            </summary>
+            <returns>流水號</returns>
+        </member>
+        <member name="M:Acer.Base.EntityBase.DoBatchInsert">
+            <summary>
+            執行大量新增動作
+            </summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.AddInsert">
+            <summary>
+            處理大量新增動作
+            </summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.BatchInsert(System.Data.DataTable)">
+            <summary>
+            SQL Server 大量新增
+            </summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.Insert">
+            <summary>
+            處理新增資料動作
+            </summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.Execute(System.String)">
+            <summary>
+            執行 SQL 指令
+            </summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.Update">
+            <summary>
+            修改資料
+            </summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.UpdateByPkNo">
+            <summary>
+            依據 PKNO 修改資料
+            </summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.Delete">
+            <summary>g
+            刪除資料
+            </summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.DeleteByPkNo">
+            <summary>
+            依據 PKNO 刪除資料
+            </summary>
+        </member>
+        <member name="M:Acer.Base.EntityBase.Query">
+            <summary>
+            查詢資料
+            </summary>
+            <returns>DataTable 資料集合</returns>
+        </member>
+        <member name="M:Acer.Base.EntityBase.QueryByPkNo">
+            <summary>
+            依據 PKNO 查詢資料
+            </summary>
+            <returns>DataTable 資料集合</returns>
+        </member>
+        <member name="M:Acer.Base.EntityBase.Query(System.Int32,System.Int32)">
+            <summary>
+            查詢資料/包含分頁處理
+            </summary>
+            <param name="pageNo">頁次</param>
+            <param name="pageSize">每頁尺寸</param>
+            <returns>DataTable 資料集合</returns>
+        </member>
+        <member name="M:Acer.Base.EntityBase.QueryBySql(System.String)">
+            <summary>
+            依據 SQL 查詢資料
+            </summary>
+            <param name="sql">SQL 語法</param>
+            <returns>DataTable 資料集合</returns>
+        </member>
+        <member name="M:Acer.Base.EntityBase.QueryBySql(System.String,System.Int32,System.Int32)">
+            <summary>
+            依據 SQL 查詢資料
+            </summary>
+            <param name="sql">SQL 語法</param>
+            <param name="pageNo">頁次</param>
+            <param name="pageSize">每頁尺寸</param>
+            <returns>DataTable 資料集合</returns>
+        </member>
+        <member name="M:Acer.Base.EntityBase.TotalRowCount">
+            <summary>
+            取得分頁查詢總筆數
+            </summary>
+            <returns>總筆數</returns>
+        </member>
+        <member name="M:Acer.Base.EntityBase.SetUserId(System.String)">
+            <summary>
+            設定使用者/批次執行檔使用(Insert/Updaet)
+            </summary>
+            <param name="userId">使用者帳號</param>
+        </member>
+        <member name="M:Acer.Base.EntityBase.PrepareProperty(System.Int32)">
+            <summary>
+            將回傳資料(DataTable)某索引資料設定對應至屬性上
+            </summary>
+            <param name="index">資料索引</param>
+        </member>
+        <member name="M:Acer.Base.EntityBase.ProcessQueryCondition(System.Text.StringBuilder,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            組合查詢字串
+            </summary>
+            <param name="outputBuff">回傳的字串</param>
+            <param name="oper">條件資訊</param>
+            <param name="column">欄位名稱</param>
+            <param name="var">欄位值</param>
+            <param name="needComma">是否需要引號資料</param>
+        </member>
+        <member name="M:Acer.Base.EntityBase.ProcessQueryCondition(System.Text.StringBuilder,System.String,System.String,System.String)">
+            <summary>
+            組合查詢字串
+            </summary>
+            <param name="outputBuff">回傳的字串</param>
+            <param name="oper">條件資訊</param>
+            <param name="column">欄位名稱</param>
+            <param name="var">欄位值</param>
+        </member>
+        <member name="M:Acer.Base.EntityBase.ProcessQueryCondition(System.Text.StringBuilder,System.String,System.String,System.String,System.String)">
+            <summary>
+            組合查詢字串
+            </summary>
+            <param name="outputBuff">回傳的字串</param>
+            <param name="oper">條件資訊 Ex: BT,...</param>
+            <param name="column">欄位名稱</param>
+            <param name="var1">欄位值1</param>
+            <param name="var2">欄位值2</param>
+        </member>
+        <member name="M:Acer.Base.EntityBase.ProcessQueryOrCondition(System.Text.StringBuilder,System.Text.StringBuilder)">
+            <summary>
+            處理 Or 的條件
+            </summary>
+            <param name="outputBuff">Me.TmpCondition</param>
+            <param name="currCondition">tmpBuff</param>
+        </member>
+        <member name="T:Acer.Base.FMBase">
+            <summary>
+            Form Manager 繼承元件
+            </summary>
+        </member>
+        <member name="M:Acer.Base.FMBase.#ctor(Acer.Base.PageBase)">
+            <summary>
+            建構子, 初使化 Page 物件及對應 UI 元件
+            </summary>
+            <param name="page">Page 物件</param>
+        </member>
+        <member name="P:Acer.Base.FMBase.PropertyMap">
+            <summary>設定取得屬性值</summary>
+        </member>
+        <member name="P:Acer.Base.FMBase.DBManager">
+            <summary>設定存取 DBManager 的物件</summary>
+        </member>
+        <member name="P:Acer.Base.FMBase.ResultData">
+            <summary>回傳資料集合</summary>
+        </member>
+        <member name="P:Acer.Base.FMBase.PageNo">
+            <summary>設定目前頁次</summary>
+        </member>
+        <member name="P:Acer.Base.FMBase.PageSize">
+            <summary>每頁筆數</summary>
+        </member>
+        <member name="P:Acer.Base.FMBase.TotalRowCount">
+            <summary>總筆數</summary>
+        </member>
+        <member name="P:Acer.Base.FMBase.UpdateCount">
+            <summary>修改更新筆數</summary>
+        </member>
+        <member name="P:Acer.Base.FMBase.Application">
+            <summary>取得 Application 物件</summary>
+        </member>
+        <member name="P:Acer.Base.FMBase.Session">
+            <summary>取得 Session 物件</summary>
+        </member>
+        <member name="P:Acer.Base.FMBase.Request">
+            <summary>取得 Request 物件</summary>
+        </member>
+        <member name="P:Acer.Base.FMBase.Response">
+            <summary>取得 Response 物件</summary>
+        </member>
+        <member name="P:Acer.Base.FMBase.Page">
+            <summary>取得 Page 物件</summary>
+        </member>
+        <member name="P:Acer.Base.FMBase.LogUtil">
+            <summary>LogUtil 設定 LogUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.FMBase.Logger">
+            <summary>讀取 Log 物件</summary>
+        </member>
+        <member name="M:Acer.Base.FMBase.PageControlPageNo(System.String)">
+            <summary>
+            取得 PageControl 的 PageNo 值
+            <param name="defaultPageControlId">預設控制項名稱</param>
+            </summary>
+        </member>
+        <member name="M:Acer.Base.FMBase.PageControlPageSize(System.String)">
+            <summary>
+            取得 ScrollSize 值
+            <param name="defaultPageControlId">預設控制項名稱</param>
+            </summary>
+        </member>
+        <member name="M:Acer.Base.FMBase.UserControl(System.String)">
+            <summary>
+            取得 UserControl 控制項
+            </summary>
+            <param name="fieldName">控制項名稱</param>
+            <returns>UserControl 控制項</returns>
+        </member>
+        <member name="M:Acer.Base.FMBase.TextBox(System.String)">
+            <summary>
+            取得 TextBox 控制項
+            </summary>
+            <param name="fieldName">控制項名稱</param>
+            <returns>TextBox 控制項</returns>
+        </member>
+        <member name="M:Acer.Base.FMBase.ListBox(System.String)">
+            <summary>
+            取得 ListBox 控制項
+            </summary>
+            <param name="fieldName">控制項名稱</param>
+            <returns>ListBox 控制項</returns>
+        </member>
+        <member name="M:Acer.Base.FMBase.Label(System.String)">
+            <summary>
+            取得 Label 控制項
+            </summary>
+            <param name="fieldName">控制項名稱</param>
+            <returns>Label 控制項</returns>
+        </member>
+        <member name="M:Acer.Base.FMBase.DropDownList(System.String)">
+            <summary>
+            取得 DropDownList 控制項
+            </summary>
+            <param name="fieldName">控制項名稱</param>
+            <returns>DropDownList 控制項</returns>
+        </member>
+        <member name="M:Acer.Base.FMBase.CheckBox(System.String)">
+            <summary>
+            取得 CheckBox 控制項
+            </summary>
+            <param name="fieldName">控制項名稱</param>
+            <returns>CheckBox 控制項</returns>
+        </member>
+        <member name="M:Acer.Base.FMBase.CheckBoxList(System.String)">
+            <summary>
+            取得 CheckBoxList 控制項
+            </summary>
+            <param name="fieldName">控制項名稱</param>
+            <returns>CheckBoxList 控制項</returns>
+        </member>
+        <member name="M:Acer.Base.FMBase.RadioButton(System.String)">
+            <summary>
+            取得 RadioButton 控制項
+            </summary>
+            <param name="fieldName">控制項名稱</param>
+            <returns>RadioButton 控制項</returns>
+        </member>
+        <member name="M:Acer.Base.FMBase.RadioButtonList(System.String)">
+            <summary>
+            取得 RadioButtonList 控制項
+            </summary>
+            <param name="fieldName">控制項名稱</param>
+            <returns>RadioButtonList 控制項</returns>
+        </member>
+        <member name="M:Acer.Base.FMBase.HiddenField(System.String)">
+            <summary>
+            取得 HiddenField 控制項
+            </summary>
+            <param name="fieldName">控制項名稱</param>
+            <returns>HiddenField 控制項</returns>
+        </member>
+        <member name="M:Acer.Base.FMBase.GetFromCondition(System.String)">
+            <summary>
+            依據查詢畫面欄位(TextBox 型態)產生條件
+            </summary>
+            <param name="fieldName">畫面欄位名稱</param>
+            <returns>查詢條件</returns>
+        </member>
+        <member name="T:Acer.Base.IEntityInterface">
+            <summary>
+            Entity 介面 
+            </summary>
+        </member>
+        <member name="M:Acer.Base.IEntityInterface.SetTransactionMode(System.Boolean)">
+            <summary>
+            設定處理交易方式
+            </summary>
+            <param name="manualTransaction">是否自行設定處理交易</param>
+        </member>
+        <member name="M:Acer.Base.IEntityInterface.SetTransactionGroup(System.String)">
+            <summary>
+            設定處理交易群組方式
+            </summary>
+            <param name="groupName">是否自行設定處理交易</param>
+        </member>
+        <member name="M:Acer.Base.IEntityInterface.Query">
+            <summary>
+            處理查詢動作
+            </summary>
+            <returns>DataTable 物件</returns>
+        </member>
+        <member name="M:Acer.Base.IEntityInterface.QueryByPkNo">
+            <summary>
+            依據 PKNO 處理查詢動作
+            </summary>
+            <returns>DataTable 物件</returns>
+        </member>
+        <member name="M:Acer.Base.IEntityInterface.Query(System.Int32,System.Int32)">
+            <summary>
+            處理分頁查詢動作
+            </summary>
+            <param name="pageNo">目前頁次</param>
+            <param name="pageSize">每頁筆數</param>
+            <returns>DataTable 物件</returns>
+        </member>
+        <member name="M:Acer.Base.IEntityInterface.TotalRowCount">
+            <summary>
+            分頁總筆數
+            </summary>
+            <returns>分頁總筆數</returns>
+        </member>
+        <member name="M:Acer.Base.IEntityInterface.SetUserId(System.String)">
+            <summary>
+            使用者 For 批次程式設定用
+            </summary>
+            <param name="userId">使用者</param>
+        </member>
+        <member name="M:Acer.Base.IEntityInterface.Insert">
+            <summary>
+            處理新增資料動作
+            </summary>
+        </member>
+        <member name="M:Acer.Base.IEntityInterface.Update">
+            <summary>
+            處理修改資料動作
+            </summary>
+            <returns>修改筆數</returns>
+        </member>
+        <member name="M:Acer.Base.IEntityInterface.UpdateByPkNo">
+            <summary>
+            依據 PKNO 處理修改資料動作
+            </summary>
+            <returns>修改筆數</returns>
+        </member>
+        <member name="M:Acer.Base.IEntityInterface.Delete">
+            <summary>
+            處理刪除資料動作
+            </summary>
+            <returns>刪除筆數</returns>
+        </member>
+        <member name="M:Acer.Base.IEntityInterface.DeleteByPkNo">
+            <summary>
+            依據 PKNO 處理刪除資料動作
+            </summary>
+            <returns>刪除筆數</returns>
+        </member>
+        <member name="M:Acer.Base.IEntityInterface.PrepareProperty(System.Int32)">
+            <summary>
+            將 Datatable 資料塞到屬性上
+            </summary>
+            <param name="index">該筆資料列索引</param>
+        </member>
+        <member name="T:Acer.Base.PageBase">
+            <summary>
+            Control 繼承元件, 初使化 UI 元件
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Acer.Base.PageBase.CommonUIMap">
+            <summary>取得屬性</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.PropertyMap">
+            <summary>取得屬性</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.AjaxErrLog">
+            <summary>設定 AjaxErrLog錯誤訊息</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.DBUtil">
+            <summary>DBUtil 設定 DBUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.LangUtil">
+            <summary>LangUtil 設定 LangUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.LogUtil">
+            <summary>LogUtil 設定 LogUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.DBManager">
+            <summary>DBManager 設定 DBManager 物件</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.JScript">
+            <summary>JScript 設定 JScript 物件</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.Exception">
+            <summary>Exception 設定 Exception 物件</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.ScriptManager">
+            <summary>ScriptManager 設定 ScriptManager 物件</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.Logger">
+            <summary>Logger 讀取 Log 物件</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.PageRangeSize">
+            <summary>PageRangeSize 頁面區間大小</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.PageNo">
+            <summary>設定目前頁次</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.PageSize">
+            <summary>每頁筆數</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.TotalRowCount">
+            <summary>TotalRowCount 總筆數</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.IsListShow">
+            <summary>IsListShow 是否頁面一載入即顯示</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.IsAjax">
+            <summary>IsAjax 是否為 Ajax 傳送方式</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.IsLog">
+            <summary>IsLog 是否紀錄 Lo</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.IsDoIOLog">
+            <summary>IsDoIOLog 是否紀錄 Lo</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.HasForm">
+            <summary>HasForm 是否包含 Form 物件</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.HasColumnFilter">
+            <summary>HasColumnFilter 是否包含欄位篩選功能</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.NeedConnectDB">
+            <summary>NeedConnectDB 是否需要連線資料庫</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.NeedCheckSession">
+            <summary>NeedCheckSession 是否需要檢查登入</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.NeedRollBack">
+            <summary>NeedRollBack 是否需要退回交易</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.HasError">
+            <summary>HasError 是否包含錯誤</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.RollBackPage">
+            <summary>RollBackPage RollBack page 交易資料</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.PageID">
+            <summary>PageID For 多國語系使用的 PageID</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.HasLoad">
+            <summary>HasLoad 是否載入完成Form 物件</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.DDColumn">
+            <summary>取得 DDColumn</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.PageColumn">
+            <summary>取得 PageColumn</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.ColumnField">
+            <summary>取得 ColumnField</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.SessionMap">
+            <summary>取得 DDColumn</summary>
+        </member>
+        <member name="M:Acer.Base.PageBase.OnPreInit(System.EventArgs)">
+            <summary>
+            頁面載入事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Acer.Base.PageBase.OnLoad(System.EventArgs)">
+            <summary>
+            頁面載入事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Acer.Base.PageBase.OnLoadComplete(System.EventArgs)">
+            <summary>
+            頁面載入完成事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Acer.Base.PageBase.OnPreRender(System.EventArgs)">
+            <summary>
+            頁面載入完事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Acer.Base.PageBase.OnError(System.EventArgs)">
+            <summary>
+            錯誤處理事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Acer.Base.PageBase.Tab_Click(System.Object,System.EventArgs)">
+            <summary>
+            切換頁籤 Tab_Click
+            </summary>
+        </member>
+        <member name="M:Acer.Base.PageBase.InitTab(System.Int32)">
+            <summary>
+            InitTab 初始化頁籤
+            </summary>
+        </member>
+        <member name="M:Acer.Base.PageBase.GetDBAccess(System.String)">
+            <summary>
+            取得 DBAccess 物件
+            </summary>
+            <param name="connName">資料庫連線設定</param>
+            <returns>DBAccess 物件</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.GetDtBySql(System.String,System.String)">
+            <summary>
+            依據 SQL 取得 DataTable
+            </summary>
+            <param name="connName">資料庫連線設定</param>
+            <param name="sql">SQL 語法</param>
+            <returns>DataTable 物件</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.GetDtBySql(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            依據 SQL 取得 DataTable
+            </summary>
+            <param name="connName">資料庫連線設定</param>
+            <param name="sql">SQL 語法</param>
+            <param name="pageNo">頁次</param>
+            <param name="pageSize">每頁尺寸</param>
+            <returns>DataTable 物件</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.RollBackPageTransaction">
+            <summary>
+            處理頁面交易資料退回動作
+            </summary>
+        </member>
+        <member name="M:Acer.Base.PageBase.PageControlPageNo(System.String)">
+            <summary>
+            取得 PageControl 的 PageNo 值
+            <param name="defaultPageControlId">預設控制項名稱</param>
+            </summary>
+        </member>
+        <member name="M:Acer.Base.PageBase.PageControlPageSize(System.String)">
+            <summary>
+            取得 ScrollSize 值
+            <param name="defaultPageControlId">預設控制項名稱</param>
+            </summary>
+        </member>
+        <member name="M:Acer.Base.PageBase.ChkHasQuery(System.Web.UI.WebControls.GridView)">
+            <summary>
+            檢查是否查詢過, For 新增後是否重 Bind 判斷使用
+            </summary>
+            <param name="gridView">GridView 控制項</param>
+            <returns>是否查詢過</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.AllCellResize(System.Web.UI.WebControls.GridView)">
+            <summary>
+            處理 DataGrid 所有表頭可以改變大小動作
+            </summary>
+            <param name="gridView">gridView 控制項</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.SetupGridEvent(System.Web.UI.WebControls.GridView,Acer.Base.PageBase.GridEvent)">
+            <summary>
+            設定 Gird 事件
+            </summary>
+            <param name="grid">Gird 物件</param>
+            <param name="gridEvent">Gird 事件結構</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.CheckHasChange(System.Web.UI.WebControls.GridViewRow)">
+            <summary>
+            判斷是否需要處理
+            </summary>
+            <param name="row">該筆列物件</param>
+            <returns>是/否</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.GetKeyValueByGridCheckBox(System.Web.UI.WebControls.GridView,System.String)">
+            <summary>
+            依據 Grid CheckBox 取得鍵值"
+            </summary>
+            <param name="dataGrid">GridView 物件</param>
+            <param name="checkBoxName">核選物件 ID</param>
+            <returns>鍵值</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.GetKeyValueByGridRow(System.Web.UI.WebControls.GridView,System.Int32)">
+            <summary>
+            依據 Grid 某行取得鍵值
+            </summary>
+            <param name="dataGrid">GridView 物件</param>
+            <param name="rowIndex">行索引</param>
+            <returns>鍵值</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.PrepareRowDataBoundEvent(System.Web.UI.WebControls.GridView,System.Web.UI.WebControls.GridViewRow)">
+            <summary>
+            PrepareRowDataBoundEvent 處理每行 Grid 事件, 
+            預設處理功能 核選/編/詳/刪 權限機制, 
+            若欲覆寫功能於下方再行覆寫即可
+            </summary>
+            <param name="dataGrid">GridView 物件</param>
+            <param name="row">行物件</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.PrepareEditKeyToUI(System.Web.UI.WebControls.LinkButton,System.String)">
+            <summary>
+            將 Key 資料回塞到畫面上去, 並改變 TD 顏色
+            </summary>
+            <param name="sender">Key 資料(CD|VALUE|CD|VALUE)</param>
+            <param name="blockName">blockName 字首,ex: M_</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.PrepareRowDataBoundEventFor1_1(System.Web.UI.WebControls.GridView,System.Web.UI.WebControls.GridViewRow)">
+            <summary>
+            PrepareRowDataBoundEventFor1_1 處理每行 Grid 事件, For Pattern 1-1
+            預設處理功能 核選/編/詳/刪 權限機制, 
+            若欲覆寫功能於下方再行覆寫即可
+            </summary>
+            <param name="dataGrid">GridView 物件</param>
+            <param name="row">行物件</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.PrepareRowDataBoundEventFor1_1_V2(System.Web.UI.WebControls.GridView,System.Web.UI.WebControls.GridViewRow,System.String)">
+            <summary>
+            PrepareRowDataBoundEventFor1_1_V2 處理每行 Grid 事件, For Pattern 1-1
+            預設處理功能 核選/編/詳/刪 權限機制, 
+            若欲覆寫功能於下方再行覆寫即可
+            </summary>
+            <param name="dataGrid">GridView 物件</param>
+            <param name="row">行物件</param>
+            <param name="num">物件序號(ex:edit2,del2)</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.MergeRows(System.Web.UI.WebControls.GridView@,System.Int32)">
+            <summary>
+            合併 GridView 儲存格
+            </summary>
+            <param name="gridView">GridView 物件</param>
+            <param name="cellIndex">欲合併的列數</param>
+        </member>
+        <member name="F:Acer.Base.PageBase.headingStr">
+            <summary>
+            表頭字串
+            </summary>
+        </member>
+        <member name="M:Acer.Base.PageBase.GetCHeadingStr">
+            <summary>
+            抓取匯出中文表頭字串
+            </summary>
+            <returns>中文表頭字串</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.GetHeadingStr">
+            <summary>
+            抓取匯出英文表頭字串
+            </summary>
+            <returns>英文表頭字串</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.DrawContent(System.Data.DataTable,System.Int32,System.String)">
+            <summary>
+            DrawContent 產生匯出資料 | L左 M中 R右
+            </summary>
+            <param name="dt">DataTable</param>
+            <param name="index">索引</param>
+            <param name="content">要匯出的資料</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.DrawContent(System.String)">
+            <summary>
+            產生匯出資料 | L左 M中 R右
+            </summary>
+            <param name="content">要匯出的資料</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.BindDDProperty">
+            <summary>
+            將資料字典設定套用套畫面上
+            </summary>
+        </member>
+        <member name="M:Acer.Base.PageBase.ServerSideValid(System.String)">
+            <summary>
+            Server 端檢核
+            </summary>
+            <param name="validForm">檢核的 Form Q_ || M_</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.BindDDFormat(System.Data.DataTable,Acer.Form.FormUtil.FormatType)">
+            <summary>
+            套用資料字典格式化
+            </summary>
+            <param name="dt">DataTable 資料</param>
+            <param name="formatType">格式化種類</param>
+            <returns>格式化後字串 DataTable 資料</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.BindDDFormat(System.Data.DataRow,System.String,Acer.Form.FormUtil.FormatType,System.Collections.Hashtable)">
+            <summary>
+            套用資料字典格式化
+            </summary>
+            <param name="dr">資料列物件</param>
+            <param name="columnName">欄位名稱</param>
+            <param name="formatType">格式化種類</param>
+            <param name="columnDD">資料字典暫存內容</param>
+            <returns>格式化後字串</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.BindCompleteColumnFieldProperty">
+            <summary>
+            BindCompleteColumnFieldProperty
+            </summary>
+        </member>
+        <member name="M:Acer.Base.PageBase.BindColumnFieldProperty">
+            <summary>
+            初始化資料欄位設定
+            </summary>
+        </member>
+        <member name="M:Acer.Base.PageBase.IsAddBlank(System.String,System.Boolean)">
+            <summary>
+            判斷是否選項加空白
+            </summary>
+            <param name="controlName">控制項名稱</param>
+            <param name="currAttr">原先的參數</param>
+            <returns>是否選項加空白</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.BindMLProperty(System.Web.UI.Control)">
+            <summary>
+            將多國語系資料套在畫面上
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Acer.Base.PageBase.BindUIByDataTable(System.Data.DataTable)">
+            <summary>
+            處理將 DataTable 結果 Bind 到畫面上
+            </summary>
+            <param name="data">DataTable 資料物件</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.BindUIByDataTable(System.Data.DataTable,System.String)">
+            <summary>
+            處理將 DataTable 結果 Bind 到畫面上
+            </summary>
+            <param name="data">DataTable 資料物件</param>
+            <param name="blockName">區塊名稱</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.ColumnFilterInit">
+            <summary>
+            初始化欄位篩選設定
+            </summary>
+        </member>
+        <member name="M:Acer.Base.PageBase.MapRequestToUIControl(System.Web.UI.Page)">
+            <summary>
+            將 Request 資料對應到控制項上, For 匯出使用(僅處理 HiddenField、TextBox 及 DropDownList)
+            </summary>
+        </member>
+        <member name="M:Acer.Base.PageBase.MapDropDownListText(System.Web.UI.WebControls.DropDownList,System.String)">
+            <summary>
+            對應下拉選項中文
+            </summary>
+            <param name="ddl">下拉控制項</param>
+            <param name="value">要對應的值</param>
+            <returns>回傳對應中文, 對應不到回傳原始值</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.MapRadioButtonListText(System.Web.UI.WebControls.RadioButtonList,System.String)">
+            <summary>
+            對應核選方塊清單中文
+            </summary>
+            <param name="ddl">核選方塊清單物件</param>
+            <param name="value">要對應的值</param>
+            <returns>回傳對應中文, 對應不到回傳原始值</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.PrepareUserControl(Acer.Base.UserControlBase)">
+            <summary>
+            將物件狀態過渡給使用者控制項上
+            </summary>
+            <param name="userControl">使用者控制項</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.GetControlHtml(System.Web.UI.WebControls.WebControl)">
+            <summary>
+            取得控制項輸出的 HTML
+            </summary>
+            <param name="webControl">控制項</param>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.AjaxError">
+            <summary>
+            Ajax 錯誤處理機制使用
+            </summary>
+            <returns>Ajax 錯誤訊息</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.GetFromCondition(System.String)">
+            <summary>
+            依據查詢畫面欄位(TextBox 型態)產生條件
+            </summary>
+            <param name="fieldName">畫面欄位名稱</param>
+            <returns>查詢條件</returns>
+        </member>
+        <member name="M:Acer.Base.PageBase.ProcessPermission">
+            <summary>
+            處理權限動作
+            </summary>
+        </member>
+        <member name="M:Acer.Base.PageBase.ProcessQueryCondition(System.Text.StringBuilder,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            組合查詢字串
+            </summary>
+            <param name="outputBuff">回傳的字串</param>
+            <param name="oper">條件資訊</param>
+            <param name="column">欄位名稱</param>
+            <param name="var">欄位值</param>
+            <param name="needComma">是否需要引號資料</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.ProcessQueryCondition(System.Text.StringBuilder,System.String,System.String,System.String)">
+            <summary>
+            組合查詢字串
+            </summary>
+            <param name="outputBuff">回傳的字串</param>
+            <param name="oper">條件資訊</param>
+            <param name="column">欄位名稱</param>
+            <param name="var">欄位值</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.ProcessQueryCondition(System.Text.StringBuilder,System.String,System.String,System.String,System.String)">
+            <summary>
+            組合查詢字串
+            </summary>
+            <param name="outputBuff">回傳的字串</param>
+            <param name="oper">條件資訊 Ex: BT,...</param>
+            <param name="column">欄位名稱</param>
+            <param name="var1">欄位值1</param>
+            <param name="var2">欄位值2</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.ProcessQueryOrCondition(System.Text.StringBuilder,System.Text.StringBuilder)">
+            <summary>
+            處理 Or 的條件
+            </summary>
+            <param name="outputBuff">Me.TmpCondition</param>
+            <param name="currCondition">tmpBuff</param>
+        </member>
+        <member name="M:Acer.Base.PageBase.ProcessCondition(System.String)">
+            <summary>
+            處理查詢條件
+            </summary>
+            <param name="cond">查詢條件</param>
+            <returns>查詢條件</returns>
+        </member>
+        <member name="T:Acer.Base.PageBase.GridEvent">
+            <summary>
+            Grid 事件結構
+            </summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.GridEvent.IsColumnReSize">
+            <summary>是否可改變欄位大小</summary>
+        </member>
+        <member name="P:Acer.Base.PageBase.GridEvent.IsColumnFilter">
+            <summary>是否包含欄位篩選功能</summary>
+        </member>
+        <member name="T:Acer.Base.UserControlBase">
+            <summary>
+            Control 繼承元件, 初使化 UI 元件
+            </summary>
+        </member>
+        <member name="P:Acer.Base.UserControlBase.PropertyMap">
+            <summary>取得屬性</summary>
+        </member>
+        <member name="P:Acer.Base.UserControlBase.DBManager">
+            <summary>設定 DBManager 物件</summary>
+        </member>
+        <member name="P:Acer.Base.UserControlBase.JScript">
+            <summary>設定 JScript 物件</summary>
+        </member>
+        <member name="P:Acer.Base.UserControlBase.Logger">
+            <summary>Logger 讀取 Log 物件</summary>
+        </member>
+        <member name="P:Acer.Base.UserControlBase.DBUtil">
+            <summary>DBUtil 設定 DBUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.UserControlBase.LogUtil">
+            <summary>設定 LogUtil 物件</summary>
+        </member>
+        <member name="P:Acer.Base.UserControlBase.LangUtil">
+            <summary>LangUtil 設定 LangUtil 物件</summary>
+        </member>
+        <member name="M:Acer.Base.UserControlBase.GetKeyValueByGridCheckBox(System.Web.UI.WebControls.GridView,System.String)">
+            <summary>
+            依據 Grid CheckBox 取得鍵值"
+            </summary>
+            <param name="dataGrid">GridView 物件</param>
+            <param name="checkBoxName">核選物件 ID</param>
+            <returns>鍵值</returns>
+        </member>
+        <member name="M:Acer.Base.UserControlBase.GetKeyValueByGridRow(System.Web.UI.WebControls.GridView,System.Int32)">
+            <summary>
+            依據 Grid 某行取得鍵值
+            </summary>
+            <param name="dataGrid">GridView 物件</param>
+            <param name="rowIndex">行索引</param>
+            <returns>鍵值</returns>
+        </member>
+        <member name="M:Acer.Base.UserControlBase.PrepareRowDataBoundEvent(System.Web.UI.WebControls.GridView,System.Web.UI.WebControls.GridViewRow)">
+            <summary>
+            PrepareRowDataBoundEvent 處理每行 Grid 事件, 
+            預設處理功能 核選/編/詳/刪 權限機制, 
+            若欲覆寫功能於下方再行覆寫即可
+            </summary>
+            <param name="dataGrid">GridView 物件</param>
+            <param name="row">行物件</param>
+        </member>
+        <member name="M:Acer.Base.UserControlBase.GetDtBySql(System.String,System.String)">
+            <summary>
+            依據 SQL 取得 DataTable
+            </summary>
+            <param name="connName">資料庫連線設定</param>
+            <param name="sql">SQL 語法</param>
+            <returns>DataTable 物件</returns>
+        </member>
+        <member name="T:Acer.DB.DBAccess">
+            <summary>
+            資料庫基本操作, 包括 insert, delete, update...
+            </summary>
+        </member>
+        <member name="P:Acer.DB.DBAccess.Logger">
+            <summary>設定 MyLogger 物件</summary>
+        </member>
+        <member name="P:Acer.DB.DBAccess.ConnectionName">
+            <summary>連線名稱</summary>
+        </member>
+        <member name="P:Acer.DB.DBAccess.LogUtil">
+            <summary>設定 LogUtil 物件</summary>
+        </member>
+        <member name="P:Acer.DB.DBAccess.DbConnection">
+            <summary>設定 DbConnection 物件</summary>
+        </member>
+        <member name="P:Acer.DB.DBAccess.DbTransaction">
+            <summary>設定 DbTransaction 物件</summary>
+        </member>
+        <member name="P:Acer.DB.DBAccess.DbCommand">
+            <summary>設定 DbCommand 物件</summary>
+        </member>
+        <member name="P:Acer.DB.DBAccess.IsRealAction">
+            <summary>是否實際執行</summary>
+        </member>
+        <member name="P:Acer.DB.DBAccess.IsLog">
+            <summary>設定是否要記 log, 大量處理建議不使用</summary>
+        </member>
+        <member name="P:Acer.DB.DBAccess.IsNeedCheckCache">
+            <summary>設定是否要判斷快取</summary>
+        </member>
+        <member name="P:Acer.DB.DBAccess.Provider">
+            <summary>Provider</summary>
+        </member>
+        <member name="P:Acer.DB.DBAccess.Hint">
+            <summary>Provider</summary>
+        </member>
+        <member name="P:Acer.DB.DBAccess.ExecuteSql">
+            <summary>設定 ExecuteSql</summary>
+        </member>
+        <member name="P:Acer.DB.DBAccess.TableName">
+            <summary>設定 TableName</summary>
+        </member>
+        <member name="M:Acer.DB.DBAccess.#ctor(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,Acer.Log.LogUtil,System.String)">
+            <summary>
+            Constructs, 包含 Transaction
+            </summary>
+            <param name="conn">DbConnection</param>
+            <param name="trans">DbTransaction</param>
+            <param name="logUtil">MyLogger</param>
+            <param name="provider">連線資訊</param>
+        </member>
+        <member name="M:Acer.DB.DBAccess.#ctor(System.Data.Common.DbConnection,Acer.Log.LogUtil,System.String)">
+            <summary>
+            Constructs, 不包含 Transaction
+            </summary>
+            <param name="conn">DbConnection</param>
+            <param name="logUtil">MyLogger</param>
+            <param name="provider">連線資訊</param>
+        </member>
+        <member name="M:Acer.DB.DBAccess.SetTableName(System.String)">
+            <summary>
+            設定欲新增, 修改, 或刪除之 Table name
+            先前以呼叫過可免再呼叫繼續使用同一 Table
+            </summary>
+            <param name="TableName">資料表名稱</param>
+        </member>
+        <member name="M:Acer.DB.DBAccess.SetColumn(System.String,System.Object)">
+            <summary>
+            設定欲更新之欄位與值
+            </summary>
+            <param name="columnName">欄位名稱</param>
+            <param name="value">欄位值</param>
+        </member>
+        <member name="M:Acer.DB.DBAccess.SetColumn(System.String,System.Object,System.Boolean)">
+            <summary>
+            設定欲更新之欄位與值
+            </summary>
+            <param name="columnName">欄位名稱</param>
+            <param name="value">欄位值</param>
+            <param name="compute">true/false -- 輸入之欄位值是否為 db 計算之 function</param>
+        </member>
+        <member name="M:Acer.DB.DBAccess.SetClobColumn(System.String,System.Object)">
+            <summary>
+            設定欲更新之欄位(Clob)與值
+            </summary>
+            <param name="columnName">欄位名稱</param>
+            <param name="value">欄位值</param>
+        </member>
+        <member name="M:Acer.DB.DBAccess.Insert">
+            <summary>
+            新增一筆資料
+            </summary>
+        </member>
+        <member name="M:Acer.DB.DBAccess.Update(System.String)">
+            <summary>
+            依傳入之條件更新一筆或多筆資料
+            </summary>
+            <param name="conditions">WHERE 條件, 如 COLUMN1 =  '001'</param>
+            <returns>	已更新之資料筆數</returns>
+        </member>
+        <member name="M:Acer.DB.DBAccess.Delete(System.String)">
+            <summary>
+            依傳入之條件刪除一筆或多筆資料
+            </summary>
+            <param name="conditions">WHERE條件, 如COLUMN1=  '001'</param>
+            <returns>已刪除之資料筆數</returns>
+        </member>
+        <member name="M:Acer.DB.DBAccess.ExecuteParam(System.String,System.String[],System.String[])">
+            <summary>
+            傳入 sql 執行 db 處理(insert, delete, update)
+            TableName 保留, 欄位資訊清除
+            </summary>
+            <param name="sql">欲執行的 SQL</param>
+            <param name="nameAry">參數名稱陣列</param>
+            <param name="valAry">參數值陣列</param>
+            <returns>處理結果筆數</returns>
+        </member>
+        <member name="M:Acer.DB.DBAccess.Execute(System.String)">
+            <summary>
+            傳入 sql 執行 db 處理(insert, delete, update)
+            TableName 保留, 欄位資訊清除
+            </summary>
+            <param name="sql">欲執行的 SQL</param>
+            <returns>處理結果筆數</returns>
+        </member>
+        <member name="M:Acer.DB.DBAccess.SqlBulryInsert(System.Data.DataTable)">
+            <summary>
+            SQL Server 大量新增
+            </summary>
+            <param name="dt">要大量新增的 DataTable</param>
+        </member>
+        <member name="M:Acer.DB.DBAccess.GetSql">
+            <summary>
+            取得執行的 sql 指令, 取得時機 - 資料處理完後
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.DB.DBAccess.InsertNormal">
+            <summary>
+            組成 Insert SQL 並執行
+            </summary>
+        </member>
+        <member name="M:Acer.DB.DBAccess.UpdateNormal(System.String)">
+            <summary>
+            組成 Update SQL 並執行
+            </summary>
+        </member>
+        <member name="M:Acer.DB.DBAccess.GetGuardiumStartString">
+            <summary>
+            For NCC 使用 建立Guardium Start字串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.DB.DBAccess.GetGuardiumEndString">
+            <summary>
+            For NCC 使用 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Acer.DB.DBFactory">
+            <summary>
+            取得資料庫元件介面, Connection, Command, DataAdapter, CommandBuilder
+            </summary>
+        </member>
+        <member name="M:Acer.DB.DBFactory.GetIConnection(System.String)">
+            <summary>
+            取得 Connection 介面, 預設為 OleDbConnection 
+            </summary>
+            <param name="provider">連線種類 ODBC/OLEDB/SQLCLIENT/ORACLE</param>
+            <returns>DbConnection</returns>
+        </member>
+        <member name="M:Acer.DB.DBFactory.GetIDBCommand(System.String)">
+            <summary>
+            取得 Command 介面, 預設為 OleDbCommand 
+            </summary>
+            <param name="provider">連線種類 ODBC/OLEDB/SQLCLIENT/ORACLE</param>
+            <returns>DbCommand</returns>
+        </member>
+        <member name="M:Acer.DB.DBFactory.GetIDBDataAdapter(System.String)">
+            <summary>
+            取得 DbDataAdapter 介面, 預設為 OleDbDataAdapter
+            </summary>
+            <param name="provider">連線種類 ODBC/OLEDB/SQLCLIENT/ORACLE</param>
+            <returns>DbDataAdapter</returns>
+        </member>
+        <member name="M:Acer.DB.DBFactory.GetIDBCommandBuilder(System.String)">
+            <summary>
+            取得 DbCommandBuilder 介面, 預設為 OracleCommandBuilder
+            </summary>
+            <param name="provider">連線種類 ODBC/OLEDB/SQLCLIENT/ORACLE</param>
+            <returns></returns>
+        </member>
+        <member name="T:Acer.DB.DBManager">
+            <summary>
+            DB 相關物件管理容器, 
+            可取得 Connection, DBAccess, DBPageResultSet, DBResultSet, DBRowSet, SimpleResultSet 
+            及設定 Transaction
+            </summary>
+        </member>
+        <member name="P:Acer.DB.DBManager.Logger">
+            <summary>設定 MyLogger 物件</summary>
+        </member>
+        <member name="P:Acer.DB.DBManager.LogUtil">
+            <summary>設定 LogUtil 物件</summary>
+        </member>
+        <member name="P:Acer.DB.DBManager.MustHaveTransactions">
+            <summary>必須包含交易屬性</summary>
+        </member>
+        <member name="M:Acer.DB.DBManager.#ctor(Acer.Log.LogUtil)">
+            <summary>
+            Constructs, 初始化 DBManager 物件
+            </summary>
+            <param name="logUtil">MyLogger 物件</param>
+        </member>
+        <member name="M:Acer.DB.DBManager.Init">
+            <summary>
+            初始化讀取 db 連線資訊 (db.conf)
+            </summary>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetProvider(System.Data.Common.DbConnection)">
+            <summary>
+            取得連線種類
+            </summary>
+            <param name="iConn">DbConnection 物件</param>
+            <returns>連線種類 ODBC/OLEDB/SQLCLIENT/ORACLE</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetDBType(System.Data.Common.DbConnection)">
+            <summary>
+            資料庫種類
+            </summary>
+            <param name="iConn">DbConnection 物件</param>
+            <returns>資料庫種類 ORACLE/....</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetDBTransaction(System.Data.Common.DbConnection)">
+            <summary>
+            取得 DBTransaction 物件
+            </summary>
+            <param name="conn">DBConnection 物件</param>
+            <returns>DBTransaction 物件</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.MustHaveTransaction(System.String)">
+            <summary>
+            設定必須包含交易
+            </summary>
+            <param name="connName">要包含交易的連線名稱</param>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetIConnection(System.String)">
+            <summary>
+            取得 DbConnection
+            </summary>
+            <param name="connName">DB 設定名稱</param>
+            <returns>DbConnection 物件</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetIConnection(System.String,System.Boolean)">
+            <summary>
+            取得 DbConnection, 其中交易由程式自行處理, 不包含在此 Container 處理
+            </summary>
+            <param name="connName">DB 設定名稱</param>
+            <param name="manualTransaction">是否自行設定處理交易</param>
+            <returns>DbConnection 物件</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetIConnection(System.String,System.String)">
+            <summary>
+            取得 DbConnection, 並設定其交易群組名稱
+            </summary>
+            <param name="connName">DB 設定名稱</param>
+            <param name="transactionGroup">交易群組名稱</param>
+            <returns>Connection 物件</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetDBAccess(System.Data.Common.DbConnection)">
+            <summary>
+            取得 db 存取物件, 指定所連接之 db (如ORACLE or MSSQL), 並由由外部傳入 Connection, 指定所連接之 db
+            </summary>
+            <param name="conn">Connection 物件</param>
+            <returns>DBAccess</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetDataSet(System.Data.Common.DbConnection,System.String)">
+            <summary>
+            取得 DataSet 查詢物件, 由外部傳入 Connection
+            </summary>
+            <param name="conn">Connection 物件</param>
+            <param name="sql">SQL 指令</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetDataSet(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.String,System.String)">
+            <summary>
+            取得 DataSet 查詢物件, 由外部傳入 Connection
+            </summary>
+            <param name="conn">Connection 物件</param>
+            <param name="trans">DbTransaction 物件</param>
+            <param name="provider">提供者</param>
+            <param name="sql">SQL 指令</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetDataReader(System.Data.Common.DbConnection,System.String)">
+            <summary>
+            取得 GetDataReader 物件, 由外部傳入 Connection
+            </summary>
+            <param name="conn">Connection 物件</param>
+            <param name="sql">SQL 指令</param>
+            <returns>GetDataReader</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetResultSet(System.Data.Common.DbConnection)">
+            <summary>
+            取得 IDBResult 物件, 由外部傳入 Connection
+            </summary>
+            <param name="conn">Connection 物件</param>
+            <returns>IDBResult</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetResultSet(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.String)">
+            <summary>
+            取得 IDBResult 物件, 由外部傳入 Connection
+            </summary>
+            <param name="conn">Connection 物件</param>
+            <param name="trans">DbTransaction 物件</param>
+            <param name="provider">提供者</param>
+            <returns>IDBResult</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetPageDataTable(System.Data.Common.DbConnection,System.String,System.Int32,System.Int32)">
+            <summary>
+            取得分頁 DataTable 物件, 由外部傳入 Connection
+            </summary>
+            <param name="conn">DbConnection 物件</param>
+            <param name="sql">SQL 指令</param>
+            <param name="startRow">開始筆數</param>
+            <param name="pageSize">頁次</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetRowCount">
+            <summary>
+            取得分頁總筆數, 須和 GetPageDataTable 搭配使用
+            </summary>
+            <returns>分頁總筆數</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetDBPageResultSet(System.Data.Common.DbConnection)">
+            <summary>
+            取得分頁查詢物件, 目前支援連線 ORACLE/SQL2005/MSSQL/DB2/INFORMIX/ACCESS/SYBASE
+            </summary>
+            <param name="conn">DbConnection 物件</param>
+            <returns>DBPageResultSet</returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.Commit(System.String)">
+            <summary>
+            Commit 該交易群組的處理資料
+            </summary>
+            <param name="transactionGroup">交易群組名稱 </param>
+        </member>
+        <member name="M:Acer.DB.DBManager.Commit">
+            <summary>
+            Commit 未設群組的所有交易資料
+            </summary>
+        </member>
+        <member name="M:Acer.DB.DBManager.Rollback(System.String)">
+            <summary>
+            Rollback  該交易群組的處理資料
+            </summary>
+            <param name="transactionGroup">交易群組名稱 </param>
+        </member>
+        <member name="M:Acer.DB.DBManager.Rollback">
+            <summary>
+            Rollback 未設群組的所有交易資料
+            </summary>
+        </member>
+        <member name="M:Acer.DB.DBManager.Close">
+            <summary>
+            Close 關閉 DBManager 中所有開啟連線及 IDBResult 連線
+            </summary>
+        </member>
+        <member name="M:Acer.DB.DBManager.Close(System.String)">
+            <summary>
+            關閉 DBManager 中該交易群組名稱連線及 IDBResult 連線
+            <param name="transactionGroup">交易群組名稱 </param>
+            </summary>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetGuardiumStartString">
+            <summary>
+            For NCC 使用 建立Guardium Start字串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.DB.DBManager.GetGuardiumEndString">
+            <summary>
+            For NCC 使用 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Acer.DB.Query.DBPageResultSet">
+            <summary>
+            處理分頁查詢功能
+            </summary>
+        </member>
+        <member name="M:Acer.DB.Query.DBPageResultSet.#ctor(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,Acer.Log.LogUtil,System.String,System.String)">
+            <summary>
+            建構子 - 一般由 dbManager 呼叫使用
+            </summary>
+            <param name="conn">DbConnection 物件</param>
+            <param name="trans">DbTransaction 物件</param>
+            <param name="logUtil">MyLogger 物件</param>
+            <param name="dBType">資料庫種類</param>
+            <param name="provider">連線種類</param>
+        </member>
+        <member name="M:Acer.DB.Query.DBPageResultSet.GetPageSqlStatement(System.String,System.Int32,System.Int32)">
+            <summary>
+            傳入 sql 語法及起始列, 分頁大小, 取得分頁查詢語法
+            </summary>
+            <param name="sql">SQL 語法</param>
+            <param name="startRow">起始列</param>
+            <param name="pageSize">分頁大小</param>
+            <returns>分頁查詢 SQL 語法</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBPageResultSet.GetTotalCountSql(System.String)">
+            <summary>
+            取得該查詢資料總筆數
+            </summary>
+            <param name="sql">一般查詢語法</param>
+            <returns>該查詢資料總筆數的 SQL</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBPageResultSet.GetDataTable(System.String,System.Int32,System.Int32)">
+            <summary>
+            取得分頁的 DataTable
+            </summary>
+            <returns></returns>
+            <param name="sql">SQL 語法</param>
+            <param name="startRow">起始列</param>
+            <param name="pageSize">分頁大小</param>
+            <returns>分頁結果 DataTable</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBPageResultSet.ExecuteQuery(System.String,System.Int32,System.Int32)">
+            <summary>
+            執行分頁查詢
+            </summary>
+            <param name="sql">查詢之語法</param>
+            <param name="startRow">該分頁起始的 row number</param>
+            <param name="pageSize">分頁大小</param>
+        </member>
+        <member name="M:Acer.DB.Query.DBPageResultSet.GetTotalRowCount">
+            <summary>
+            取得該查詢資料總筆數
+            </summary>
+            <returns>回傳總筆數</returns>
+        </member>
+        <member name="T:Acer.DB.Query.DBResultSet">
+            <summary>
+            DBResultSet 資料查詢元件
+            </summary>
+        </member>
+        <member name="F:Acer.DB.Query.DBResultSet.pPropertyMap">
+            <summary>設定 PropertyMap 物件</summary>
+        </member>
+        <member name="P:Acer.DB.Query.DBResultSet.PropertyMap">
+            <summary>設定 PropertyMap 物件</summary>
+        </member>
+        <member name="P:Acer.DB.Query.DBResultSet.Logger">
+            <summary>設定 MyLogger 物件</summary>
+        </member>
+        <member name="P:Acer.DB.Query.DBResultSet.LogUtil">
+            <summary>設定 LogUtil 物件</summary>
+        </member>
+        <member name="P:Acer.DB.Query.DBResultSet.IsLog">
+            <summary>是否執行 Log 機制</summary>
+        </member>
+        <member name="F:Acer.DB.Query.DBResultSet.columnCount">
+            <summary>欄位總數</summary>
+        </member>
+        <member name="F:Acer.DB.Query.DBResultSet.pageSize">
+            <summary>全域的 MyLogger 物件</summary>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.#ctor(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,Acer.Log.LogUtil,System.String)">
+            <summary>
+            建構子 - DBManager 使用
+            </summary>
+            <param name="conn">DbConnection 物件</param>
+            <param name="trans">DbTransaction 物件</param>
+            <param name="logUtil">LogUtil 物件</param>
+            <param name="provider">連線類型</param>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.NoLog">
+            <summary>
+            不進行記錄 Log 動作
+            </summary>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.Close">
+            <summary>
+            結束查詢並關閉連線
+            </summary>
+            <returns>是否有出錯</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.ExecuteQuery(System.String)">
+            <summary>
+            執行查詢
+            </summary>
+            <param name="sql">查詢語法</param>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.GetDataSet(System.String)">
+            <summary>
+            取得 DataSet
+            </summary>
+            <param name="sql">查詢語法</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.GetDataReader(System.String)">
+            <summary>
+            取得 DataReader
+            </summary>
+            <param name="sql">查詢語法</param>
+            <returns>DataReader</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.ExecuteQuery(System.String,System.Boolean)">
+            <summary>
+            執行查詢
+            </summary>
+            <param name="sql">查詢語法</param>
+            <param name="hasBinary">是否包含二進制資料型態</param>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.Absolute(System.Int32,System.Int32)">
+            <summary>
+            MSSQL, Access 分頁專用, 2007/03/o4 補上
+            </summary>
+            <param name="cousor">起始點</param>
+            <param name="pageSize">每頁尺寸</param>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.Next">
+            <summary>
+            移至下一筆
+            </summary>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.Convert(System.Object)">
+            <summary>
+            將結果的右邊空白去掉, 若為 Null 回傳空白字串
+            </summary>
+            <param name="val">處理的值</param>
+            <returns>處理後結果</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.GetString(System.String)">
+            <summary>
+            依欄位名稱取得欄位值
+            </summary>
+            <param name="columnName">欄位名稱</param>
+            <returns>欄位值(string), 若 DBNull 則傳回空白</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.GetString(System.Int32)">
+            <summary>
+            依欄位索引取得欄位值
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+            <returns>欄位值(string), 若 DBNull 則傳回空白</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.GetInt(System.String)">
+            <summary>
+            依欄位名稱取得欄位值
+            </summary>
+            <param name="columnName">欄位名稱</param>
+            <returns>欄位值(int), 若 DBNull 則傳回 0</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.GetInt(System.Int32)">
+            <summary>
+            依欄位索引取得欄位值
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+            <returns>欄位值(int), 若 DBNull 則傳回 0</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.GetLong(System.String)">
+            <summary>
+            依欄位名稱取得欄位值
+            </summary>
+            <param name="columnName">欄位序號,從1開始</param>
+            <returns>欄位值(long), 若 DBNull 則傳回 0</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.GetLong(System.Int32)">
+            <summary>
+            依欄位索引取得欄位值
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+            <returns>欄位值(int), 若 DBNull 則傳回 0</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.GetDouble(System.String)">
+            <summary>
+            依欄位名稱取得欄位值
+            </summary>
+            <param name="columnName">欄位名稱</param>
+            <returns>欄位值(double), 若 DBNull 則傳回 0</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.GetDouble(System.Int32)">
+            <summary>
+            依欄位索引取得欄位值
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+            <returns>欄位值(double), 若 DBNull 則傳回 0</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.BinaryToWeb(System.Int32)">
+            <summary>
+            二進位資料輸出至 Web
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.BinaryToFile(System.Int32,System.String)">
+            <summary>
+            將二位元資料轉成檔案
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+            <param name="filePath">轉存路徑</param>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.GetMetaData">
+            <summary>
+            取得欄位 Meta 資訊
+            </summary>
+            <returns>包含欄位資訊的 DataTable</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.GetColumnName(System.Int32)">
+            <summary>
+            依欄位索引取得欄位值
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+            <returns>欄位名稱</returns>
+        </member>
+        <member name="M:Acer.DB.Query.DBResultSet.GetColumnCount">
+            <summary>
+            取得欄位總數
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Acer.DB.Query.IDBResult">
+            <summary>
+            db 查詢物件介面
+            </summary>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.NoLog">
+            <summary>
+            不進行記錄 Log 動作
+            </summary>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.Close">
+            <summary>
+            結束查詢並關閉連線
+            </summary>
+            <returns>True/False</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.ExecuteQuery(System.String)">
+            <summary>
+            執行查詢
+            </summary>
+            <param name="sql">查詢語法</param>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.GetDataSet(System.String)">
+            <summary>
+            取得 DataSet
+            </summary>
+            <param name="sql">查詢語法</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.GetDataReader(System.String)">
+            <summary>
+            取得 DataReader
+            </summary>
+            <param name="sql">查詢語法</param>
+            <returns>DataReader</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.ExecuteQuery(System.String,System.Boolean)">
+            <summary>
+            執行查詢
+            </summary>
+            <param name="sql">查詢語法</param>
+            <param name="hasBinary">是否包含二進制資料型態</param>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.GetColumnCount">
+            <summary>
+            取得欄位數目
+            </summary>
+            <returns>欄位數目</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.Next">
+            <summary>
+            移至下一筆
+            </summary>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.GetString(System.String)">
+            <summary>
+            依欄位名稱取得欄位值
+            </summary>
+            <param name="columnName">欄位名稱</param>
+            <returns>欄位值(string), 若 DBNull 則傳回空白</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.GetString(System.Int32)">
+            <summary>
+            依欄位索引取得欄位值
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+            <returns>欄位值(string), 若 DBNull 則傳回空白</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.GetInt(System.String)">
+            <summary>
+            依欄位名稱取得欄位值
+            </summary>
+            <param name="columnName">欄位名稱</param>
+            <returns>欄位值(int), 若 DBNull 則傳回 0</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.GetInt(System.Int32)">
+            <summary>
+            依欄位索引取得欄位值
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+            <returns>欄位值(int), 若 DBNull 則傳回 0</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.GetLong(System.String)">
+            <summary>
+            依欄位名稱取得欄位值
+            </summary>
+            <param name="columnName">欄位序號,從1開始</param>
+            <returns>欄位值(long), 若 DBNull 則傳回 0</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.GetLong(System.Int32)">
+            <summary>
+            依欄位索引取得欄位值
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+            <returns>欄位值(int), 若 DBNull 則傳回 0</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.GetDouble(System.String)">
+            <summary>
+            依欄位名稱取得欄位值
+            </summary>
+            <param name="columnName">欄位名稱</param>
+            <returns>欄位值(double), 若 DBNull 則傳回 0</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.GetDouble(System.Int32)">
+            <summary>
+            依欄位索引取得欄位值
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+            <returns>欄位值(double), 若 DBNull 則傳回 0</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.GetColumnName(System.Int32)">
+            <summary>
+            依欄位索引取得欄位值
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+            <returns>欄位名稱</returns>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.BinaryToFile(System.Int32,System.String)">
+            <summary>
+            將二位元資料轉成檔案
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+            <param name="filePath">轉存路徑</param>
+        </member>
+        <member name="M:Acer.DB.Query.IDBResult.BinaryToWeb(System.Int32)">
+            <summary>
+            二進位資料輸出至 Web
+            </summary>
+            <param name="columnIndex">欄位序號, 從 0 開始</param>
+        </member>
+        <member name="T:Acer.Err.ColumnNotSelectException">
+            <summary>
+            未選擇欄位的自訂錯誤物件
+            </summary>
+        </member>
+        <member name="T:Acer.Err.SessionTimeoutException">
+            <summary>
+            Server 端檢核錯誤的自訂錯誤物件
+            </summary>
+        </member>
+        <member name="T:Acer.Err.ServerSideValidException">
+            <summary>
+            Server 端檢核錯誤的自訂錯誤物件
+            </summary>
+        </member>
+        <member name="T:Acer.Err.DataBaseNotSupportException">
+            <summary>
+            不支援該資料庫的自訂錯誤物件
+            </summary>
+        </member>
+        <member name="T:Acer.Err.DataTypeFaileException">
+            <summary>
+            資料型態錯誤的自訂錯誤物件
+            </summary>
+        </member>
+        <member name="T:Acer.Err.ErrUtil">
+            <summary>
+            定義錯誤訊息的共用物件
+            </summary>
+        </member>
+        <member name="M:Acer.Err.ErrUtil.ErrToStr(System.Exception)">
+            <summary>
+            將 Exception 的 StractTrace 轉成 string 回傳 
+            </summary>
+            <param name="ex">Exception 物件</param>
+            <returns>轉後字串</returns>
+        </member>
+        <member name="M:Acer.Err.ErrUtil.GetPageError(System.Exception)">
+            <summary>
+            取的頁面處理的錯誤訊息
+            </summary>
+            <param name="ex">Exception 物件</param>
+            <returns>錯誤訊息</returns>
+        </member>
+        <member name="M:Acer.Err.ErrUtil.HandlePageError(System.Exception)">
+            <summary>
+            處理一般頁面處理的錯誤機制
+            </summary>
+            <param name="ex">Exception 物件</param>
+        </member>
+        <member name="T:Acer.Err.GetConnectionFaileException">
+            <summary>
+            取得連線失敗的自訂錯誤物件
+            </summary>
+        </member>
+        <member name="T:Acer.Err.MustBeSameNumberOfSubReportKeyAndArgumentsException">
+            <summary>
+            子報表鍵值跟參數數量必須一致的自訂錯誤物件
+            </summary>
+        </member>
+        <member name="T:Acer.Err.MustFinishAllTransactionThenCloseConnectionException">
+            <summary>
+            必須完成所有交易才能關閉連線自訂錯誤物件
+            </summary>
+        </member>
+        <member name="T:Acer.Err.MustSetupConnectionStringException">
+            <summary>
+            必須設定連線字串資訊的自訂錯誤物件
+            </summary>
+        </member>
+        <member name="T:Acer.Err.MustSetupEnvException">
+            <summary>
+            必須設定參數的自訂錯誤物件
+            </summary>
+        </member>
+        <member name="T:Acer.Err.MustSetupSubReportKeyException">
+            <summary>
+            必須定義子報表鍵值的自訂錯誤物件
+            </summary>
+        </member>
+        <member name="T:Acer.Err.SubReportConfigFileNotExistsException">
+            <summary>
+            子報表設定檔不存在的自訂錯誤物件
+            </summary>
+        </member>
+        <member name="T:Acer.Err.CacheNotSetException">
+            <summary>
+            取得連線失敗的自訂錯誤物件
+            </summary>
+        </member>
+        <member name="T:Acer.File.FileUtil">
+            <summary>
+            檔案處理相關共用方法
+            </summary>
+        </member>
+        <member name="P:Acer.File.FileUtil.RootPath">
+            <summary>
+            取得根目錄路徑
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.File.FileUtil.LastSeparator(System.String)">
+            <summary>
+            判斷路徑結構是否有最後一碼 "\" 若沒有補上傳回
+            </summary>
+            <param name="filePath">欲判斷的路徑</param>
+            <returns>補上的路徑結構</returns>
+        </member>
+        <member name="M:Acer.File.FileUtil.FileExists(System.String)">
+            <summary>
+            判斷檔案或目錄是否存在
+            </summary>
+            <param name="path">欲判斷的路徑</param>
+            <returns>是 - 存在, 否 - 不存在</returns>
+        </member>
+        <member name="M:Acer.File.FileUtil.GetFolderName(System.String)">
+            <summary>
+            依據傳入的檔案路徑取出檔案目錄
+            Exp: c:\xx\x1\x2\xx.txt --> c:\xx\x1\x2\
+            </summary>
+            <param name="path">檔案路徑</param>
+            <returns>檔案目錄</returns>
+        </member>
+        <member name="M:Acer.File.FileUtil.CreateDir(System.String)">
+            <summary>
+            根據傳入之檔案位置, 判斷此目錄是否存在, 若不存在, 則建立此一目錄
+            可建立 N 層的結構
+            </summary>
+            <param name="path">預建立的目錄路徑</param>
+        </member>
+        <member name="M:Acer.File.FileUtil.CreateFile(System.String)">
+            <summary>
+            根據傳入之檔案位置, 判斷此目錄是否存在, 若不存在, 則建立此一目錄檔案
+            可建立 N 層的結構
+            </summary>
+            <param name="path">預建立的檔案路徑</param>
+        </member>
+        <member name="M:Acer.File.FileUtil.CreateFileUTF8(System.String)">
+            <summary>
+            根據傳入之檔案位置, 判斷此目錄是否存在, 若不存在, 則建立此一目錄檔案
+            可建立 N 層的結構
+            </summary>
+            <param name="path">預建立的檔案路徑</param>
+        </member>
+        <member name="M:Acer.File.FileUtil.GetFileName(System.String)">
+            <summary>
+            依據傳入的檔案路徑取出檔案名稱
+            Exp: c:\xx\x1\x2\xx.txt --> xx.txt
+            </summary>
+            <param name="path">檔案路徑</param>
+            <returns>檔案名稱</returns>
+        </member>
+        <member name="M:Acer.File.FileUtil.MoveFile(System.String,System.String)">
+            <summary>
+            移動檔案(包含子目錄)
+            </summary>
+            <param name="sourcePath">來源檔案路徑</param>
+            <param name="targetPath">要移動至的檔案路徑</param>
+        </member>
+        <member name="M:Acer.File.FileUtil.DelFile(System.String)">
+            <summary>
+            刪除目錄或檔案(包含子目錄)
+            </summary>
+            <param name="path">要刪除的檔案或目錄路徑</param>
+        </member>
+        <member name="M:Acer.File.FileUtil.ReadFile(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            讀取檔案內容至 ArrayList
+            </summary>
+            <param name="filePath">檔案路徑</param>
+            <param name="skipStr">排除的字首字串</param>
+            <param name="ecoding">編碼方式</param>
+            <returns>檔案內容</returns>
+        </member>
+        <member name="M:Acer.File.FileUtil.ReadFile(System.String,System.Text.Encoding)">
+            <summary>
+            讀取檔案內容至 ArrayList
+            </summary>
+            <param name="filePath">檔案路徑</param>
+            <param name="ecoding">編碼方式</param>
+            <returns>檔案內容</returns>
+        </member>
+        <member name="M:Acer.File.FileUtil.WriteFile(System.String,System.Collections.ArrayList,System.Text.Encoding)">
+            <summary>
+            寫入 ArrayList 內容至所指定的檔案
+            </summary>
+            <param name="path">檔案路徑</param>
+            <param name="content">檔案內容</param>
+            <param name="ecoding">編碼方式</param>
+        </member>
+        <member name="M:Acer.File.FileUtil.AppendFile(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            新增內容至所指定的檔案
+            </summary>
+            <param name="path">檔案路徑</param>
+            <param name="content">檔案內容</param>
+            <param name="ecoding">編碼方式</param>
+        </member>
+        <member name="M:Acer.File.FileUtil.GetFileSize(System.String)">
+            <summary>
+            取得檔案大小-位元, 檔案不存在回傳 0 位元
+            </summary>
+            <param name="path">檔案路徑</param>
+            <returns>檔案大小 (位元)</returns>
+        </member>
+        <member name="T:Acer.Form.CacheProcess">
+            <summary>
+            處理表格快取的 Class
+            </summary>
+        </member>
+        <member name="M:Acer.Form.CacheProcess.#ctor">
+            <summary>
+            建構子
+            </summary>
+        </member>
+        <member name="M:Acer.Form.CacheProcess.#ctor(Acer.DB.DBManager)">
+            <summary>
+            建構子 For 舊程式用 just for call
+            </summary>
+            <param name="dbmanager"></param>
+        </member>
+        <member name="M:Acer.Form.CacheProcess.InitCache">
+            <summary>
+            初始化快取處理 for init
+            </summary>
+        </member>
+        <member name="M:Acer.Form.CacheProcess.InitCache(System.String)">
+            <summary>
+            初始化快取處理 for init
+            </summary>
+            <param name="tableFilter">Table 篩選</param>
+        </member>
+        <member name="M:Acer.Form.CacheProcess.InitCache(System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.String,System.String)">
+            <summary>
+            初始化快取處理 for init
+            </summary>
+            <param name="paramConn">連線</param>
+            <param name="paramTrans">交易</param>
+            <param name="paramProvider">連線提供者</param>
+            <param name="tableFilter">Table 篩選</param>
+        </member>
+        <member name="M:Acer.Form.CacheProcess.ProcessCacheForExecuteSQL(System.String,System.Data.Common.DbConnection,System.Data.Common.DbTransaction,System.String)">
+            <summary>
+            處理重載 Cache 內容動作（for 舊底層）
+            </summary>
+            <param name="sql">SQL</param>
+            <param name="dbConnection">DbConnection</param>
+            <param name="dbTransaction">DbTransaction</param>
+            <param name="provider">provider</param>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Form.CacheProcess.GetCacheData(System.String)">
+            <summary>
+            取得 Cache DataTable
+            </summary>
+            <param name="tableName">Table Name</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="T:Acer.Form.ColumnFilterUtil">
+            <summary>
+            處理欄位篩選
+            </summary>
+        </member>
+        <member name="T:Acer.Form.ColumnFilterUtil.ColiumnFilter">
+            <summary>
+            資料字典結構
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Acer.Form.ColumnFilterUtil.ColiumnFilter.EName">
+            <summary>英文名稱</summary>
+        </member>
+        <member name="P:Acer.Form.ColumnFilterUtil.ColiumnFilter.CName">
+            <summary>中文名稱</summary>
+        </member>
+        <member name="P:Acer.Form.ColumnFilterUtil.ColiumnFilter.Index">
+            <summary>對應索引</summary>
+        </member>
+        <member name="P:Acer.Form.ColumnFilterUtil.ColiumnFilter.NoShowIndex">
+            <summary>不顯示索引</summary>
+        </member>
+        <member name="M:Acer.Form.ColumnFilterUtil.GetColumnFilter(Acer.DB.DBManager,System.String)">
+            <summary>
+            初始化多國語系對應
+            </summary>
+        </member>
+        <member name="T:Acer.Form.DataDictionaryUtil">
+            <summary>
+            處理資料字典
+            </summary>
+        </member>
+        <member name="T:Acer.Form.DataDictionaryUtil.ColumnDD">
+            <summary>
+            資料字典結構
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnDD.Name">
+            <summary>欄位名稱</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnDD.CName">
+            <summary>欄位中文名稱</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnDD.Length">
+            <summary>欄位長度</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnDD.Dot">
+            <summary>小數點位數</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnDD.UIType">
+            <summary>畫面種類</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnDD.ChkType">
+            <summary>檢查格式</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnDD.Valid1">
+            <summary>檢查資料一</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnDD.Valid2">
+            <summary>檢查資料二</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnDD.DBType">
+            <summary>資料庫型態</summary>
+        </member>
+        <member name="T:Acer.Form.DataDictionaryUtil.ColumnField">
+            <summary>
+            程式資料欄位結構
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnField.Head">
+            <summary>欄位開頭 M_ Q_</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnField.FieldCd">
+            <summary>欄位代號</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnField.FieldType">
+            <summary>欄位型態</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnField.CName">
+            <summary>欄位中文名稱</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnField.DefaultValue">
+            <summary>預設值</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnField.DefaultSessionValue">
+            <summary>預設 Session 值</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnField.ReadOnly">
+            <summary>唯讀</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnField.NotNull">
+            <summary>必填否</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnField.AddBlank">
+            <summary>下拉加空白</summary>
+        </member>
+        <member name="P:Acer.Form.DataDictionaryUtil.ColumnField.Content">
+            <summary>控制項資料</summary>
+        </member>
+        <member name="M:Acer.Form.DataDictionaryUtil.InitDataDictionary(Acer.DB.DBManager,Acer.Log.LogUtil)">
+            <summary>
+            初始化資料字典
+            </summary>
+        </member>
+        <member name="M:Acer.Form.DataDictionaryUtil.InitDataDictionary(Acer.DB.DBManager,Acer.Log.LogUtil,System.Boolean)">
+            <summary>
+            初始化資料字典對應 for init
+            </summary>
+        </member>
+        <member name="M:Acer.Form.DataDictionaryUtil.CheckDDFormat(Acer.Base.PageBase,System.String,System.String)">
+            <summary>
+            檢查資料 DD 格式符合
+            </summary>
+            <param name="pageObj">PageBase 物件</param>
+            <param name="columnName">欄位名稱</param>
+            <param name="columnValue">欄位值</param>
+            <returns>錯誤訊息, 無錯誤回傳空白</returns>
+        </member>
+        <member name="T:Acer.Form.FormUtil">
+            <summary>
+            跟 Web 相關的共用方法
+            </summary>
+        </member>
+        <member name="T:Acer.Form.FormUtil.UIType">
+            <summary>
+            定義畫面種類
+            </summary>
+        </member>
+        <member name="F:Acer.Form.FormUtil.UIType.Query">
+            <summary>查詢畫面</summary>
+        </member>
+        <member name="F:Acer.Form.FormUtil.UIType.Edit">
+            <summary>編輯畫面</summary>
+        </member>
+        <member name="F:Acer.Form.FormUtil.UIType.Result">
+            <summary>查詢結果畫面</summary>
+        </member>
+        <member name="T:Acer.Form.FormUtil.FormatType">
+            <summary>
+            定義畫面種類
+            </summary>
+        </member>
+        <member name="F:Acer.Form.FormUtil.FormatType.Grid">
+            <summary>Grid 呈現</summary>
+        </member>
+        <member name="F:Acer.Form.FormUtil.FormatType.Edit">
+            <summary>編輯呈現</summary>
+        </member>
+        <member name="F:Acer.Form.FormUtil.FormatType.Label">
+            <summary>純文字呈現</summary>
+        </member>
+        <member name="F:Acer.Form.FormUtil.FormatType.Report">
+            <summary>報表呈現</summary>
+        </member>
+        <member name="P:Acer.Form.FormUtil.Response">
+            <summary>
+            取得 Response 物件
+            </summary>
+        </member>
+        <member name="P:Acer.Form.FormUtil.Request">
+            <summary>
+            取得 Request 物件
+            </summary>
+        </member>
+        <member name="P:Acer.Form.FormUtil.Session">
+            <summary>
+            取得 Session 物件
+            </summary>
+        </member>
+        <member name="P:Acer.Form.FormUtil.Application">
+            <summary>
+            取得 Application 物件
+            </summary>
+        </member>
+        <member name="P:Acer.Form.FormUtil.Server">
+            <summary>
+            取得 Server 物件
+            </summary>
+        </member>
+        <member name="P:Acer.Form.FormUtil.Cache">
+            <summary>
+            取得 Cache 物件
+            </summary>
+        </member>
+        <member name="M:Acer.Form.FormUtil.ToKeyObject">
+            <summary>
+            將 Request 轉為 Javascript 物件, var keyObj = {key1:value,key2:value};
+            </summary>
+            <returns>Js 資料</returns>
+        </member>
+        <member name="M:Acer.Form.FormUtil.HasSession">
+            <summary>
+            檢核 Session 資訊, 是否非法登入 env.conf [SKIP_SESSION_VALID] [VALIDE_SESSION_NAME]
+            </summary>
+            <returns>是/否</returns>
+        </member>
+        <member name="M:Acer.Form.FormUtil.SetControlValue(System.Web.UI.Control,System.Object)">
+            <summary>
+            設定控制項的值
+            </summary>
+            <param name="control">控制項</param>
+            <param name="value">初始值</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.SetControlText(System.Web.UI.Control,System.Object)">
+            <summary>
+            設定控制項的顯示
+            </summary>
+            <param name="control">控制項</param>
+            <param name="value">初始值</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.SetControlDisable(System.Web.UI.Control,System.Boolean)">
+            <summary>
+            設定控制項是否唯讀
+            </summary>
+            <param name="control">控制項</param>
+            <param name="isDisable">是否唯讀</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.GetControlValue(System.Web.UI.Control)">
+            <summary>
+            取得控制項的值
+            </summary>
+            <param name="control">控制項</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.GetAttributeData(System.Object,System.String)">
+            <summary>
+            抓取控制項的屬性值
+            </summary>
+            <param name="control"></param>
+            <param name="arg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Form.FormUtil.SetAttributeData(System.Object,System.String,System.String)">
+            <summary>
+            設定控制項的屬性值
+            </summary>
+            <param name="control">控制項</param>
+            <param name="arg">屬性名稱</param>
+            <param name="value">屬性值</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.GetControlValidationGroupData(System.Web.UI.Control)">
+            <summary>
+            取得控制項定義的 ValidationGroup 屬性值 
+            </summary>
+            <param name="control">控制項</param>
+            <returns>ValidationGroup 屬性值</returns>
+        </member>
+        <member name="M:Acer.Form.FormUtil.SetControlValidationGroup(System.Web.UI.Control,System.String)">
+            <summary>
+            設定控制項的 ValidationGroup 值 
+            </summary>
+            <param name="control">控制項</param>
+            <param name="data">屬性值</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.BindCheckBoxList(System.Web.UI.WebControls.CheckBoxList,System.Object,System.String,System.String,System.Int32)">
+            <summary>
+            產出 BindCheckBoxList 資料
+            </summary>
+            <param name="item">下拉物件</param>
+            <param name="dataSource">資料來源物件</param>
+            <param name="valueField">value 的欄位</param>
+            <param name="textField">text 的欄位</param>
+            <param name="repeatColumns">顯示的欄位</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.BindRadioButtonList(System.Web.UI.WebControls.RadioButtonList,System.Object,System.String,System.String,System.Int32)">
+            <summary>
+            產出 RadioButtonList 資料
+            </summary>
+            <param name="item">下拉物件</param>
+            <param name="dataSource">資料來源物件</param>
+            <param name="valueField">value 的欄位</param>
+            <param name="textField">text 的欄位</param>
+            <param name="repeatColumns">顯示的欄位</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.BindDropDownList(System.Web.UI.WebControls.DropDownList,System.Object,System.String,System.String,Acer.Form.FormUtil.UIType,System.Boolean)">
+            <summary>
+            產出 DropDownList 資料
+            </summary>
+            <param name="item">下拉物件</param>
+            <param name="dataSource">資料來源物件</param>
+            <param name="valueField">value 的欄位</param>
+            <param name="textField">text 的欄位</param>
+            <param name="uIType">UI 種類</param>
+            <param name="hasEmpty">是否要包含空白資料</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.BindListBox(System.Web.UI.WebControls.ListBox,System.Object,System.String,System.String,Acer.Form.FormUtil.UIType,System.Boolean)">
+            <summary>
+            產出 ListBox 資料
+            </summary>
+            <param name="item">多選下拉物件</param>
+            <param name="dataSource">資料來源物件</param>
+            <param name="valueField">value 的欄位</param>
+            <param name="textField">text 的欄位</param>
+            <param name="uIType">UI 種類</param>
+            <param name="hasEmpty">是否要包含空白資料</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.SetDropdownListEmptyList(System.Web.UI.WebControls.DropDownList,Acer.Form.FormUtil.UIType)">
+            <summary>
+            設定空白下拉選單的值
+            </summary>
+            <param name="item">下拉物件</param>
+            <param name="uIType">UI 種類</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.CheckControlByType(System.Web.UI.Control,System.String)">
+            <summary>
+            檢查是否包含某種控制項
+            </summary>
+            <param name="currObject">檢查控制項物件</param>
+            <param name="controlType">檢查物件型態 Exp: System.Web.UI.LiteralControl</param>
+            <returns>是否包含某種控制項</returns>
+        </member>
+        <member name="M:Acer.Form.FormUtil.FindControlByType(System.Web.UI.Control,System.String)">
+            <summary>
+            依據控制項型態尋找控制項
+            </summary>
+            <param name="currObject">檢查控制項物件</param>
+            <param name="controlType">檢查物件型態 Exp: System.Web.UI.LiteralControl</param>
+            <returns>控制項</returns>
+        </member>
+        <member name="M:Acer.Form.FormUtil.ProcessSQLInjection(System.Web.UI.Control,System.Boolean)">
+            <summary>
+            處理置換會發生 SQLInjection 的資料, 及金額型態資料處理
+            </summary>
+            <param name="currObject">檢查控制項物件</param>
+            <param name="isPageLoad">是否為頁面載入</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.FindUserControls(System.Web.UI.Control,System.Collections.ArrayList)">
+            <summary>
+            依據控制項型態尋找控制項集合
+            </summary>
+            <param name="currObject">檢查控制項物件</param>
+            <param name="controls">控制項集合</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.FindHasValidationGroupControls(System.Web.UI.Control,System.Collections.ArrayList)">
+            <summary>
+            尋找包含 ValidationGroup 屬性的控制項
+            </summary>
+            <param name="currObject">檢查控制項物件</param>
+            <param name="controls">控制項集合</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.FindNoEditControls(System.Web.UI.Control,System.Collections.ArrayList)">
+            <summary>
+            尋找不可編輯的控制項
+            </summary>
+            <param name="currObject">檢查控制項物件</param>
+            <param name="controls">控制項集合</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.FindUIDDControls(System.Web.UI.Control,System.Collections.ArrayList)">
+            <summary>
+            依據控制項前兩碼尋找控制項 (M_/Q_),2017.12.14 增加 UVWXYZ
+            </summary>
+            <param name="currObject">檢查控制項物件</param>
+            <param name="controls">控制項集合</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.FindUIMLControls(System.Web.UI.Control,System.Collections.ArrayList)">
+            <summary>
+            依據屬性尋找控制項, 多國語系用 (CL_/CB_/PL_/PB_)
+            </summary>
+            <param name="currObject">檢查控制項物件</param>
+            <param name="controls">控制項集合</param>
+        </member>
+        <member name="M:Acer.Form.FormUtil.GetGridCondition(System.String)">
+            <summary>
+            取得 Grid 條件
+            </summary>
+            <param name="keyValue">鍵值字串</param>
+            <returns>取得條件結果</returns>
+        </member>
+        <member name="M:Acer.Form.FormUtil.GetGridKeyMap(System.String)">
+            <summary>
+            取得 Grid 條件集合
+            </summary>
+            <param name="keyValue">鍵值字串</param>
+            <returns>取得條件結果</returns>
+        </member>
+        <member name="M:Acer.Form.FormUtil.ControlEnabled(System.Web.UI.Control,System.Boolean)">
+            <summary>
+            控制項 Enable 方法
+            </summary>
+            <param name="control">控制項</param>
+            <param name="enabled">是否 Enable</param>
+        </member>
+        <member name="T:Acer.Form.ActionSecurity">
+            <summary>
+            定義動作權限的物件
+            </summary>
+        </member>
+        <member name="M:Acer.Form.ActionSecurity.HasFunctionPermission(System.String)">
+            <summary>
+            判斷是否有功能權限
+            </summary>
+            <param name="funtionCode">功能代碼</param>
+            <returns>是否有功能權限</returns>
+        </member>
+        <member name="M:Acer.Form.ActionSecurity.SecurityCheck(System.String)">
+            <summary>
+            按鈕權限檢核
+            </summary>
+            <param name="securityType">權限種類 ADD/MOD/DEL/QRY/PRT Or 12345678</param>
+            <returns>是否有權限</returns>
+        </member>
+        <member name="T:Acer.Form.JScript">
+            <summary>
+            處理 Javascript 的物件
+            </summary>
+        </member>
+        <member name="M:Acer.Form.JScript.#ctor(Acer.Log.MyLogger)">
+            <summary>
+            建構子
+            </summary>
+            <param name="logger">MyLogger 物件</param>
+        </member>
+        <member name="P:Acer.Form.JScript.PropertyMap">
+            <summary>取得屬性</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Script">
+            <summary>設定 Client 端的 Javascript code</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Logger">
+            <summary>設定 Client 端的 Javascript code</summary>
+        </member>
+        <member name="T:Acer.Form.JScript.Ctrl">
+            <summary>
+            Ctrl 結構
+            </summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.MaxLength">
+            <summary>M - 最長長度(2)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.ReadOnly">
+            <summary>R - 唯讀(2)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.NumberFormat">
+            <summary>N - 整數不含小數(含負號)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.OnlyNumber">
+            <summary>N1 - 數字型態, 純數字</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.OnlyNumberAndEnglish">
+            <summary>EN - 僅能輸入英文及數字(不含符號)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.OnlyNumberEngAndSpecialWord">
+            <summary>SE - 允許英數及某些字元</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.DecimalFormat">
+            <summary>DC - 數字型態 ##.##(2)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.DecimalFormatNoFormat1">
+            <summary>DCN1 - (僅正)數字型態 ##.##(2)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.DecimalFormatNoFormat">
+            <summary>DCN - 數字型態 ##.##(2)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.NumberRange">
+            <summary>NR - 數字區間 ##-##(2)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.Disable">
+            <summary>D - 物件使無效(2)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.Size">
+            <summary>S - 物件尺寸(2)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.StyleSize">
+            <summary>S1 - 用 Style 定 Szie</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.AutoTab">
+            <summary>A - Key 滿自動跳離(2)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.Value">
+            <summary>V - 設定預設值(2)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.DefaultValue">
+            <summary>DV - 設定預設值-保留(2)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.UpperCase">
+            <summary>U - 轉大寫</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.LowerCase">
+            <summary>L - 轉小寫</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.FullString">
+            <summary>FS - 輸入字皆轉全型(含符號)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.DateFormat">
+            <summary>DT - 日期型態</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.TimeFormat">
+            <summary>T - 時間型態</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.FillZero">
+            <summary>F - 填滿零(2)</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.Focus">
+            <summary>FC - 游標停留</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.NameOrAddress">
+            <summary>NA - 中文名地</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.IdnBan">
+            <summary>I - 身份證統一編號檢核</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.IP">
+            <summary>IP - IP 格式</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.TEL">
+            <summary>TEL - 電話型態</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.HTTP">
+            <summary>HTTP - 網址</summary>
+        </member>
+        <member name="P:Acer.Form.JScript.Ctrl.EMAIL">
+            <summary>EMAIL - EMAIL</summary>
+        </member>
+        <member name="M:Acer.Form.JScript.IniFormSet(System.Web.UI.Control,System.String[])">
+            <summary>
+            執行 Server 的 iniFormSet 動作, 可保持狀態
+            </summary>
+            <param name="control">控制項</param>
+            <param name="argAry">輸入參數陣列, 不需包含引號資訊</param>
+        </member>
+        <member name="M:Acer.Form.JScript.ControlEventAdd(System.Web.UI.Control,System.String,System.String)">
+            <summary>
+            新增加事件
+            </summary>
+            <param name="control">控制項</param>
+            <param name="eventName">事件名稱</param>
+            <param name="funName">方法名稱</param>
+        </member>
+        <member name="M:Acer.Form.JScript.ProcessData(System.String,System.String)">
+            <summary>
+            處理屬性資料
+            </summary>
+            <param name="oldAttribute">舊屬性</param>
+            <param name="newAttribute">新屬性</param>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Form.JScript.ChkForm(System.Web.UI.Control,System.String)">
+            <summary>
+            設定檢查欄位
+            </summary>
+            <param name="control">控制項</param>
+            <param name="controlName">控制項中文</param>
+        </member>
+        <member name="M:Acer.Form.JScript.ShowHidwLabel(System.Web.UI.Control,System.Boolean)">
+            <summary>
+            顯示/隱藏畫面上物件
+            </summary>
+            <param name="control">物件</param>
+            <param name="isShow">顯示/隱藏</param>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Form.JScript.DisableAll(System.Boolean)">
+            <summary>
+            呼叫 Client Script Form.disableAll 是否無效化(Disable)所有物件
+            </summary>
+            <param name="isDisable">是/否</param>
+        </member>
+        <member name="M:Acer.Form.JScript.IniFormColor">
+            <summary>
+            設定 Client 的 Form 顏色
+            </summary>
+        </member>
+        <member name="M:Acer.Form.JScript.SetWaterMark">
+            <summary>
+            設定浮水印/Water Mark
+            </summary>
+        </member>
+        <member name="M:Acer.Form.JScript.HideProcess">
+            <summary>
+            呼叫 Client 的 Message.hideProcess 隱藏訊息窗
+            </summary>
+        </member>
+        <member name="M:Acer.Form.JScript.OpenSuccess(System.String)">
+            <summary>
+             呼叫 Client 的 Message.openSuccess 顯示處理成功訊息
+            </summary>
+            <param name="message">要顯示的訊息</param>
+        </member>
+        <member name="M:Acer.Form.JScript.OpenSuccess(System.String,System.String)">
+            <summary>
+             呼叫 Client 的 Message.openSuccess 顯示處理成功訊息
+            </summary>
+            <param name="message">要顯示的訊息</param>
+            <param name="processFunction">處理完成要執行的 Function</param>
+        </member>
+        <member name="M:Acer.Form.JScript.ShowMessage(System.String)">
+            <summary>
+            呼叫 Client 的 Message.showMessage 顯示處理成功訊息
+            </summary>
+            <param name="message">訊息</param>
+        </member>
+        <member name="M:Acer.Form.JScript.Alert(System.String)">
+            <summary>
+            呼叫 Client 的 alert 顯示訊息
+            </summary>
+            <param name="message">顯示訊息</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:Acer.Form.JScript.ExecAjaxClientScript(System.Web.UI.Page)">
+            <summary>
+            執行 Client Javascript
+            </summary>
+            <param name="page">Page 物件</param>
+        </member>
+        <member name="M:Acer.Form.JScript.ExecClientScript(System.Web.UI.Page)">
+            <summary>
+            執行 Client Javascript
+            </summary>
+        </member>
+        <member name="M:Acer.Form.JScript.ButtonPermission">
+            <summary>
+            處理按鈕權限功能
+            </summary>
+        </member>
+        <member name="T:Acer.Form.LangUtil">
+            <summary>
+            處理語系
+            </summary>
+        </member>
+        <member name="M:Acer.Form.LangUtil.#ctor(Acer.Log.MyLogger,Acer.DB.DBManager)">
+            <summary>
+            建構子
+            </summary>
+            <param name="logger">MyLogger 物件</param>
+            <param name="dbManager">DBManager 物件</param>
+        </member>
+        <member name="M:Acer.Form.LangUtil.LangMap(System.String)">
+            <summary>
+            取得語系對應資料
+            </summary>
+            <param name="mapName">對應名稱</param>
+            <returns>結果資料</returns>
+        </member>
+        <member name="M:Acer.Form.LangUtil.InitLanguage">
+            <summary>
+            初始化多國語系對應
+            </summary>
+        </member>
+        <member name="T:Acer.Log.ClientLog">
+            <summary>
+            處理紀錄 Client 端 Log 的機制
+            </summary>
+        </member>
+        <member name="M:Acer.Log.ClientLog.Log(System.String)">
+            <summary>
+            紀錄 Client 資訊
+            </summary>
+            <param name="content">要記錄的物件</param>
+        </member>
+        <member name="T:Acer.Log.MyLogger">
+            <summary>
+            處理 Log 的共用函式
+            </summary>
+        </member>
+        <member name="F:Acer.Log.MyLogger.currLogger">
+            <summary>
+            記錄目前排隊處理的 Logger 物件, 非同步處理時使用
+            </summary>
+        </member>
+        <member name="F:Acer.Log.MyLogger.threadId">
+            <summary>
+            紀錄 Log 的序號, DB 切割資料串接使用
+            </summary>
+        </member>
+        <member name="F:Acer.Log.MyLogger.sessionId">
+            <summary>Session ID</summary>
+        </member>
+        <member name="F:Acer.Log.MyLogger.execTime">
+            <summary>總共執行時間</summary>
+        </member>
+        <member name="F:Acer.Log.MyLogger.logLevel">
+            <summary>Log 等級</summary>
+        </member>
+        <member name="F:Acer.Log.MyLogger.logIOName">
+            <summary>記錄 IO Log 的檔案名稱</summary>
+        </member>
+        <member name="P:Acer.Log.MyLogger.MULTI_LANGUAGE">
+            <summary>取得 MULTI_LANGUAGE</summary>
+        </member>
+        <member name="P:Acer.Log.MyLogger.Info">
+            <summary>Log 等級 Info</summary>
+        </member>
+        <member name="P:Acer.Log.MyLogger.Debug">
+            <summary>Log 等級 Debug</summary>
+        </member>
+        <member name="P:Acer.Log.MyLogger.Warn">
+            <summary>Log 等級 Warn</summary>
+        </member>
+        <member name="P:Acer.Log.MyLogger.Fatal">
+            <summary>Log 等級 Fatal</summary>
+        </member>
+        <member name="P:Acer.Log.MyLogger.Error">
+            <summary>Log 等級 Error</summary>
+        </member>
+        <member name="P:Acer.Log.MyLogger.IsLog">
+            <summary>判斷是否紀錄 Log</summary>
+        </member>
+        <member name="P:Acer.Log.MyLogger.IsBatch">
+            <summary>判斷是否批次程式</summary>
+        </member>
+        <member name="M:Acer.Log.MyLogger.#ctor(System.String)">
+            <summary>
+            建構子, 初始化 log, 以程式名稱
+            </summary>
+            <param name="name">程式名稱</param>
+            
+        </member>
+        <member name="M:Acer.Log.MyLogger.IniUserInfo(System.String)">
+            <summary>
+            初使化紀錄使用者資訊
+            </summary>
+            <param name="userInfo">使用者資訊</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.Append(System.String)">
+            <summary>
+            紀錄  Log 訊息累加	
+            </summary>
+            <param name="inputMessage">紀錄的資訊</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.Append(System.Int32)">
+            <summary>
+            紀錄  Log 訊息累加	
+            </summary>
+            <param name="message">紀錄的資訊</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.Append(System.Double)">
+            <summary>
+            紀錄  Log 訊息累加	
+            </summary>
+            <param name="message">紀錄的資訊</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.Append(System.Char)">
+            <summary>
+            紀錄  Log 訊息累加	
+            </summary>
+            <param name="message">紀錄的資訊</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.SetLogLevel(System.Int32)">
+            <summary>
+            設定要 Log 的等級
+            </summary>
+            <param name="logLevel">Log 的等級</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.GetMessage">
+            <summary>
+            取得 Log 訊息, Log 記錄使用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Log.MyLogger.Flush(Acer.Log.MyLogger)">
+            <summary>
+            將目前 Memory 的紀錄內容 Log 起來, 並清掉 Cache Memory
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.Log(Acer.Log.MyLogger)">
+            <summary>
+            開始進行 Log 動作
+            </summary>
+            <param name="logger">MyLogger 物件</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.Log(System.Int32,System.String,System.String,System.String,System.String,System.Int64,System.Boolean)">
+            <summary>
+            直接呼叫 log 訊息(Debug)
+            </summary>
+            <param name="logLevel">Log 等級</param>
+            <param name="logName">Log 標題</param>
+            <param name="userInfo">使用者資訊</param>
+            <param name="logMessage">要 Log 的內容</param>
+            <param name="sessionId">SessionId</param>
+            <param name="execTime">執行時間</param>
+            <param name="isBatch">是否批次處理</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.Log(System.Int32,System.String,System.String)">
+            <summary>
+            直接呼叫 log 訊息(Debug)
+            </summary>
+            <param name="logLevel">Log 等級</param>
+            <param name="logName">Log 標題</param>
+            <param name="logMessage">要 Log 的內容</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.Log(System.Int32,System.String,System.String,System.String,System.Int64)">
+            <summary>
+            直接呼叫 log 訊息(Debug)
+            </summary>
+            <param name="logLevel">Log 等級</param>
+            <param name="logName">Log 標題</param>
+            <param name="logMessage">要 Log 的內容</param>
+            <param name="sessionId">SessionId</param>
+            <param name="execTime">執行時間</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.EndThreadLog(System.IAsyncResult)">
+            <summary>
+            Log 非同步處理結束時呼叫
+            </summary>
+            <param name="ar"></param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.StartThreadLog">
+            <summary>
+            Log 非同步處理起始時呼叫
+            </summary>
+        </member>
+        <member name="M:Acer.Log.MyLogger.LogDB(System.String,System.String,System.String,System.String)">
+            <summary>
+            紀錄 Log 到資料庫
+            </summary>
+            <param name="strLevel">Log 等級</param>
+            <param name="logName">Log 標題</param>
+            <param name="userInfo">使用者資訊</param>
+            <param name="logMessage">要 Log 的內容</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.LogHTML(System.String,System.String,System.String,System.String)">
+            <summary>
+            紀錄 Log 到 HTML 檔案
+            </summary>
+            <param name="strLevel">Log 等級</param>
+            <param name="logName">Log 標題</param>
+            <param name="userInfo">使用者資訊</param>
+            <param name="logMessage">要 Log 的內容</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.LogXML(System.String,System.String,System.String,System.String)">
+            <summary>
+            紀錄 Log 到 XML 檔案
+            </summary>
+            <param name="strLevel">Log 等級</param>
+            <param name="logName">Log 標題</param>
+            <param name="userInfo">使用者資訊</param>
+            <param name="logMessage">要 Log 的內容</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.AppendXMLMessage(System.String,System.Collections.Hashtable)">
+            <summary>
+            累計 XML 檔案資料
+            </summary>
+            <param name="filePath">檔案路徑</param>
+            <param name="map">對應資料</param>
+        </member>
+        <member name="M:Acer.Log.MyLogger.GetSysDate">
+            <summary>
+            取得系統日期
+            </summary>
+            <returns>系統日期</returns>
+        </member>
+        <member name="M:Acer.Log.MyLogger.GetThreadId">
+            <summary>
+            取的唯一執行 ID
+            </summary>
+            <returns>唯一執行 ID</returns>
+        </member>
+        <member name="T:Acer.Log.LogStruct">
+            <summary>
+            Log 的結構
+            </summary>
+        </member>
+        <member name="P:Acer.Log.LogStruct.LogLevel">
+            <summary>Log 等級</summary>
+        </member>
+        <member name="P:Acer.Log.LogStruct.UserInfo">
+            <summary>使用者資訊</summary>
+        </member>
+        <member name="P:Acer.Log.LogStruct.LogName">
+            <summary>Log 名稱</summary>
+        </member>
+        <member name="P:Acer.Log.LogStruct.LogMessage">
+            <summary>Log 訊息</summary>
+        </member>
+        <member name="P:Acer.Log.LogStruct.LogDate">
+            <summary>Log 日期</summary>
+        </member>
+        <member name="P:Acer.Log.LogStruct.LogTime">
+            <summary>Log 時間</summary>
+        </member>
+        <member name="P:Acer.Log.LogStruct.ClientIP">
+            <summary>客戶端 IP</summary>
+        </member>
+        <member name="P:Acer.Log.LogStruct.ServerIP">
+            <summary>主機 IP</summary>
+        </member>
+        <member name="P:Acer.Log.LogStruct.SessionId">
+            <summary>Session Id</summary>
+        </member>
+        <member name="P:Acer.Log.LogStruct.LogChannel">
+            <summary>佇列頻道</summary>
+        </member>
+        <member name="T:Acer.Log.LogUtil">
+            <summary>
+            Log 共用方法物件
+            </summary>
+        </member>
+        <member name="P:Acer.Log.LogUtil.PropertyMap">
+            <summary>取得屬性</summary>
+        </member>
+        <member name="P:Acer.Log.LogUtil.CACHE_TABLE_LIST">
+            <summary>取得 CACHE_TABLE_LIST</summary>
+        </member>
+        <member name="P:Acer.Log.LogUtil.StartTime">
+            <summary>設定開始時間</summary>
+        </member>
+        <member name="P:Acer.Log.LogUtil.Logger">
+            <summary>設定 Logger</summary>
+        </member>
+        <member name="P:Acer.Log.LogUtil.IsLog">
+            <summary>判斷是否紀錄 Log</summary>
+        </member>
+        <member name="M:Acer.Log.LogUtil.#ctor">
+            <summary>
+            建構子
+            </summary>
+        </member>
+        <member name="M:Acer.Log.LogUtil.#ctor(System.String)">
+            <summary>
+            建構子
+            </summary>
+            <param name="jobID">工作編號</param>
+        </member>
+        <member name="T:Acer.Log.LogUtil.PointType">
+            <summary>
+            紀錄種類
+            </summary>
+        </member>
+        <member name="F:Acer.Log.LogUtil.PointType.PointStart">
+            <summary>起點</summary>
+        </member>
+        <member name="F:Acer.Log.LogUtil.PointType.Point">
+            <summary>點</summary>
+        </member>
+        <member name="F:Acer.Log.LogUtil.PointType.PointEnd">
+            <summary>結束點</summary>
+        </member>
+        <member name="M:Acer.Log.LogUtil.TraceStart(System.String)">
+            <summary>
+            紀錄執行點開始 (For Trace PRODECUTION=Y 則不處理)
+            </summary>
+            <param name="functionName">執行點名稱</param>
+        </member>
+        <member name="M:Acer.Log.LogUtil.MethodStart(System.String)">
+            <summary>
+            紀錄執行點開始
+            </summary>
+            <param name="functionName">執行點名稱</param>
+        </member>
+        <member name="M:Acer.Log.LogUtil.TraceEnd(System.String)">
+            <summary>
+            紀錄執行點結束 (For Trace PRODECUTION=Y 則不處理)
+            </summary>
+            <param name="functionName">執行點名稱</param>
+        </member>
+        <member name="M:Acer.Log.LogUtil.MethodEnd(System.String)">
+            <summary>
+            紀錄執行點結束
+            </summary>
+            <param name="functionName">執行點名稱</param>
+        </member>
+        <member name="M:Acer.Log.LogUtil.PointStr(System.Collections.Hashtable,System.String,System.String,System.Int32)">
+            <summary>
+            取得紀錄點的文字
+            </summary>
+            <param name="propertyMap">屬性物件</param>
+            <param name="functionName">紀錄點</param>
+            <param name="timerStr">時間紀錄</param>
+            <param name="pointType">紀錄種類</param>
+            <returns>紀錄點的文字</returns>
+        </member>
+        <member name="M:Acer.Log.LogUtil.DoLog">
+            <summary>
+            開始紀錄 Log
+            </summary>
+        </member>
+        <member name="M:Acer.Log.LogUtil.SessionSize">
+            <summary>
+            取得 Session 大小及內容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Acer.Util.MultiProcess">
+            <summary>
+            處理多處理序的共用函式
+            </summary>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.SetProcessInit(System.String,System.String)">
+            <summary>
+            設定處理初始化
+            </summary>
+            <param name="basePath">檔案路徑</param>
+            <param name="processName">處理名稱</param>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.CheckNeedInitProcess(System.String,System.String)">
+            <summary>
+            檢查是否須變更處理
+            </summary>
+            <param name="basePath">檔案路徑</param>
+            <param name="processName">處理名稱</param>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.SerializeToFile(System.String,System.String,System.Object)">
+            <summary>
+            將物件序化到檔案
+            </summary>
+            <param name="basePath">檔案路徑</param>
+            <param name="fileName">檔案名稱</param>
+            <param name="obj">物件</param>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.SerializeFromFile(System.String,System.String)">
+            <summary>
+            將檔案反序列化到物件
+            </summary>
+            <param name="basePath">檔案路徑</param>
+            <param name="fileName">檔案名稱</param>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.SetCrossSiteValue(System.String,System.Object)">
+            <summary>
+            設定跨網站變數
+            </summary>
+            <param name="varName">變數名稱</param>
+            <param name="obj">變數值</param>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.GetDelayCrossSiteValue(System.String)">
+            <summary>
+            取得延遲跨網站變數 (半小時)
+            </summary>
+            <param name="varName">變數名稱</param>
+            <returns>變數值</returns>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.GetDelayCrossSiteValue(System.String,System.String)">
+            <summary>
+            取得延遲跨網站變數 (半小時), For check Hashtable key use
+            </summary>
+            <param name="varName">變數名稱</param>
+            <param name="keyName">Key</param>
+            <returns>變數值</returns>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.GetCrossSiteValue(System.String)">
+            <summary>
+            取得跨網站變數
+            </summary>
+            <param name="varName">變數名稱</param>
+            <returns>變數值</returns>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.GetCrossSiteValue(System.String,System.String)">
+            <summary>
+            取得跨網站變數
+            </summary>
+            <param name="varName">變數名稱</param>
+            <param name="keyName">Key</param>
+            <returns>變數值</returns>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.GetRealCrossSiteValue(System.String)">
+            <summary>
+            取得跨網站變數
+            </summary>
+            <param name="varName">變數名稱</param>
+            <returns>變數值</returns>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.SetGlobalValue(System.String,System.Object)">
+            <summary>
+            設定全域變數
+            </summary>
+            <param name="varName">變數名稱</param>
+            <param name="obj">變數值</param>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.GetDelayGlobalValue(System.String)">
+            <summary>
+            取得延遲全域變數 (半小時)
+            </summary>
+            <param name="varName">變數名稱</param>
+            <returns>變數值</returns>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.GetDelayGlobalValue(System.String,System.String)">
+            <summary>
+            取得延遲全域變數 (半小時), For check Hashtable key use
+            </summary>
+            <param name="varName">變數名稱</param>
+            <param name="keyName">Key</param>
+            <returns>變數值</returns>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.GetGlobalValue(System.String)">
+            <summary>
+            取得全域變數
+            </summary>
+            <param name="varName">變數名稱</param>
+            <returns>變數值</returns>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.GetGlobalValue(System.String,System.String)">
+            <summary>
+            取得全域變數
+            </summary>
+            <param name="varName">變數名稱</param>
+            <param name="keyName">Key</param>
+            <returns>變數值</returns>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.GetRealGlobalValue(System.String)">
+            <summary>
+            取得即時全域變數
+            </summary>
+            <param name="varName">變數名稱</param>
+            <returns>變數值</returns>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.ChoiceHashtable(System.Object)">
+            <summary>
+            判斷要回傳物件
+            </summary>
+            <param name="obj">要判斷的物件</param>
+            <returns>Hashtable</returns>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.GetProcessValue(System.String)">
+            <summary>
+            取得處理序變數值
+            </summary>
+            <param name="varName">變數名稱</param>
+            <returns>變數值</returns>
+        </member>
+        <member name="M:Acer.Util.MultiProcess.SetProcessValue(System.String,System.Object)">
+            <summary>
+            設定處理序變數值
+            </summary>
+            <param name="varName">變數名稱</param>
+            <param name="obj">變數值</param>
+        </member>
+        <member name="T:Acer.Util.Timer">
+            <summary>
+            處理一般的共用函式
+            </summary>
+        </member>
+        <member name="M:Acer.Util.Timer.#ctor">
+            <summary>
+            計時器
+            </summary>
+        </member>
+        <member name="M:Acer.Util.Timer.GetDiffTime">
+            <summary>
+            取得目前計時的經過時間 ms
+            </summary>
+            <returns>經過時間 ms</returns>
+        </member>
+        <member name="T:Acer.Util.DateUtil">
+            <summary>
+            專門處理日期相關共用方法
+            </summary>
+        </member>
+        <member name="M:Acer.Util.DateUtil.GetCurrTimeMillis">
+            <summary>
+            取得日期和時間的刻度數目
+            </summary>
+            <returns>日期和時間的刻度數目</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.GetNowTimeMS">
+            <summary>
+            取得系統時間到微秒
+            </summary>
+            <returns>系統時間 hhmmssmms</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.GetNowDate">
+            <summary>
+            取得系統日期，格式為西元日期 yyyyMMdd
+            </summary>
+            <returns>西元日期 yyyyMMdd</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.FormatDate(System.String)">
+            <summary>
+            將西元日期格式化 yyyyMMdd --> yyyy/MM/dd
+            </summary>
+            <param name="dateStr">八碼西元日期 yyyyMMdd</param>
+            <returns>西元日期 yyyy/MM/dd</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.FormatDateDetail(System.String)">
+            <summary>
+            將西元日期格式化 yyyyMMdd hh:mm:ss --> yyyy/MM/dd hh:mm:ss
+            </summary>
+            <param name="dateStr">有帶時間的西元日期 yyyyMMdd hh:mm:ss</param>
+            <returns>西元日期 yyyy/MM/dd</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.ConvertDate(System.String)">
+            <summary>
+            將西元日期格式化為七碼中文日期 yyyyMMdd(yyyy/MM/dd) --> yyyMMdd
+            </summary>
+            <param name="dateStr">西元日期 yyyyMMdd</param>
+            <returns>七碼中文日期 yyyMMdd</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.ConvertDateDetail(System.String)">
+            <summary>
+            將西元日期格式化為七碼中文日期 加上時分秒hh:mm:ss yyyyMMdd(yyyy/MM/dd) hh:mm:ss --> yyy/MM/dd hh:mm:ss
+            </summary>
+            <param name="dateStr">西元日期 yyyyMMdd tt hh:mm:ss</param>
+            <returns>七碼中文日期 yyy/MM/dd hh:mm:ss</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.ConvertFormatDate(System.String)">
+            <summary>
+            將西元日期格式化為民國格式日期 yyyyMMdd(yyyy/MM/dd) --> yyy/MM/dd
+            </summary>
+            <param name="dateStr">西元日期 yyyyMMdd</param>
+            <returns>民國格式日期 yyy/MM/dd</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.GetNowCDate">
+            <summary>
+            取得民國系統日期，格式為七碼中文日期 yyyMMdd
+            </summary>
+            <returns>七碼中文日期 yyyMMdd</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.ConvertCDate(System.String,System.String)">
+            <summary>
+            將七碼中文日期格式化為西元日期
+            </summary>
+            <param name="dateStr">七碼中文日期 yyyMMdd</param>
+            <param name="formatType">格式化種類 Exp: yyyy/MM/dd</param>
+            <returns>格式化後的西元日期</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.GetNowDateTime">
+            <summary>
+            取得系統日期時間，格式為西元日期時間
+            </summary>
+            <returns>西元日期 yyyy/mm/dd hh:mm</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.FormatTime(System.String)">
+            <summary>
+            將時間格式化 hhmm --> hh:mm, hhmmss --> hh:mm:ss
+            </summary>
+            <param name="timeStr">四碼或六碼時間 mmss</param>
+            <returns>mm:ss</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.DateAdd(System.String,System.Double,System.String)">
+            <summary>
+            傳回內容為某個基準日期加上數個時間間隔單位後的日期。
+            Exp: DateUtil.DateAdd("m", 1, "2003/2/28") --> 2003/3/7
+            </summary>
+            <param name="interval">種類 d(日), w(星期), m(月), yyyy(年)</param>
+            <param name="number">相加的數目</param>
+            <param name="dateStr">字串型態日期 yyyy/MM/dd or yyyyMMdd</param>
+            <returns>比較後的日期 yyyy/MM/dd</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.CDateAdd(System.String,System.Int32,System.String)">
+            <summary>
+            傳回內容為某個基準七碼中文日期加上數個時間間隔單位後的日期。
+            Exp: DateUtil.CDateAdd("ww", 1, "920228") --> 920307
+            </summary>
+            <param name="interval">種類 d(日), w(星期), m(月), yyyy(年)</param>
+            <param name="number">相加的數目</param>
+            <param name="dateStr">字串型態日期</param>
+            <returns>比較後的日期 yyyMMdd</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.DateDiff(System.String,System.String,System.String)">
+            <summary>
+            傳回兩個日期間相差的時間間隔單位數目 Exp: DateUtil.DateDiff("d", "2003/5/1", "2003/5/2") --> 1
+            </summary>
+            <param name="interval">種類 d(日), w(星期), m(月), yyyy(年)</param>
+            <param name="dateStr1">字串型態日期一</param>
+            <param name="dateStr2">字串型態日期二</param>
+            <returns>比較後的時間差</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.CDateDiff(System.String,System.String,System.String)">
+            <summary>
+            傳回兩個七碼中文日期間相差的時間間隔單位數目 Exp: DateUtil.CDateDiff("d", "0920501", "0920502") --> 1
+            </summary>
+            <param name="interval">種類 d(日), w(星期), m(月), yyyy(年)</param>
+            <param name="dateStr1">字串型態日期一</param>
+            <param name="dateStr2">字串型態日期二</param>
+            <returns>比較後的時間差</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.GetNowTime">
+            <summary>
+            取得系統時間，格式為 hhmm
+            </summary>
+            <returns>hhmm</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.GetCWeek(System.String)">
+            <summary>
+            抓取七碼中文日期的星期
+            </summary>
+            <param name="dateStr">七碼中文日期</param>
+            <returns>一 ~ 日</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.FormatCDate(System.String)">
+            <summary>
+            將七碼中文日期格式化
+            </summary>
+            <param name="dateStr">七碼中文日期</param>
+            <returns>中文日期 yyy/MM/dd</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.FormatCDateForPrint(System.String)">
+            <summary>
+            將日期格式化為中文日期 Exp: 0920101 --> 九十二年一月一日
+            </summary>
+            <param name="dateStr">日期 yyyMMdd</param>
+            <returns>中文日期</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.FormatDateForPrint(System.String)">
+            <summary>
+            將日期格式化為西元日期 Exp: 20060101 --> 二ＯＯ六年一月一日
+            </summary>
+            <param name="dateStr">日期 yyyyMMdd</param>
+            <returns>中文日期</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.IsDate(System.String)">
+            <summary>
+            判斷是否日期格式
+            </summary>
+            <param name="dateStr">日期字串, 民國 Or 西元</param>
+            <returns>是否日期格式, 空白為 true</returns>
+        </member>
+        <member name="M:Acer.Util.DateUtil.IsTime(System.String)">
+            <summary>
+            判斷是否時間格式
+            </summary>
+            <param name="timeStr">時間字串</param>
+            <returns>是否時間格式, 空白為 true</returns>
+        </member>
+        <member name="T:Acer.Util.DBUtil">
+            <summary>
+            連線共用處理物件
+            </summary>
+        </member>
+        <member name="P:Acer.Util.DBUtil.PropertyMap">
+            <summary>取得屬性</summary>
+        </member>
+        <member name="P:Acer.Util.DBUtil.Logger">
+            <summary>設定 Logger</summary>
+        </member>
+        <member name="P:Acer.Util.DBUtil.LogUtil">
+            <summary>設定 Logger</summary>
+        </member>
+        <member name="P:Acer.Util.DBUtil.DBManager">
+            <summary>設定 DBManager</summary>
+        </member>
+        <member name="M:Acer.Util.DBUtil.#ctor(Acer.Log.LogUtil)">
+            <summary>
+            建構子
+            </summary>
+        </member>
+        <member name="M:Acer.Util.DBUtil.CloseDBManager">
+            <summary>
+            關閉 DBManager 物件
+            </summary>
+        </member>
+        <member name="M:Acer.Util.DBUtil.ProcessQueryCondition(System.Text.StringBuilder,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            組合查詢字串
+            </summary>
+            <param name="outputBuff">回傳的字串</param>
+            <param name="oper">條件資訊</param>
+            <param name="column">欄位名稱</param>
+            <param name="var">欄位值</param>
+            <param name="needComma">是否需要引號資料</param>
+        </member>
+        <member name="M:Acer.Util.DBUtil.ProcessQueryCondition(System.Text.StringBuilder,System.String,System.String,System.String)">
+            <summary>
+            組合查詢字串
+            </summary>
+            <param name="outputBuff">回傳的字串</param>
+            <param name="oper">條件資訊</param>
+            <param name="column">欄位名稱</param>
+            <param name="var">欄位值</param>
+        </member>
+        <member name="M:Acer.Util.DBUtil.ProcessQueryCondition(System.Text.StringBuilder,System.String,System.String,System.String,System.String)">
+            <summary>
+            組合查詢字串
+            </summary>
+            <param name="outputBuff">回傳的字串</param>
+            <param name="oper">條件資訊 Ex: BT,...</param>
+            <param name="column">欄位名稱</param>
+            <param name="var1">欄位值1</param>
+            <param name="var2">欄位值2</param>
+        </member>
+        <member name="M:Acer.Util.DBUtil.ProcessQueryOrCondition(System.Text.StringBuilder,System.Text.StringBuilder)">
+            <summary>
+            處理 Or 的條件
+            </summary>
+            <param name="outputBuff">Me.TmpCondition</param>
+            <param name="currCondition">tmpBuff</param>
+        </member>
+        <member name="M:Acer.Util.DBUtil.ProcessCondition(System.String)">
+            <summary>
+            處理查詢條件
+            </summary>
+            <param name="cond">查詢條件</param>
+            <returns>查詢條件</returns>
+        </member>
+        <member name="M:Acer.Util.DBUtil.Dispose">
+            <summary>
+            覆寫 Dispose 方法
+            </summary>
+        </member>
+        <member name="M:Acer.Util.DBUtil.Dispose(System.Boolean)">
+            <summary>
+            覆寫 Dispose 方法
+            </summary>
+            <param name="disposing">是否 dispose</param>
+        </member>
+        <member name="T:Acer.Util.Evaluator">
+            <summary>
+            執行 Eval 指令方法
+            </summary>
+        </member>
+        <member name="M:Acer.Util.Evaluator.Eval(System.String)">
+            <summary>
+            計算結果,如果表達式出錯則拋出異常
+            </summary>
+            <param name="statement">表達式,如"1+2+3+4"</param>
+            <returns>結果</returns>
+        </member>
+        <member name="T:Acer.Util.EntityColumnCompare">
+            <summary>
+            EntityColumnCompare 覆寫
+            </summary>
+        </member>
+        <member name="M:Acer.Util.EntityColumnCompare.Equals(System.Object,System.Object)">
+            <summary>
+            實作 Equals
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Util.EntityColumnCompare.GetHashCode(System.Object)">
+            <summary>
+            實作 GetHashCode
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Acer.Util.Utility">
+            <summary>
+            處理一般的共用函式
+            </summary>
+        </member>
+        <member name="M:Acer.Util.Utility.Substring(System.String,System.Int32,System.Int32)">
+            <summary>
+            依據索引取字串值
+            </summary>
+            <param name="content">要處理資料</param>
+            <param name="startIndex">起始索引</param>
+            <param name="endIndex">結束索引</param>
+            <returns>取得的字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.StrToFullSize(System.String)">
+            <summary>
+            將傳入的字串中，有半形的英文或數字改為全形後傳出
+            </summary>
+            <param name="str">原始的字串內容</param>
+            <returns>處理後字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.CharToFullSize(System.Char)">
+            <summary>
+            將含有半形的字元改為全形的傳回
+            </summary>
+            <param name="str">含有半形的字元</param>
+            <returns>處理後字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.ConvertStr(System.String)">
+            <summary>
+            將字串反向, 例如: 傳入 '1234', 傳回 '4321'
+            </summary>
+            <param name="str">欲反向的字串</param>
+            <returns>處理後的字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.Split(System.String,System.String)">
+            <summary>
+            將字串依指定符號切割為陣列
+            </summary>
+            <param name="str">欲切割的字串</param>
+            <param name="delim">指定符號</param>
+            <returns>切割後陣列</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.CloneStr(System.String,System.Int32)">
+            <summary>
+            將字串複製設定次數
+            EX: "abcabcabc" = CloneStr("abc", 3)
+            </summary>
+            <param name="str">指定要重覆的字串內容</param>
+            <param name="len">指定要重覆的次數</param>
+            <returns>處理後字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.ChkLen(System.String,System.Int32)">
+            <summary>
+            檢查傳入字串的長度是否未超過設定長度
+            </summary>
+            <param name="str">原始字串</param>
+            <param name="strLen">檢核的長度</param>
+            <returns>檢查的結果</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.RTrim(System.String)">
+            <summary>
+            清除字串右邊的空白
+            </summary>
+            <param name="str">要處理的字串</param>
+            <returns>處理後的字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.GetBLen(System.String)">
+            <summary>
+            取得檔案長度(中文為兩碼)
+            </summary>
+            <param name="str">判斷長度的字串</param>
+            <returns>傳回長度</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.GetTagStr(System.String,System.String,System.String)">
+            <summary>
+            取得 Tag 所包含字串 Exp: [abc] --> abc
+            </summary>
+            <param name="content">要處理的字串</param>
+            <param name="startTag">起始 Tag 符號</param>
+            <param name="endTag">結束 Tag 符號</param>
+            <returns>取得後字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.GetTagList(System.String,System.String,System.String)">
+            <summary>
+            取得 Tag 所包含字串 Exp: [abc]123[456] --> {abc, 456}
+            </summary>
+            <param name="content">要處理的字串</param>
+            <param name="startTag">起始 Tag 符號</param>
+            <param name="endTag">結束 Tag 符號</param>
+            <returns>取得後字串陣列</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.EncryptTagContent(System.String)">
+            <summary>
+            將 {} 區隔的內容編碼
+            </summary>
+            <param name="content">欲編碼內容</param>
+            <returns>編碼過的內容</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.DecryptTagContent(System.String)">
+            <summary>
+            將 Tag 解碼
+            </summary>
+            <param name="content">欲解碼內容</param>
+            <returns>解碼過的內容</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.TripleDesEncrypt(System.String)">
+            <summary>
+            TripleDesEncrypt 將字串加密
+            </summary>
+            <param name="str">要加密的字串</param>
+            <returns>加密後字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.TripleDesDecrypt(System.String)">
+            <summary>
+            TripleDesDecrypt 將字串解密
+            </summary>
+            <param name="str">要解密的字串</param>
+            <returns>解密後字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.GenerateTripleDesKey">
+            <summary>
+            產生 3Des 的 Key
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Util.Utility.GenerateTripleDesIV">
+            <summary>
+            產生 3Des 的 IV
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Util.Utility.EncryptStr(System.String)">
+            <summary>
+            將字串編碼
+            </summary>
+            <param name="str">要編碼的字串</param>
+            <returns>編碼後字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.DecryptStr(System.String)">
+            <summary>
+            將字串解碼
+            </summary>
+            <param name="str">要解碼的字串</param>
+            <returns>解碼後的字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.GenerateKey">
+            <summary>
+            產生 Des 的 Key
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Util.Utility.GetCNum(System.Int32,System.Int32)">
+            <summary>
+            將數字字串轉換為中文的數字資料格式
+            Exp: 12345.06
+            種類 0:一萬二千零四十五點零六,
+            1:壹萬貳仟零肆拾伍點零陸,
+            2:一萬二千零四十五點０六, 1234506
+            3:一二０四五０六
+            須注意種類'3'一般為轉換號的數字不可輸入非數字型態資料
+            </summary>
+            <param name="strNum">要轉換的數字</param>
+            <param name="cNumType">轉換格式</param>
+            <returns>轉換後字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.GetCNum(System.Double,System.Int32)">
+            <summary>
+            將數字字串轉換為中文的數字資料格式
+            Exp: 12345.06
+            種類 0:一萬二千零四十五點零六,
+            1:壹萬貳仟零肆拾伍點零陸,
+            2:一萬二千零四十五點０六, 1234506
+            3:一二０四五０六
+            須注意種類'3'一般為轉換號的數字不可輸入非數字型態資料
+            </summary>
+            <param name="strNum">要轉換的數字</param>
+            <param name="cNumType">轉換格式</param>
+            <returns>轉換後字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.GetCNum(System.Int64,System.Int32)">
+            <summary>
+            將數字字串轉換為中文的數字資料格式
+            Exp: 12345.06
+            種類 0:一萬二千零四十五點零六,
+            1:壹萬貳仟零肆拾伍點零陸,
+            2:一萬二千零四十五點０六, 1234506
+            3:一二０四五０六
+            須注意種類'3'一般為轉換號的數字不可輸入非數字型態資料
+            </summary>
+            <param name="strNum">要轉換的數字</param>
+            <param name="cNumType">轉換格式</param>
+            <returns>轉換後字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.GetCNum(System.String,System.Int32)">
+            <summary>
+            將數字字串轉換為中文的數字資料格式
+            Exp: 12345.06
+            種類 0:一萬二千零四十五點零六,
+            1:壹萬貳仟零肆拾伍點零陸,
+            2:一萬二千零四十五點０六, 1234506
+            3:一二０四五０六
+            須注意種類'3'一般為轉換號的數字不可輸入非數字型態資料
+            </summary>
+            <param name="strNum">字串格式的數字內容</param>
+            <param name="cNumType">轉換格式</param>
+            <returns>傳回中文的數字字碼</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.IsIPFormat(System.String)">
+            <summary>
+            是否 IP 格式
+            </summary>
+            <param name="ip">欲檢查字串</param>
+            <returns>是/否</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.GetIP">
+            <summary>
+            取得 Client IP 位址, 當 Session("IP") 有值則以 Session 為主
+            </summary>
+            <returns>IP 位址</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.FormStr(System.Object)">
+            <summary>
+            轉換 Client 端 Script 處理的特殊符號(', \r\n, \n, \r)
+            </summary>
+            <param name="str">輸入字串</param>
+            <returns>處理後字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.InputStr(System.Object)">
+            <summary>
+            轉換 Input 處理的特殊符號, 將 ' 轉換成 ＆＃３９；
+            </summary>
+            <param name="str">輸入字串</param>
+            <returns>號轉後的字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.DBStr(System.Object)">
+            <summary>
+            轉換要寫入db 的字串, ' 轉換成 ''
+            </summary>
+            <param name="str">輸入字串</param>
+            <returns>處理後的字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.NullToSpace(System.Object)">
+            <summary>
+            將 Null 轉換成空白
+            </summary>
+            <param name="str">輸入物件</param>
+            <returns>處理後字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.CheckNull(System.Object,System.String)">
+            <summary>
+            若為 Null, 則傳回設定值
+            </summary>
+            <param name="obj">原始的物件</param>
+            <param name="defaultvalue">設定值</param>
+            <returns>處理後的字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.DateStr(System.Object)">
+            <summary>
+            轉換要寫入db 的字串, 民國日期 yyymmdd 轉換成 TO_DATE('yyyy/mm/dd', 'yyyy/MM/dd') For Oracle
+            </summary>
+            <param name="str">輸入日期字串 yyymmdd</param>
+            <returns>處理後的字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.DateTimeStr(System.Object)">
+            <summary>
+            轉換要寫入 db 的字串, 西元日期時間 yyyy/mm/dd hh:mm:ss 轉換成 TO_DATE('yyyy/mm/dd hh:mm:ss', 'yyyy/MM/dd HH:MI:SS')
+            </summary>
+            <param name="str">輸入字串 yyyy/mm/dd hh:mm:ss</param>
+            <returns>處理後的字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.CsvConvert(System.Object)">
+            <summary>
+            轉換 CVS 檔案的特殊符號 
+            </summary>
+            <param name="str">要處理的字串</param>
+            <returns>處理後的字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.CsvConvert(System.Object,System.Boolean)">
+            <summary>
+            轉換 CVS 檔案的特殊符號 001->="001"
+            </summary>
+            <param name="str">要處理的字串</param>
+            <param name="isZeroStart">是否 0 開頭字串 Exp: 000123</param>
+            <returns>處理後的字串</returns>
+        </member>
+        <member name="M:Acer.Util.Utility.ArrayListToString(System.Collections.ArrayList)">
+            <summary>
+            轉換 ArrayList 成字串 
+            </summary>
+            <param name="al">要處理的 ArrayList</param>
+            <returns>處理後的字串</returns>
+        </member>
+        <member name="T:AcerLibrary.Properties.Resources">
+            <summary>
+              用於查詢當地語系化字串等的強類型資源類別。
+            </summary>
+        </member>
+        <member name="P:AcerLibrary.Properties.Resources.ResourceManager">
+            <summary>
+              傳回這個類別使用的快取的 ResourceManager 執行個體。
+            </summary>
+        </member>
+        <member name="P:AcerLibrary.Properties.Resources.Culture">
+            <summary>
+              覆寫目前執行緒的 CurrentUICulture 屬性，對象是所有
+              使用這個強類型資源類別的資源查閱。
+            </summary>
+        </member>
+    </members>
+</doc>

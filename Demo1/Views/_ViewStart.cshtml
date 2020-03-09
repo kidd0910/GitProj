@@ -1,0 +1,14 @@
+﻿@{
+    //如果沒特別指定，則預設會套用這組
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    //因為這邊是入口點，用來設定全域變數
+
+    Layout = "~/Views/Shared/_LayoutBase.cshtml";
+}
+
+
+<script type="text/javascript">
+        var BASE_ROOT_URL = '@Url.Content("~/")';
+        var BASE_NENU_URL = '@ViewContext.RouteData.Values["controller"]';
+</script>

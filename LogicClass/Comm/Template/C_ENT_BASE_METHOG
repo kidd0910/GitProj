@@ -1,0 +1,44 @@
+﻿		#region [OP_CD] [OP_NM]
+		/// <summary> 
+		/// [OP_NM]  
+		/// </summary>
+		public DataTable [OP_CD] ()
+		{
+			return this.[OP_CD](0, 0);
+		}
+		
+		/// <summary> 
+		/// [OP_NM]  
+		/// </summary>
+		/// <remarks>
+		/// 0.0.1 作者 新增方法
+		/// </remarks>
+		public DataTable [OP_CD](int pageNo, int pageSize)
+		{
+			try
+			{
+				this.LogUtil.MethodStart(MethodBase.GetCurrentMethod().DeclaringType.FullName + "." + MethodBase.GetCurrentMethod().Name);
+
+				this.LogProperty();
+
+[VALID_COLUMN]
+	
+				//=== 處理別名轉換 ===
+				this.ParserAlias();
+				
+				[REMARK]
+				
+				string		sql	=	"";
+				
+				DataTable	dt	=	this.QueryBySql(sql, pageNo, pageSize);
+				
+				this.ResetColumnProperty();
+				
+				return dt;
+			}
+			finally
+			{
+				this.LogUtil.MethodEnd(MethodBase.GetCurrentMethod().DeclaringType.FullName + "." + MethodBase.GetCurrentMethod().Name);
+			}
+		}
+		#endregion

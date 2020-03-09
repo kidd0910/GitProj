@@ -1,0 +1,21 @@
+﻿		#Region "[OP_CD] [OP_NM]"
+		''' <summary>
+		''' [OP_NM] 
+		''' </summary>
+		''' <remarks>
+		''' 0.0.1 作者 新增方法
+		''' </remarks>
+		Public Sub [OP_CD]()
+			Try
+				Me.LogUtil.MethodStart(GetCurrentMethod.DeclaringType.FullName & "." & GetCurrentMethod.Name)
+				Me.LogProperty()
+
+[VALID_COLUMN]
+				[REMARK]
+				
+				Me.ResetColumnProperty()
+			Finally
+				Me.LogUtil.MethodEnd(GetCurrentMethod.DeclaringType.FullName & "." & GetCurrentMethod.Name)
+			End Try
+		End Sub
+		#End Region

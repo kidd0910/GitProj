@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FB71BE3D-DD94-4639-9DCB-B83EB96CF950}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo1</RootNamespace>
+    <AssemblyName>Demo1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.6</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LogicClass, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\LogicClass.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.5.11.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.11.1\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc.5.11.1\lib\net47\Unity.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Wcf, Version=4.0.0.0, Culture=neutral, PublicKeyToken=c4fb9567b49ff432, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerrequestLifetimeManager.1.0.0\lib\net45\Unity.Wcf.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityWcfPerrequestLifetimeManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PerrequestLifetimeManager.1.0.0\lib\net45\UnityWcfPerrequestLifetimeManager.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Controllers\A1\A1001Controller.cs" />
+    <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\Example\EXPController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Base\BaseInit.cs" />
+    <Compile Include="Models\Base\IBaseInit.cs" />
+    <Compile Include="Models\Services\BaseService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Services\Home\HomeService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CFCMData\CFCM1\CSS\default.css" />
+    <Content Include="Content\CFCMData\CFCM1\CSS\jquery.loadmask.css" />
+    <Content Include="Content\CFCMData\CFCM1\CSS\tabs.css" />
+    <Content Include="Content\CFCMData\CFCM1\Images\ap_index_bg.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\ap_index_icon_txt.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\bg_btn.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\body_bg.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\bottom_bg.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\bottom_bg2.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\btn_bg.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\btn_bg2.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\btn_bg3.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\btn_fp.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\Btn_Identity1.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\Btn_Identity2.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\btn_login.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\btn_reset.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\calendar.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\caret-arrow-up.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\case_blue.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\case_blue.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\case_gray.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\case_green.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\case_green.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\case_orgenge.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\case_red.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\case_red.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\case_yellow.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\case_yellow.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\contentBg_01.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\contentBg_02.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\contentBg_03.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\contentBg_04.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\contentBg_06.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\contentBg_07.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\contentBg_08.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\contentBg_09.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\content_bg.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\content_right.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\edit.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\example.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\footer_bg.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2BLAN.GIF" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2BLANK.GIF" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2DOC.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2FOLDERCLOSED.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2FOLDEROPEN.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2LAST.GIF" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2LASTNODE.GIF" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2LINK.GIF" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2MLAS.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2MLASTNODE.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2MNOD.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2MNODE.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2NODE.GIF" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2PLAS.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2PLASTNODE.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2PNOD.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2PNODE.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2VERT.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\FTV2VERTLINE.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon001.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon002.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon1_off.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon1_on.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon2_off.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon2_on.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon4.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon_1.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon_2.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon_3.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon_add.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon_arrow_next.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon_arrow_previous.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon_arrow_right.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon_arrow_top.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon_attach.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon_new.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon_pageLine.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon_scale.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\icon_sub.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\index_tb1.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\index_tb2.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\index_tb3.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\index_tb4.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\index_tb5.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\index_tb6.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\index_tb7.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\index_tb8.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\index_tb_bg.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\index_td_bg.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\item_client.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\item_client_over.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\left_bg.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\link_icon.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\list_header.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\list_header1.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\list_header2.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\loading.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\login_bg.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\login_bg1.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\login_bg2.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\login_bg3.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\menuBg.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\menu_bottom.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\menu_Left_LinkBg.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\menu_top.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\module1.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\module2.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\module4.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\ncc_logo_s.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\new02.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\post_icon.png" />
+    <Content Include="Content\CFCMData\CFCM1\Images\select.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\space.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table1_1.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table1_2.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table1_3.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table1_4.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table1_5.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table1_6.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table1_7.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table1_8.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table1_9.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table1_left.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table1_right.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table_1_bg.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table_1_bg_1.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table_1_bg_2.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table_1_bg_3.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table_1_l.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table_1_l_1.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table_1_l_2.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table_1_l_3.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table_1_r.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table_1_r_1.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table_1_r_2.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\table_1_r_3.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\tag_click.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\tag_unclick.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\title_menu.gif" />
+    <Content Include="Content\CFCMData\CFCM1\Images\top_1.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\top_2.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\top_bg.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\up_windows_btn.jpg" />
+    <Content Include="Content\CFCMData\CFCM1\Images\Watermark.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Base\baseUtil.js" />
+    <Content Include="Scripts\Components\vue-confirm.js" />
+    <Content Include="Scripts\Components\vue-datepicker.js" />
+    <Content Include="Scripts\Components\vue-mask.js" />
+    <Content Include="Scripts\Components\vue-message.js" />
+    <Content Include="Scripts\Components\vue-optionview.js" />
+    <Content Include="Scripts\Components\vue-paginaiton.js" />
+    <Content Include="Scripts\Components\vue-select.js" />
+    <Content Include="Scripts\Components\vue-tabsli.js" />
+    <Content Include="Scripts\Layout\layoutMain.js" />
+    <Content Include="Scripts\Layout\mainMask.js" />
+    <Content Include="Scripts\Frameworks\bootstrap.js" />
+    <Content Include="Scripts\Frameworks\bootstrap.min.js" />
+    <Content Include="APConfig.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Scripts\Frameworks\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Frameworks\jquery-3.3.1.js" />
+    <Content Include="Scripts\Frameworks\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\Frameworks\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\Frameworks\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\Frameworks\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Frameworks\jquery.validate.js" />
+    <Content Include="Scripts\Frameworks\jquery.validate.min.js" />
+    <Content Include="Scripts\Frameworks\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\Frameworks\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Frameworks\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Frameworks\Vue\logger.js" />
+    <Content Include="Scripts\Frameworks\Vue\vue.common.js" />
+    <Content Include="Scripts\Frameworks\Vue\vue.js" />
+    <Content Include="Scripts\Frameworks\Vue\vue.min.js" />
+    <Content Include="Scripts\Frameworks\Vue\vue.runtime.common.js" />
+    <Content Include="Scripts\Frameworks\Vue\vue.runtime.js" />
+    <Content Include="Scripts\Frameworks\Vue\vue.runtime.min.js" />
+    <Content Include="Scripts\Frameworks\Vue\vuex.js" />
+    <Content Include="Scripts\Frameworks\Vue\vuex.min.js" />
+    <Content Include="Scripts\Pages\Home\Menu.js" />
+    <Content Include="Scripts\Pages\Example\Page1.js" />
+    <Content Include="Scripts\Pages\Login\Login.js" />
+    <Content Include="Scripts\Utility\baseUtil.js" />
+    <Content Include="Scripts\Utility\CommonUtil.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout---.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\A1001\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutBase.cshtml" />
+    <Content Include="Views\EXP\Index.cshtml" />
+    <Content Include="Views\EXP\Page1.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Views\Home\Bulltin.cshtml" />
+    <Content Include="Views\Home\Page1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Log\" />
+    <Folder Include="Models\Home\" />
+    <Folder Include="Views\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\Frameworks\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\Frameworks\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\CFCMData\CFCM1\CSS\mvcDefault.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AcerLibrary\AcerLibrary.csproj">
+      <Project>{56E126A8-8139-4BC7-B2B1-FEB6B8E7722C}</Project>
+      <Name>AcerLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12030</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12030/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

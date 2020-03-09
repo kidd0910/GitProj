@@ -1,0 +1,4 @@
+﻿				'=== [ATTR_NM] ===
+				If string.IsNullOrEmpty(Me.[ATTR]) Then
+					faileArguments.Add("[ATTR]")
+				End If

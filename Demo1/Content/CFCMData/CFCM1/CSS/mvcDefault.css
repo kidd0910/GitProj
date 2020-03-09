@@ -1,0 +1,133 @@
+﻿/*NEW MVC --- begin */
+
+/*登入 --- begin */
+
+/*body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}*/
+
+
+.login-body {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.login-main-frame {
+    /*min-height: 100%;*/ /*682px;*/
+    /*background: url(../Images/login_bg.jpg);*/   
+    background-color: lightblue;
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 35%;
+    height: 60%;
+    margin: 0px auto; /*置中*/
+    border: 1px blue solid;
+}
+
+.login-input {
+    /*padding-top: 160px;*/
+    padding-top: 10%;
+    /*padding-left: 250px;*/
+    padding-left: 35%;
+    padding-right: 30%;
+    padding-bottom: 30%;
+}
+
+.login-input-padding {
+    padding-top: 10px;
+}
+
+.inputBTN-padding {
+    /*padding-top: 90px;*/
+    padding-top: 10%;
+}
+
+.loginBTN {
+    background: url(../Images/btn_login.gif);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    border: 0;
+}
+
+.clearBTN {
+    background: url(../Images/btn_reset.gif);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    border: 0;
+}
+
+.loginBTN {
+    position: relative;
+    float: left;
+}
+
+.clearBTN-Padding {
+    position: relative;
+    float: left;
+    padding-left: 30px;
+}
+/*登入 --- end */
+
+/*主屬性 --- begin */
+html {
+    /*width: 100vw;*/
+    /*height: 100vh;*/
+}
+body {
+    /*width: 100vw;*/
+    /*height: 100vh;*/
+}
+/*主屬性 --- end */
+
+/*主框架 --- begin */
+.main-frame-body {
+    width: 100vw;
+    height: 100vh;
+    /*width: 100%;
+    height: 100%;*/
+    /*width: 100vw;
+    height: 100vh;*/
+    /*background-color: saddlebrown;*/
+}
+
+.sub-frame-tooper {
+    background-color: #2f2f2f; /*深灰*/
+    color: #e6e6e6 /*90%灰*/
+}
+
+.sub-frame-menu {
+    width: 15%;
+    height: 90%;
+    float: left;
+    /*line-height: 50px;*/ /*DIV區塊高度*/
+    padding: 0.5%; /*DIV區塊內距*/
+    margin-right: 0.5%; /*靠右外距*/
+    overflow: scroll; /*當內容超出範圍時的動作*/
+    border: 2px blue solid;
+    border-color: darkblue;
+}
+
+.sub-frame-body {
+    width: 84.5%;
+    /*height: 90%;*/
+    height: 90vh;
+    /*line-height: 100%;*/
+    padding: 0.5%;
+    border: 2px green solid;
+    float: right;
+    border-color: darkblue;
+}
+.sub-frame-footer {
+    width: 100%;   
+    clear: both; /*清除Float*/
+    background-color: lightgray;
+}
+/*主框架 --- end */
+
+
+/*NEW MVC --- end */

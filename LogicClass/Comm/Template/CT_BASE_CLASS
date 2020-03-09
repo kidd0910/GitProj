@@ -1,0 +1,49 @@
+﻿'----------------------------------------------------------------------------------
+'File Name		: [CLASS_CD] 
+'Author			: [作者]
+'Description		: [CLASS_CD] [CLASS_NM]
+'Modification Log	:
+'
+'Vers		Date       	By		Notes
+'--------------	--------------	--------------	----------------------------------
+'0.0.1		[SYS_DT]	[作者]   	Source Create
+'----------------------------------------------------------------------------------
+
+Imports [SYS_CD1].Data
+Imports Acer.Log
+Imports Acer.DB
+Imports Acer.Util
+Imports Comm.Business.CommonMessage
+Imports System.Reflection.MethodBase
+
+NameSpace [SYS_CD1].Business
+	''' <summary>
+	''' [CLASS_CD] [CLASS_NM]
+	''' </summary>
+	Public partial Class [CLASS_CD]
+		Inherits Acer.Base.ControlBase
+
+	#Region "屬性"
+[ATTR]
+	#End Region
+
+	#Region "建構子"
+		''' <summary>
+		''' 建構子
+		''' </summary>
+		''' <param name="dbManager">dbManager 物件</param>
+		''' <param name="logUtil">logUtil 物件</param>
+		Public Sub New (ByVal dbManager As DBManager, ByVal logUtil As LogUtil)
+			MyBase.New(dbManager, logUtil)
+			
+			'=== 關聯 Class ===
+[REF_CLASS]
+		End Sub
+	#End Region
+
+	#Region "方法"
+[METHOD]
+	#End Region
+	End Class
+End NameSpace
+

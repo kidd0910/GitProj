@@ -1,0 +1,74 @@
+﻿//---------------------------------------------------------------------------------- 
+//File Name		: [CLASS_CD] 
+//Author		: [作者]
+//Description		: [CLASS_CD] [CLASS_NM]
+//Modification Log	: 
+// 
+//Vers			Date		By		Notes 
+//--------------	--------------	--------------	---------------------------------- 
+//0.0.1			[SYS_DT]	[作者]		Source Create
+//----------------------------------------------------------------------------------
+
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Data.Common;
+using Acer.Apps;
+using Acer.DB;
+using Acer.DB.Query;
+using Acer.Util;
+using Acer.Log;
+using System.Reflection;
+
+namespace Data
+{
+	/// <summary> 
+	/// [CLASS_CD] [CLASS_NM]
+	/// </summary> 
+	public class [CLASS_CD] : [INHERIT], Acer.Base.IEntityInterface
+	{
+#region 建構子
+		/// <summary> 
+		/// 建構子/處理屬性對應處理 
+		/// </summary> 
+		/// <param name="dt">DataTable 物件</param> 
+		public [CLASS_CD](DataTable dt)
+			: base(dt)
+		{
+
+		}
+
+		/// <summary> 
+		/// 建構子/處理異動處理 
+		/// </summary> 
+		/// <param name="dbManager">DBManager 物件</param> 
+		/// <param name="LogUtil">LogUtil 物件</param> 
+		public [CLASS_CD](DBManager dbManager, LogUtil logUtil)
+			: base(dbManager, logUtil)
+		{
+			this.TableName		=	"[TABLE]";
+			this.SysName		=	"HEAMS";
+			this.ConnName		=	"HEAMS";
+			
+			//=== 關聯 Class ===
+[REF_CLASS]
+			//=== 處理別名 ===
+		}
+#endregion
+
+#region 屬性
+[ATTR]
+#endregion
+	
+#region 自訂方法
+[METHOD]
+#endregion
+		
+	}
+} 

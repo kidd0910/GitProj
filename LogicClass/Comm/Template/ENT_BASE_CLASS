@@ -1,0 +1,63 @@
+﻿'----------------------------------------------------------------------------------
+'File Name		: [CLASS_CD]
+'Author			: [作者]
+'Description		: [CLASS_CD] [CLASS_NM]
+'Modification Log	:
+'
+'Vers		Date       	By		Notes
+'--------------	--------------	--------------	----------------------------------
+'0.0.1		[SYS_DT]	[作者]		Source Create
+'----------------------------------------------------------------------------------
+
+Imports System.Data.Common 
+Imports Acer.Apps
+Imports Acer.DB
+Imports Acer.DB.Query
+Imports Acer.Util 
+Imports Acer.Log
+Imports System.Reflection.MethodBase
+
+NameSpace [SYS_CD1].Data
+	'' <summary>
+	'' [CLASS_CD] [CLASS_NM]
+	'' </summary>
+	Public Class [CLASS_CD] 
+		Inherits [INHERIT]
+		Implements Acer.Base.IEntityInterface 
+		
+	#Region "建構子"
+		'' <summary>
+		'' 建構子/處理屬性對應處理
+		'' </summary>
+		'' <param name="dt">DataTable 物件</param>
+		Public Sub New (ByVal dt As DataTable)
+			MyBase.New(dt)
+		End Sub
+
+		'' <summary>
+		'' 建構子/處理異動處理
+		'' </summary>
+		'' <param name="dbManager">DBManager 物件</param>
+		Public Sub New (ByVal dbManager As DBManager, ByVal logUtil As LogUtil)
+			MyBase.New(dbManager, logUtil)
+			Me.TableName	=	"[TABLE]"
+			Me.SysName	=	"[SYS_CD]"
+			Me.ConnName	=	"CSP"
+
+			'=== 關聯 Class ===
+[REF_CLASS]
+			'=== 處理別名 ===
+		End Sub
+	#End Region
+
+	#Region "屬性"
+[ATTR]
+	#End Region
+	
+	#Region "自訂方法"
+[METHOD]
+	#End Region
+		
+	End Class
+End NameSpace
+ 

@@ -1,0 +1,38 @@
+Imports System
+Imports System.Text
+Imports System.Data
+Imports System.Collections
+Imports System.Data.SqlClient
+Imports Acer.DB
+Imports Acer.Err
+Imports Acer.Log
+Imports Acer.Util
+Imports Tke.Data
+Imports Sip.Data
+Class PABLib 
+	Public Function  EvalCode() As Object 
+		Dim	logUtil		As	LogUtil		=	New LogUtil()
+		Dim	dbManager	As	DBManager	=	new DBManager(LogUtil)
+		Dim	result		As	ArrayList	=	New ArrayList()
+			
+		Try
+			Dim	resultBuff	As	StringBuilder	=	New StringBuilder()
+			
+			logUtil.Logger.Append("#######======= Unit test for [{CLASS}.{FUNCTION}] =======#######")
+			Dim	data		As	{CLASS}		=	New {CLASS}(dbManager, logUtil)
+			{ATTRIBUTES}
+			
+			result.Add(data.{FUNCTION}({PARAMS}))
+		Catch ex As Exception
+			logUtil.Logger.SetLogLevel(MyLogger.Error) 
+			logUtil.Logger.Append(ErrUtil.ErrToStr(ex).Replace("<", "&lt;"))
+			result.Add("<pre>" & ErrUtil.ErrToStr(ex) & "</pre>")
+			'Throw
+		Finally
+			dbManager.Close()
+			logUtil.DoLog()
+		End Try	
+		
+		Return result
+	End Function 
+End Class 

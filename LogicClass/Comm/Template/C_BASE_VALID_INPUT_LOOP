@@ -1,0 +1,4 @@
+﻿				
+				//=== [ATTR_NM] ===
+				if (string.IsNullOrEmpty(this.[ATTR]))
+					faileArguments.Add("[ATTR]");

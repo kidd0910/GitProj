@@ -1,0 +1,43 @@
+﻿<div id="MENU" class="menu">
+    <span v-if="menus.length === 0">
+        尚未設定功能表資料
+    </span>
+    <ul class='menu-level-1' style="display: none;" v-show="init" v-if="menus.length > 0">
+        <!-- 寫死固定連結(首頁等等) -->
+        <li class='menu-node-3'>
+            <span class='menu-npoint' v-bind:url="'Home'" v-on:click="goUrlPage('Home')">
+                <span class="menu-link-icon"></span>
+                <span class="menu-span">首頁<span class="menu-span-tip">&nbsp;首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;頁&nbsp;</span></span>
+            </span>
+        </li>
+        <li class='menu-node-1' v-for="(menu1, index1) in menus">
+            <span class='menu-npoint'>
+                <span class="menu-folder-icon"></span>
+                <span class="menu-span">{{menu1.NAME}}</span>
+            </span>
+            <ul class='menu-level-2' v-if="menu1.ITEMS.length > 0">
+                <li class='menu-node-2' v-for="(menu2, index2) in menu1.ITEMS">
+                    <span class='menu-npoint'>
+                        <span class="menu-folder-icon"></span>
+                        <span class="menu-span">{{menu2.NAME}}</span>
+                    </span>
+                    <ul class='menu-level-3' v-if="menu2.ITEMS.length > 0">
+                        <li class='menu-node-3' v-for="(menu3, index3) in menu2.ITEMS">
+                            <span class='menu-npoint' v-bind:url="menu3.URL" v-on:click="goUrlPage(menu3.URL)">
+                                <span class="menu-link-icon"></span>
+                                <span class="menu-span">{{menu3.NAME}}<span class="menu-span-tip">{{menu3.NAME}} ({{menu3.URL}})</span></span>
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div id="MainMask">
+    <vue-mask v-bind:mask="mask"></vue-mask>
+    <vue-message v-bind:message="message"></vue-message>
+</div>
+
+<script type="text/javascript" src="~/Scripts/Pages/Home/Menu.js" defer></script>

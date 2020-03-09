@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{60BA4A76-01DB-4B60-B5A9-A33FF8ECCD63}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>LogicClass</AssemblyName>
+    <MyType>Windows</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\Demo1\bin\</OutputPath>
+    <DocumentationFile>LogicClass.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LogicClass.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>LogicClass.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>LogicClass.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcerLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\AcerLibrary\AcerLibrary\bin\Release\AcerLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DocX, Version=1.0.0.22, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TSBA\Bin\DocX.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip">
+      <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\TSBA\Bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TSBA\Bin\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="javaAPI_XDS, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TSBA\Bin\javaAPI_XDS.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.0.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TSBA\Bin\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SqlXml" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TemplateEngine.Docx, Version=1.0.0.0, Culture=neutral, PublicKeyToken=04d12e71ab4342c2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TSBA\Bin\TemplateEngine.Docx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebChart">
+      <HintPath>..\TSBA\Bin\WebChart.dll</HintPath>
+    </Reference>
+    <Reference Include="WinSCPnet">
+      <HintPath>..\packages\WinSCP.5.9.4\lib\WinSCPnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Text" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.HtmlControls" />
+    <Import Include="System.Web.UI.WebControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\Business\CtAPP0003.vb" />
+    <Compile Include="App\Business\CtAPP0002.vb" />
+    <Compile Include="App\Business\CtAPP0001.vb" />
+    <Compile Include="App\Business\CtAPP0004.vb" />
+    <Compile Include="App\Business\CtAPP1030.vb" />
+    <Compile Include="App\Business\CtAPP1020.vb" />
+    <Compile Include="App\Business\CtAPP1010.vb" />
+    <Compile Include="App\Business\CtAPP1040.vb" />
+    <Compile Include="App\Business\CtAPP1041.vb" />
+    <Compile Include="App\Business\CtAPP1050.vb" />
+    <Compile Include="App\Business\CtAPP1060.vb" />
+    <Compile Include="App\Business\CtAPP1070.vb" />
+    <Compile Include="App\Business\CtAPP1080.vb" />
+    <Compile Include="App\Business\CtAPP1100.vb" />
+    <Compile Include="App\Business\CtAPP1090.vb" />
+    <Compile Include="App\Business\CtAPP1110.vb" />
+    <Compile Include="App\Business\CtAPP1120.vb" />
+    <Compile Include="App\Business\CtAPP1140.vb" />
+    <Compile Include="App\Business\CtAPP1150.vb" />
+    <Compile Include="App\Business\CtAPP1160.vb" />
+    <Compile Include="App\Business\CtAPP1170.vb" />
+    <Compile Include="App\Business\CtAPP1180.vb" />
+    <Compile Include="App\Business\CtAPP1411.vb" />
+    <Compile Include="App\Business\CtAPP1421.vb" />
+    <Compile Include="App\Business\CtAPP1430.vb" />
+    <Compile Include="App\Business\CtAPP1440.vb" />
+    <Compile Include="App\Business\CtAPP1451.vb" />
+    <Compile Include="App\Business\CtAPP1460.vb" />
+    <Compile Include="App\Business\CtAPP1450.vb" />
+    <Compile Include="App\Business\CtAPP1420.vb" />
+    <Compile Include="App\Business\CtAPP1410.vb" />
+    <Compile Include="App\Business\CtAPP1400.vb" />
+    <Compile Include="App\Business\CtAPP1130.vb" />
+    <Compile Include="App\Business\CtAPP2010.vb" />
+    <Compile Include="App\Business\CtAPP2020.vb" />
+    <Compile Include="App\Business\CtAPP2030.vb" />
+    <Compile Include="App\Business\CtAPPL010.vb" />
+    <Compile Include="App\Business\CtAPPL020.vb" />
+    <Compile Include="App\Business\CtAPPL022.vb" />
+    <Compile Include="App\Business\CtAPPL023.vb" />
+    <Compile Include="App\Business\CtAPPL024.vb" />
+    <Compile Include="App\Business\CtAPPL025.vb" />
+    <Compile Include="App\Business\CtAUTC030.vb" />
+    <Compile Include="App\Business\CtAPPL021.vb" />
+    <Compile Include="App\Business\CtMSG010.vb" />
+    <Compile Include="App\Business\CtRAWDISM031V.vb" />
+    <Compile Include="App\Business\CtRAWDISM034V.vb" />
+    <Compile Include="App\Business\CtVW_BASIC_APPLY.vb" />
+    <Compile Include="App\Business\CtRAWDISM032V.vb" />
+    <Compile Include="App\Business\CtRAWDISM033V.vb" />
+    <Compile Include="App\CommonUtil.vb" />
+    <Compile Include="App\DataEnum.vb" />
+    <Compile Include="App\Data\ENT_APP0001.vb" />
+    <Compile Include="App\Data\ENT_APP0002.vb" />
+    <Compile Include="App\Data\ENT_APP0003.vb" />
+    <Compile Include="App\Data\ENT_APP0004.vb" />
+    <Compile Include="App\Data\ENT_APP1030.vb" />
+    <Compile Include="App\Data\ENT_APP1020.vb" />
+    <Compile Include="App\Data\ENT_APP1010.vb" />
+    <Compile Include="App\Data\ENT_APP1040.vb" />
+    <Compile Include="App\Data\ENT_APP1041.vb" />
+    <Compile Include="App\Data\ENT_APP1050.vb" />
+    <Compile Include="App\Data\ENT_APP1060.vb" />
+    <Compile Include="App\Data\ENT_APP1070.vb" />
+    <Compile Include="App\Data\ENT_APP1080.vb" />
+    <Compile Include="App\Data\ENT_APP1100.vb" />
+    <Compile Include="App\Data\ENT_APP1090.vb" />
+    <Compile Include="App\Data\ENT_APP1110.vb" />
+    <Compile Include="App\Data\ENT_APP1120.vb" />
+    <Compile Include="App\Data\ENT_APP1140.vb" />
+    <Compile Include="App\Data\ENT_APP1150.vb" />
+    <Compile Include="App\Data\ENT_APP1160.vb" />
+    <Compile Include="App\Data\ENT_APP1170.vb" />
+    <Compile Include="App\Data\ENT_APP1180.vb" />
+    <Compile Include="App\Data\ENT_APP1411.vb" />
+    <Compile Include="App\Data\ENT_APP1421.vb" />
+    <Compile Include="App\Data\ENT_APP1430.vb" />
+    <Compile Include="App\Data\ENT_APP1440.vb" />
+    <Compile Include="App\Data\ENT_APP1451.vb" />
+    <Compile Include="App\Data\ENT_APP1460.vb" />
+    <Compile Include="App\Data\ENT_APP1450.vb" />
+    <Compile Include="App\Data\ENT_APP1420.vb" />
+    <Compile Include="App\Data\ENT_APP1410.vb" />
+    <Compile Include="App\Data\ENT_APP1400.vb" />
+    <Compile Include="App\Data\ENT_APP1130.vb" />
+    <Compile Include="App\Data\ENT_APP2010.vb" />
+    <Compile Include="App\Data\ENT_APP2020.vb" />
+    <Compile Include="App\Data\ENT_APP2030.vb" />
+    <Compile Include="App\Data\ENT_APPL010.vb" />
+    <Compile Include="App\Data\ENT_APPL011.vb" />
+    <Compile Include="App\Data\ENT_APPL020.vb" />
+    <Compile Include="App\Data\ENT_APPL022.vb" />
+    <Compile Include="App\Data\ENT_APPL023.vb" />
+    <Compile Include="App\Data\ENT_APPL024.vb" />
+    <Compile Include="App\Data\ENT_APPL025.vb" />
+    <Compile Include="App\Data\ENT_AUTC030.vb" />
+    <Compile Include="App\Data\ENT_APPL021.vb" />
+    <Compile Include="App\Data\ENT_MSG010.vb" />
+    <Compile Include="App\Data\ENT_RAWDISM031V.vb" />
+    <Compile Include="App\Data\ENT_RAWDISM032V.vb" />
+    <Compile Include="App\Data\ENT_RAWDISM033V.vb" />
+    <Compile Include="App\Data\ENT_RAWDISM034V.vb" />
+    <Compile Include="App\Data\ENT_VW_BASIC_APPLY.vb" />
+    <Compile Include="Aut\Business\CtMaintainGroup.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Business\CtMaintainSystemTask.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntAutCode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntColumnRange.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntColumnRight.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntFunctionColumn.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntGroup.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntGroupFunction.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntGroupMember.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntGroupRightRange.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntInnerNetWKAddr.vb" />
+    <Compile Include="Aut\Data\EntLoginAcntGroup.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntProFunction.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntProgremMenu.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntSessionColDef.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntSysProgram.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntSystem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\EntSystemTask.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Aut\Data\ENT_AUTC020.vb" />
+    <Compile Include="Aut\Data\ENT_AUTC030.vb" />
+    <Compile Include="Bat\Business\CtDataExchange.vb" />
+    <Compile Include="Bat\Business\CtMaintainBatch.vb" />
+    <Compile Include="Bat\Data\EntBatchParam.vb" />
+    <Compile Include="Bat\Data\EntBatchProg.vb" />
+    <Compile Include="Bat\Data\EntBatchRecord.vb" />
+    <Compile Include="Bat\Data\EntBatchSchedule.vb" />
+    <Compile Include="Bat\Data\EntImpExchangeData.vb" />
+    <Compile Include="Bat\Data\EntProBatchParam.vb" />
+    <Compile Include="Bat\Data\EntScheduleParam.vb" />
+    <Compile Include="Bat\Data\EntScheduleSet.vb" />
+    <Compile Include="Bat\Data\EntSetExchangeData.vb" />
+    <Compile Include="Comm\Business\AppointmentBLL.vb" />
+    <Compile Include="Comm\Business\ClassSpec.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Business\CommonMessage.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Business\FMGen001.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Business\LANG001.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Business\MultiLanguageAttribute.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Business\SessionClass.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Common\Common.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Data\CLASSOBJ.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Data\CLASS_ASSO.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Data\CLASS_ATTR.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Data\CLASS_OP.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Data\COLUMNDD.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Data\EntCityType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Data\EntSqlSeverConn.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Data\EntZip.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Data\LANGLIST.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Data\LANGUAGE.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Comm\Data\Sample.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Csh\Business\CtCSHT010.vb" />
+    <Compile Include="Csh\Data\ENT_CSHT010.vb" />
+    <Compile Include="Csh\Data\ENT_CSHT200.vb" />
+    <Compile Include="Eml\Business\CtPageEmail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Eml\Business\CtSendMail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Eml\Data\EntHistSendMail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Eml\Data\EntHistSendMailAddressee.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Eml\Data\EntHistSendMailAttachFile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Eml\Data\EntMailRecvSet.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Eml\Data\EntSendMail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Eml\Data\EntSendMailAddressee.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Eml\Data\EntSendMailApp.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Eml\Data\EntSendMailAttachFile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Eml\Data\EntSendMailCCAddressee.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Eml\Data\EntSendMailTemplate.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="File\Business\CtAttchFile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="File\Business\CtAttchFileByCase.vb" />
+    <Compile Include="File\Data\EntAttachFile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="File\Data\EntTempFile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="His\Business\CtHIS020.vb" />
+    <Compile Include="His\Data\EntHIS020.vb" />
+    <Compile Include="Imp\Business\CtImpOpe.vb" />
+    <Compile Include="Imp\Data\EntCheck.vb" />
+    <Compile Include="Imp\Data\EntImpCom.vb" />
+    <Compile Include="Imp\Data\EntTable.vb" />
+    <Compile Include="Max\Business\CtMaxNo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Max\Data\EntMaxNo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Mchk\Business\CtMCHK010.vb" />
+    <Compile Include="Mchk\Business\CtMCHK020.vb" />
+    <Compile Include="Mchk\Data\ENT_MCHK010.vb" />
+    <Compile Include="Mchk\Data\ENT_MCHK020.vb" />
+    <Compile Include="Mis\Business\CtDbSchema.vb" />
+    <Compile Include="Mis\Data\EntDbSchema.vb" />
+    <Compile Include="Msg\Data\ENT_MSG010.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Pat\Business\CtSYST001.vb" />
+    <Compile Include="Pat\Data\ENT_SYST001.vb" />
+    <Compile Include="Pos\Business\CtIPValidator.vb" />
+    <Compile Include="Pos\Business\CtMaintainPerson.vb" />
+    <Compile Include="Pos\Data\EntLoginData.vb" />
+    <Compile Include="Pos\Data\EntPasswordHis.vb" />
+    <Compile Include="Pos\Data\EntPerson.vb" />
+    <Compile Include="Pos\Data\EntPOSCode.vb" />
+    <Compile Include="Que\Business\CtProcessQuestionary.vb" />
+    <Compile Include="Que\Business\CtQuestionary.vb" />
+    <Compile Include="Que\Business\CtWriteQuestionary.vb" />
+    <Compile Include="Que\Data\EntHeadingDegree.vb" />
+    <Compile Include="Que\Data\EntQuestionary.vb" />
+    <Compile Include="Que\Data\EntQuestionaryAnswer.vb" />
+    <Compile Include="Que\Data\EntQuestionaryAnswerAmount.vb" />
+    <Compile Include="Que\Data\EntQuestionaryHeading.vb" />
+    <Compile Include="Que\Data\EntQuestionaryItem.vb" />
+    <Compile Include="Que\Data\EntQuestionaryObj.vb" />
+    <Compile Include="Report\Report.vb" />
+    <Compile Include="Rpt\Data\ENT_RPT2500.vb" />
+    <Compile Include="Rpt\Data\ENT_RPTList.vb" />
+    <Compile Include="S3\Business\CtS3001.vb" />
+    <Compile Include="S3\Data\ENT_S3001.vb" />
+    <Compile Include="Session\Business\CtLogin.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Session\Data\EntSession.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sys\Business\CtFTPInfo.vb" />
+    <Compile Include="Sys\Business\CtScheduleInfo.vb" />
+    <Compile Include="Sys\Business\CtSYSC001.vb" />
+    <Compile Include="Sys\Business\CtSysOpertaion.vb" />
+    <Compile Include="Sys\Business\CtSYST010.vb" />
+    <Compile Include="Sys\Business\PatternCt.vb" />
+    <Compile Include="Sys\Data\ENT_SYSC001.vb" />
+    <Compile Include="Sys\Data\ENT_SYST010.vb" />
+    <Compile Include="Sys\Data\ENT_SYST011.vb" />
+    <Compile Include="Sys\Data\ENT_SYST012.vb" />
+    <Compile Include="Sys\Data\ENT_SYST020.vb" />
+    <Compile Include="Sys\Data\ENT_SYST030.vb" />
+    <Compile Include="Sys\Data\ENT_SYST031.vb" />
+    <Compile Include="Sys\Data\ENT_SYST040.vb" />
+    <Compile Include="Sys\Data\ENT_SYST050.vb" />
+    <Compile Include="Sys\Data\SYST001.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Comm\Template\BASE_ATTR" />
+    <None Include="Comm\Template\BASE_VALID_INPUT" />
+    <None Include="Comm\Template\BASE_VALID_INPUT_LOOP" />
+    <None Include="Comm\Template\CT_BASE_CLASS" />
+    <None Include="Comm\Template\CT_BASE_METHOG" />
+    <None Include="Comm\Template\C_BASE_ATTR" />
+    <None Include="Comm\Template\C_BASE_VALID_INPUT" />
+    <None Include="Comm\Template\C_BASE_VALID_INPUT_LOOP" />
+    <None Include="Comm\Template\C_CT_BASE_CLASS" />
+    <None Include="Comm\Template\C_CT_BASE_METHOG" />
+    <None Include="Comm\Template\C_ENT_BASE_CLASS" />
+    <None Include="Comm\Template\C_ENT_BASE_METHOG" />
+    <None Include="Comm\Template\EM_TEMPLATE" />
+    <None Include="Comm\Template\EM_TEMPLATE_PROPERTYS" />
+    <None Include="Comm\Template\EM_TEST_BASE" />
+    <None Include="Comm\Template\ENT_BASE_CLASS" />
+    <None Include="Comm\Template\ENT_BASE_METHOG" />
+    <None Include="compiler.bat" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Comm\CommonUI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WinSCP.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
