@@ -44,7 +44,7 @@ namespace Demo1.Controllers
         {
             ViewBag.Message = "Menu";
 
-            srv.GetMenu();
+            //srv.GetMenu();
 
             return View();
         }
@@ -53,7 +53,7 @@ namespace Demo1.Controllers
         /// 公佈欄
         /// </summary>
         [HttpPost]
-        public ActionResult Bulltin()
+        public ActionResult Bullitin()
         {
             ViewBag.Message = "Bulltin";
             

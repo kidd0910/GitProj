@@ -3352,6 +3352,8 @@
             </summary>
             <returns></returns>
         </member>
+        <!-- Badly formed XML comment ignored for member "M:Acer.Util.ModelUtil.GetModelKeys``1(``0)" -->
+        <!-- Badly formed XML comment ignored for member "M:Acer.Util.ModelUtil.Conver``2(``0)" -->
         <member name="T:Acer.Util.MultiProcess">
             <summary>
             處理多處理序的共用函式
@@ -3494,6 +3496,85 @@
             </summary>
             <param name="varName">變數名稱</param>
             <param name="obj">變數值</param>
+        </member>
+        <member name="M:Acer.Util.StringUtil.GetNumber(System.Object)">
+            <summary>
+            空字串轉為NULL
+            </summary>
+        </member>
+        <member name="M:Acer.Util.StringUtil.GetMoneyCurrency(System.String)">
+            <summary>
+            取金錢格式自串 (增加每三位逗號)
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Util.StringUtil.GetMoneyCurrency(System.Int32)">
+            <summary>
+            取金錢格式自串 (增加每三位逗號)
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Util.StringUtil.GetMoneyValue(System.String)">
+            <summary>
+            取金錢值 (移除每三位逗號)
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Acer.Util.StringUtil.Substring(System.String,System.Int32,System.Int32)">
+            <summary>
+            依據索引取字串值
+            </summary>
+            <param name="content">要處理資料</param>
+            <param name="startIndex">起始索引</param>
+            <param name="endIndex">結束索引</param>
+            <returns>取得的字串</returns>
+        </member>
+        <member name="M:Acer.Util.StringUtil.ConvertStr(System.String)">
+            <summary>
+            將字串反向, 例如: 傳入 '1234', 傳回 '4321'
+            </summary>
+            <param name="str">欲反向的字串</param>
+            <returns>處理後的字串</returns>
+        </member>
+        <member name="M:Acer.Util.StringUtil.GetCNum(System.String,System.Int32)">
+            <summary>
+            將數字字串轉換為中文的數字資料格式
+            Exp: 12345.06
+            種類 0:一萬二千零四十五點零六,
+            1:壹萬貳仟零肆拾伍點零陸,
+            2:一萬二千零四十五點０六, 1234506
+            3:一二０四五０六
+            須注意種類'3'一般為轉換號的數字不可輸入非數字型態資料
+            </summary>
+            <param name="strNum">字串格式的數字內容</param>
+            <param name="cNumType">轉換格式</param>
+            <returns>傳回中文的數字字碼</returns>
+        </member>
+        <member name="M:Acer.Util.StringUtil.ToNarrow(System.String)">
+            <summary>
+            字串轉半形
+            </summary>
+        </member>
+        <member name="M:Acer.Util.StringUtil.CNumTONum(System.String)">
+            <summary>
+            中文數字轉阿拉伯數字
+            </summary>
+        </member>
+        <member name="M:Acer.Util.StringUtil.CNumTONumAddr(System.String)">
+            <summary>
+            功能說明: 將地址切成六個區塊並存至陣列中。
+            傳入參數說明: strAddr 傳入地址。
+            回傳參數說明: 
+            string(0) 縣市鄉鎮市區。
+            string(1) 里村。
+            string(2) 鄰(數字)。
+            string(3) 鄰。
+            string(4) 路街段。
+            string(5) 巷弄號樓等剩下地址。
+            </summary>
         </member>
         <member name="T:Acer.Util.Timer">
             <summary>

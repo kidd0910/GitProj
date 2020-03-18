@@ -17,14 +17,14 @@
 
 .login-main-frame {
     /*min-height: 100%;*/ /*682px;*/
-    /*background: url(../Images/login_bg.jpg);*/   
-    background-color: lightblue;
+    /*background: url(../Images/login_bg.jpg);*/
+    background-color: #0099cc;
     background-repeat: no-repeat;
     background-position: center top;
     width: 35%;
     height: 60%;
     margin: 0px auto; /*置中*/
-    border: 1px blue solid;
+    /*border: 1px blue solid;*/
 }
 
 .login-input {

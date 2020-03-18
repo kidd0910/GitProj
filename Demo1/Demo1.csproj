@@ -164,14 +164,16 @@
     </Compile>
     <Compile Include="Models\Base\BaseInit.cs" />
     <Compile Include="Models\Base\IBaseInit.cs" />
-    <Compile Include="Models\Services\BaseService.cs" />
+    <Compile Include="Models\Default\DefaultModel.cs" />
+    <Compile Include="Models\Base\BaseService.cs" />
+    <Compile Include="Models\Default\DefaultService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Models\Services\Home\HomeService.cs" />
+    <Compile Include="Models\Home\HomeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -392,13 +394,14 @@
     <Content Include="Views\EXP\Index.cshtml" />
     <Content Include="Views\EXP\Page1.cshtml" />
     <Content Include="Views\Home\Menu.cshtml" />
-    <Content Include="Views\Home\Bulltin.cshtml" />
     <Content Include="Views\Home\Page1.cshtml" />
+    <Content Include="Views\Home\Bullitin.cshtml" />
+    <Content Include="Views\Default\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Log\" />
-    <Folder Include="Models\Home\" />
+    <Folder Include="Models\Services\Home\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

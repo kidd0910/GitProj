@@ -1,53 +1,20 @@
-﻿@* 登入頁面 *@
+﻿@{
+    Layout = "";
+    Html.RenderPartial("Login");
+}
 
-@{
-        ViewBag.Title = "Index";
-        Layout = "";
-   }
-<html>
-<head>
-    <title>TEST Login</title>
-    @Styles.Render("~/Content/CFCMData")
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/vue")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/util")
-</head>
-<body class="Login-Body">
-    @* Init *@
     <script type="text/javascript">
-        var BASE_ROOT_URL = '@Url.Content("~/")';
-        var BASE_NENU_URL = '@ViewContext.RouteData.Values["controller"]';
+        // 其他頁面
+        $(document).ready(function () {
+            // start page
+            LOGIN.view = true;
+            LOGIN.doInit();
+        });
     </script>
 
-    <form id="form1">
-        <div class="login-main-frame" id="LOGIN">
-            <div class="login-input">
-                <div>
-                    <span>ID : </span><input id="ID" type="text" />
-                </div>
-                <div class="login-input-padding">
-                    <span>PW : </span><input id="PW" type="text" />
-                </div>
-                <div class="inputBTN-padding">
-                    <div class="loginBTN">
-                        <input type="button" class="loginBTN" id="LOGIN_BTN" v-on:click="doLogin()" />
-                        @* 換頁時，這邊要用input類型，若使用button則要注意其他事項 *@
-                    </div>
-                    <div class="clearBTN-padding">
-                        <input type="button" class="clearBTN" id="CLEAR_BTN" />
-                    </div>
-                </div>
-            </div>
 
-            <div id="USER_MSG">{{message}}</div>            
 
-        </div>
 
-        @* JS *@
-        <script src="~/Scripts/Pages/Login/Login.js" defer>
-        </script>
 
-    </form>
-</body>
-</html>
+
+

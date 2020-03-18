@@ -5,11 +5,17 @@
 	Load Menu
 	權限控管
 	Menu Perform
-[X]Log機制
+[/]Log機制
 	2020/3/5 : Exception時沒有印出來錯誤訊息
 	2020/3/6 : 在適當的時機執行DoLog，寫內容
+	2020/3/17 : 正在實作登入
+		logic
+		loading db
+		auth
+		session
+		redirection		
 [/]DB機制
-	2002/3/6 : 應該是可以了吧
+	2002/3/6 : 應該是可以了吧		
 []Grid分頁
 []DD新設計
 	

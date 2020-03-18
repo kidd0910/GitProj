@@ -5,7 +5,7 @@
         var data = {
             view: false,
             init: false,
-            controller: 'LOGIN',
+            controller: 'Default',
             actions: {},
             button: {},
             options: {},
@@ -17,9 +17,11 @@
         };
         // url
         data.actions = {
-            QueryGrid: data.controller + '/QueryGrid',
-            Export: data.controller + '/Export',
-            Print: data.controller + '/Print'
+            //QueryGrid: data.controller + '/QueryGrid',
+            //Export: data.controller + '/Export',
+            //Print: data.controller + '/Print',            
+            Init: data.controller + '/Init', 
+            Login: data.controller + '/Login'
         };
         // button 操作權限設定
         //data.button = {
@@ -41,21 +43,67 @@
     },
     methods: {
         doInit: function () {
-            var self = this;
-            //form.message.info = 'aaaaaa';
-            //if (!self.init) {
-            //    BaseUtil.CreateFormModel(self.form, ['SEND_ORG_ID', 'SEND_ORG_NAME']);
-            //    AuthUtil.GetButtonUsed(self.controller, self.button);
-            //    self.init = true;
-            //}
-        
+            var self = this;            
+            if (!self.init) {
+                var requestOption = {
+                    url: self.actions.Init,
+                    data: {},
+                    success: function (datas) {
+                        // 產生欄位控制項
+                        // 產生欄位 model
+                        // value:      資料內容
+                        // required:   必填欄位
+                        // disabled:   停用狀態
+                        // display:    隱藏狀態
+                        // message:    驗證訊息
+                        // 加入其他欄位 >> datas.formColumns.push('XXX', ...);
+                        //datas.formColumns.push('COL_E', 'COL_F', 'COL_G', 'COL_H', 'COL_I', 'COL_J');
+                        BaseUtil.CreateFormModel(self.form, datas.formColumns);
+                        //self.form.COL_A.display = false;
+                        //self.form.COL_B.display = false;
+                        //self.form.COL_C.display = false;
+                        //self.form.COL_D.display = false;                       
+                        //// 指定型態，預設字串
+                        //self.form.COL_G.value = true;
+                        //self.form.COL_H.value = [];
+                        //self.form.COL_I.value = [];
+                        //// 產生選項
+                        //self.options.COL_D = datas.COL_D;
+                        // 按鈕權限
+                        // AuthUtil.GetButtonUsed(self.controller, self.button);
+                        // 初始化完成
+                        self.init = true;
+                    }
+                };
+                BaseUtil.Ajax(requestOption);
+            }                    
         },
         goUrlPage: function (url) {
             BaseUtil.DoHref(BASE_ROOT_URL + url);
         },
         doLogin: function () {
-            var url = "Home/Bulltin";//"EXP";
-            BaseUtil.DoHref(BASE_ROOT_URL + url);
+            var url = "Home";//"EXP";
+            //BaseUtil.DoHref(BASE_ROOT_URL + url);
+
+            var self = this;
+            var postData = {
+                ID: self.grid.datas[0].ID.value,
+                PW: self.grid.datas[0].PW.value
+            }
+
+            var requestOption = {
+                url: self.actions.Login,
+                data: { model: postData },
+                success: function (data) {                   
+                    self.grid.datas = [];
+                    BaseUtil.CreateGridDatas(self.grid.datas, data.gridDatas);
+                    //self.grid.paginaiton = data.paginaiton;
+                    if (self.grid.datas[0].ERROR_MESSAGE == '') {
+                        BaseUtil.DoHref(BASE_ROOT_URL + url);
+                    }
+                }
+            };
+            BaseUtil.Ajax(requestOption);
         }
         //doQuery: function (type) {
         //    var self = this;
