@@ -72,6 +72,7 @@
                         // 按鈕權限
                         // AuthUtil.GetButtonUsed(self.controller, self.button);
                         // 初始化完成
+                        self.form.ID.value = 'vvvvv';
                         self.init = true;
                     }
                 };
@@ -87,8 +88,8 @@
 
             var self = this;
             var postData = {
-                ID: self.grid.datas[0].ID.value,
-                PW: self.grid.datas[0].PW.value
+                ID: self.form.ID.value,
+                PW: self.form.PW.value
             }
 
             var requestOption = {
