@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Demo1.Services.HomeService;
+using Demo1.Models.Home;
+using Acer.Util;
 
 namespace Demo1.Controllers
 {
@@ -55,9 +57,18 @@ namespace Demo1.Controllers
         [HttpPost]
         public ActionResult Bullitin()
         {
-            ViewBag.Message = "Bulltin";
-            
-            return View();
+            //ViewBag.Message = "Bulltin";
+
+            //return View();
+            BullitinModel model = new BullitinModel();
+            try
+            {
+                model.formColumns = ModelUtil.GetModelKeys<BullitinModel>(new BullitinModel());
+            }
+            finally
+            {
+            }
+            return Json(model);
         }
     }
 }

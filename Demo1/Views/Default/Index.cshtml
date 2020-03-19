@@ -1,16 +1,19 @@
 ﻿@{
-    Layout = "";
+    Layout = "~/Views/Shared/_LayoutDefault.cshtml";
+    
     Html.RenderPartial("Login");
 }
 
-    <script type="text/javascript">
-        // 其他頁面
-        $(document).ready(function () {
-            // start page
+<script type="text/javascript">
+    // 其他頁面
+    $(document).ready(function () {
+        // start page
+         BaseUtil.WaitAjaxEnd(function () {
             LOGIN.view = true;
             LOGIN.doInit();
-        });
-    </script>
+        });        
+    });
+</script>
 
 
 

@@ -32,6 +32,8 @@ namespace Demo1
             bundles.Add(new ScriptBundle("~/bundles/component").Include(
             "~/Scripts/Components/*.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/directive").Include(
+           "~/Scripts/Directives/*.js"));
 
 
             // 使用開發版本的 Modernizr 進行開發並學習。然後，當您

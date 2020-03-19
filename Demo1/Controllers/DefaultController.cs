@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Demo1.Models.Default;
 using Acer.Util;
+using Demo1.Model.Util;
 
 namespace Demo1.Controllers
 {
@@ -38,12 +39,22 @@ namespace Demo1.Controllers
             PageModel model = new PageModel();
             try
             {
-                model.formColumns = ModelUtil.GetModelKeys<QueryModel>(new QueryModel());
+                model.formColumns = ModelUtil.GetModelKeys<QueryModel>(new QueryModel() { 
+                    ID="",
+                    PW="",
+                    MESSAGE = "",
+                    ERROR_MESSAGE = ""
+                });
+                model.ID = "";
+                model.PW = "";
+                model.MESSAGE = "";
+                model.ERROR_MESSAGE = "";
             }
             finally
             {
             }
-            return Json(model);
+            //return Json(model);
+            return JsonUtil.ToJsonResult(model);
         }
 
         /// <summary>
@@ -61,7 +72,8 @@ namespace Demo1.Controllers
             {
             }
             //return View();
-            return Json(model);
+            //return Json(model);
+            return JsonUtil.ToJsonResult(model);
         }
     }
 }

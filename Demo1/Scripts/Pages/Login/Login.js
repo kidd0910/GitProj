@@ -13,7 +13,7 @@
             form: {},
             grid: {},
             confirm: { show: false },
-            message: 'This is demo page'
+            message: 'This is demo page'            
         };
         // url
         data.actions = {
@@ -57,7 +57,8 @@
                         // display:    隱藏狀態
                         // message:    驗證訊息
                         // 加入其他欄位 >> datas.formColumns.push('XXX', ...);
-                        //datas.formColumns.push('COL_E', 'COL_F', 'COL_G', 'COL_H', 'COL_I', 'COL_J');
+                        //datas.formColumns.push('COL_E', 'COL_F', 'COL_G', 'COL_H', 'COL_I', 'COL_J');                        
+                        datas.formColumns.push('TEST');                        
                         BaseUtil.CreateFormModel(self.form, datas.formColumns);
                         //self.form.COL_A.display = false;
                         //self.form.COL_B.display = false;
@@ -73,6 +74,7 @@
                         // AuthUtil.GetButtonUsed(self.controller, self.button);
                         // 初始化完成
                         self.form.ID.value = 'vvvvv';
+                        self.form.TEST.value = 'tettteet';
                         self.init = true;
                     }
                 };
@@ -83,7 +85,7 @@
             BaseUtil.DoHref(BASE_ROOT_URL + url);
         },
         doLogin: function () {
-            var url = "Home";//"EXP";
+            var destinationController = "Home";//"EXP";
             //BaseUtil.DoHref(BASE_ROOT_URL + url);
 
             var self = this;
@@ -99,8 +101,9 @@
                     self.grid.datas = [];
                     BaseUtil.CreateGridDatas(self.grid.datas, data.gridDatas);
                     //self.grid.paginaiton = data.paginaiton;
-                    if (self.grid.datas[0].ERROR_MESSAGE == '') {
-                        BaseUtil.DoHref(BASE_ROOT_URL + url);
+                    //if (self.grid.datas[0].ERROR_MESSAGE == '') {
+                    if (data.ERROR_MESSAGE == '') {
+                        BaseUtil.DoHref(BASE_ROOT_URL + destinationController);
                     }
                 }
             };
