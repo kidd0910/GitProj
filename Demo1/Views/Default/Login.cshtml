@@ -1,0 +1,69 @@
+﻿@* 登入頁面 *@
+
+@{
+    Layout = "";
+}
+
+@* Init *@
+
+
+<script type="text/javascript">
+        var BASE_ROOT_URL = '@Url.Content("~/")';
+        var BASE_NENU_URL = '@ViewContext.RouteData.Values["controller"]';
+</script>
+
+<div id="LOGIN" class="login-main-frame">
+    @*
+        因為在諸多非同步傳輸的當下，造成Script執行完成度不對稱，
+        所以在確定初始化完成前，vue的綁定與相關動作都會有異常，
+        解決方案為Tag [init]偵測
+    *@
+    <div class="login-input" v-if="init">
+        <div>
+            @*<span>ID : </span> <input type="text" v-model.lazy="form.ID.value" />*@
+            <span>ID : </span> <input type="text" v-model="message" />
+            {{message}}
+            <br />
+            {{form.TEST.value}}
+        </div>
+        <div class="login-input-padding">
+            <span>PW : </span><input id="PW" type="text" />
+        </div>
+        <div class="inputBTN-padding">
+            <div class="loginBTN">
+                <input type="button" class="loginBTN" id="LOGIN_BTN" v-on:click="doLogin()" />
+                @* 換頁時，這邊要用input類型，若使用button則要注意其他事項 *@
+            </div>
+            <div class="clearBTN-padding">
+                <input type="button" class="clearBTN" id="CLEAR_BTN" />
+            </div>
+        </div>
+    </div>
+
+    <div id="USER_MSG">{{message}}</div>
+
+</div>
+
+
+
+
+
+
+<div id="MainMask">
+    <vue-mask v-bind:mask="mask"></vue-mask>
+    <vue-message v-bind:message="message"></vue-message>
+</div>
+
+
+@* JS *@
+<script type="text/javascript" src="~/Scripts/Pages/Login/Login.js"> 
+</script>
+
+@* 需要晚些載入 *@
+@*
+    Vue的載入在dom準備好之前，會出錯 [Vue warn]: Cannot find element #XXX
+    因此在dom完全載入後在載入相應的宣告才能有效編譯。
+*@
+<script src="~/Scripts/Layout/mainMask.js" defer></script>
+@* 用這方式載入似乎存在些問題要解決 *@
+@*@Scripts.Render("~/bundles/layout")*@

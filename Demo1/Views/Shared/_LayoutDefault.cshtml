@@ -1,0 +1,35 @@
+﻿@*
+
+    Demo1
+    Layout Default
+    無框架，僅載入元件
+
+*@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>SCW-Demo1-Login</title>
+    @Styles.Render("~/Content/CFCMData")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/vue")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/util")
+    @Scripts.Render("~/bundles/component")
+    @Scripts.Render("~/bundles/directive")
+    @Scripts.Render("~/bundles/base")
+</head>
+<body>
+    <div>@RenderBody()</div>
+
+    @Scripts.Render("~/bundles/layout")
+    @*
+        Vue的載入在dom準備好之前，會出錯 [Vue warn]: Cannot find element #XXX
+        因此在dom完全載入後在載入相應的宣告才能有效編譯。
+    *@
+
+</body>
+</html>
