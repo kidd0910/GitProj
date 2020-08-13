@@ -350,6 +350,7 @@
     <Content Include="Scripts\Frameworks\bootstrap.js" />
     <Content Include="Scripts\Frameworks\bootstrap.min.js" />
     <Content Include="APConfig.config" />
+    <Content Include="conf\env.conf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -405,6 +406,7 @@
     <Content Include="Views\Home\Bullitin.cshtml" />
     <Content Include="Views\Default\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutDefault.cshtml" />
+    <Content Include="Views\Default\DoInit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

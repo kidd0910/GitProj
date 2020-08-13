@@ -1,138 +1,165 @@
-using System;
+ï»¿using System;
 using System.Text;
 using System.Collections;
 using Acer.Util;
 using Acer.File;
 using Acer.Err;
 using System.Configuration;
+using Acer.Log;
 
 namespace Acer.Apps
 {
-	/// <summary>
-	/// ³B²z§ì¨ú³]©wÀÉ (env.conf) ¬ÛÃö³B²z°Ê§@
-	/// </summary>
-	public static class APConfig
-	{
-	#region Äİ©Ê
-		
-	#endregion
-		private	static	object	lickObj	=	new object();
-		
-		/// <summary>
-		/// ³]©wÀÉªì©l¤Æ
-		/// </summary>
-		public static void Init()
-		{
-			lock (lickObj)
-			{
-				//2011/02/11 nono for ªF§d½Õ¾ã, ·íµL³]©wÀÉ®É¤£³B²z
-				if (!System.IO.File.Exists(FileUtil.LastSeparator(FileUtil.RootPath) + @"conf\env.conf"))
-					return;
+    
+    /// <summary>
+    /// è™•ç†æŠ“å–è¨­å®šæª” (env.conf) ç›¸é—œè™•ç†å‹•ä½œ
+    /// </summary>
+    public static class APConfig
+    {
+        #region å±¬æ€§       
+        #endregion
+        private static object lickObj = new object();
+        
+        /// <summary>
+        /// è¨­å®šæª”åˆå§‹åŒ–
+        /// </summary>
+        public static void Init()
+        {
+            lock (lickObj)
+            {
+                //2011/02/11 nono for æ±å³èª¿æ•´, ç•¶ç„¡è¨­å®šæª”æ™‚ä¸è™•ç†
+                if (!System.IO.File.Exists(FileUtil.LastSeparator(FileUtil.RootPath) + @"conf\env.conf"))
+                {
+                    string secName = "appSettings";
+                    ConfigurationManager.RefreshSection(secName);
+                    ConfigurationManager.GetSection(secName);
+                }
+                else
+                {
+                    Hashtable dataMap = new Hashtable();
+                    Hashtable propMap = new Hashtable();
+                    ArrayList content = FileUtil.ReadFile(FileUtil.LastSeparator(FileUtil.RootPath) + @"conf\env.conf", System.Text.Encoding.GetEncoding("BIG5"));
+                    string tmpStr = "";
+                    string tmpKey = "";
 
-				Hashtable	dataMap	=	new Hashtable();
-				Hashtable	propMap	=	new Hashtable();
-				ArrayList	content =	FileUtil.ReadFile(FileUtil.LastSeparator(FileUtil.RootPath) + @"conf\env.conf", System.Text.Encoding.GetEncoding("BIG5"));
-				string		tmpStr	=	"";
-				string		tmpKey	=	"";
-					
-				for (int i = 0; i < content.Count; i++)
-				{
-					tmpStr	=	content[i].ToString();
-					
-					if (tmpStr.StartsWith("#") || tmpStr.IndexOf("=") == -1)
-						continue;
+                    for (int i = 0; i < content.Count; i++)
+                    {
+                        tmpStr = content[i].ToString();
 
-					if (tmpStr.StartsWith("%"))
-					{
-						tmpKey	=	tmpStr.Substring(1, tmpStr.IndexOf("=") - 1);
-						if (tmpStr.Substring(tmpStr.IndexOf("=") + 1).Equals("ROOT_PATH"))
-						{
-							if (FileUtil.RootPath.EndsWith(@"\"))
-								propMap[tmpKey]	=	FileUtil.RootPath.Remove(FileUtil.RootPath.Length - 1, 1);
-							else
-								propMap[tmpKey]	=	FileUtil.RootPath;
-						}
-						else
-							propMap[tmpKey]	=	tmpStr.Substring(tmpStr.IndexOf("=") + 1);
-					}
-					else
-						dataMap[tmpStr.Substring(0, tmpStr.IndexOf("="))]	=	tmpStr.Substring(tmpStr.IndexOf("=") + 1);
-				}
-				MultiProcess.SetGlobalValue("APCONFIG_DATAMAP", dataMap);
-				MultiProcess.SetGlobalValue("APCONFIG_PROPMAP", propMap);
-			}
-		}
+                        if (tmpStr.StartsWith("#") || tmpStr.IndexOf("=") == -1)
+                            continue;
 
-		/// <summary>
-		/// ¨ú±o WEB Root ¹ê»Ú¸ô®| [REAL_PATH]
-		/// </summary>
-		public static string RealPath
-		{
-			get{return FileUtil.LastSeparator(GetProperty("REAL_PATH"));}
-		}
-
-		/// <summary>
-		/// ¨ú±oÀô¹ÒÅÜ¼Æ
-		/// </summary>
-		/// <param name="keyStr">±ı¨ú±oªºÀô¹ÒÅÜ¼Æ¤º®e</param>
-		/// <returns>Àô¹ÒÅÜ¼Æ¤º®e</returns>
-		public static string GetProperty(string keyStr)
-		{
-			//2011/02/11 nono add ±N³]©wÀÉ©âÂ÷¦Ü Web.config ¤¤
-			//if (APConfig.GetProperty("DATA_PROJECT").Equals("ªF§d¤j¾Ç¤G´Á") || APConfig.GetProperty("DATA_PROJECT").Equals("ªF§d¤j¾Ç¤@´Á") || APConfig.GetProperty("DATA_PROJECT").Equals("KNUE4"))
-			//if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings["DATA_PROJECT"]))
-			//2011/05/23 nono ½Õ¾ã, ·í¦³³]©wÀÉ®É³B²z
-			if (!System.IO.File.Exists(FileUtil.LastSeparator(FileUtil.RootPath) + @"conf\env.conf"))
-			{
-				if (keyStr.Equals("pwdkey"))
-					return "??qfw?'";
-
-				string		value	=	Utility.DecryptTagContent(ConfigurationManager.AppSettings[keyStr].ToString());
-				ArrayList	tagAry	=	Utility.GetTagList(value, "[", "]");
-
-				if (tagAry.Count > 0)
-				{
-					foreach(string tag in tagAry)
-					{
-						if (tag.Equals("ROOT_PATH"))
-						{
-							if (FileUtil.RootPath.EndsWith(@"\"))
-								value	=	value.Replace("[" + tag + "]", FileUtil.RootPath.Remove(FileUtil.RootPath.Length - 1, 1));
-							else
-								value	=	value.Replace("[" + tag + "]", FileUtil.RootPath);
-						}
-						else if (ConfigurationManager.AppSettings["%" + tag] != null)
-						{
-							value	=	value.Replace("[" + tag + "]", ConfigurationManager.AppSettings["%" + tag].ToString());
-						}
-					}
-				}
-
-				return value;
-			}
-
-			Hashtable	dataMap	=	(Hashtable)MultiProcess.GetGlobalValue("APCONFIG_DATAMAP");
-			Hashtable	propMap	=	(Hashtable)MultiProcess.GetGlobalValue("APCONFIG_PROPMAP");
-
-			//=== ¦A¨ú¤£¨ì®ÉÅã¥Ü°T®§ ===
-			if (dataMap == null || dataMap[keyStr] == null)
-			{
-				throw new MustSetupEnvException("¥²¶·³]©wÀô¹ÒÅÜ¼Æ " + keyStr);
-			}
-
-			string	result	=	dataMap[keyStr].ToString();
-			if (result.IndexOf("%") != -1)
-			{
-				//=== ¸m´«°Ñ¼Æ³]©w ===
-				foreach (string key in propMap.Keys)
-					result	=	result.Replace("%" + key + "%", propMap[key].ToString());
-			}
-
-			return result;
-		}
+                        if (tmpStr.StartsWith("%"))
+                        {
+                            tmpKey = tmpStr.Substring(1, tmpStr.IndexOf("=") - 1);
+                            if (tmpStr.Substring(tmpStr.IndexOf("=") + 1).Equals("ROOT_PATH"))
+                            {
+                                if (FileUtil.RootPath.EndsWith(@"\"))
+                                    propMap[tmpKey] = FileUtil.RootPath.Remove(FileUtil.RootPath.Length - 1, 1);
+                                else
+                                    propMap[tmpKey] = FileUtil.RootPath;
+                            }
+                            else
+                                propMap[tmpKey] = tmpStr.Substring(tmpStr.IndexOf("=") + 1);
+                        }
+                        else
+                            dataMap[tmpStr.Substring(0, tmpStr.IndexOf("="))] = tmpStr.Substring(tmpStr.IndexOf("=") + 1);
+                    }
+                    MultiProcess.SetGlobalValue("APCONFIG_DATAMAP", dataMap);
+                    MultiProcess.SetGlobalValue("APCONFIG_PROPMAP", propMap);
+                }
+            }
+        }
 
         /// <summary>
-        /// ¨ú±oÀô¹ÒÅÜ¼Æ­È¡A­Y¥¼³]©w«h±Ä¥Î¹w³]­È
+        /// å–å¾— WEB Root å¯¦éš›è·¯å¾‘ [REAL_PATH]
+        /// </summary>
+        public static string RealPath
+        {
+            get { return FileUtil.LastSeparator(GetProperty("REAL_PATH")); }
+        }
+
+        /// <summary>
+        /// å–å¾—ç’°å¢ƒè®Šæ•¸
+        /// </summary>
+        /// <param name="keyStr">æ¬²å–å¾—çš„ç’°å¢ƒè®Šæ•¸å…§å®¹</param>
+        /// <returns>ç’°å¢ƒè®Šæ•¸å…§å®¹</returns>
+        public static string GetProperty(string keyStr)
+        {
+            string value = "";
+            string result = "";
+
+            try
+            {
+
+                //2011/02/11 nono add å°‡è¨­å®šæª”æŠ½é›¢è‡³ Web.config ä¸­
+                //if (APConfig.GetProperty("DATA_PROJECT").Equals("æ±å³å¤§å­¸äºŒæœŸ") || APConfig.GetProperty("DATA_PROJECT").Equals("æ±å³å¤§å­¸ä¸€æœŸ") || APConfig.GetProperty("DATA_PROJECT").Equals("KNUE4"))
+                //if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings["DATA_PROJECT"]))
+                //2011/05/23 nono èª¿æ•´, ç•¶æœ‰è¨­å®šæª”æ™‚è™•ç†
+                if (!System.IO.File.Exists(FileUtil.LastSeparator(FileUtil.RootPath) + @"conf\env.conf"))
+                {
+                    if (keyStr.Equals("pwdkey"))
+                        return "??qfw?'";
+
+                    //string value = Utility.DecryptTagContent(ConfigurationManager.AppSettings[keyStr].ToString());
+                    value = Utility.DecryptTagContent(ConfigurationManager.AppSettings[keyStr].ToString());
+                    ArrayList tagAry = Utility.GetTagList(value, "[", "]");
+
+                    if (tagAry.Count > 0)
+                    {
+                        foreach (string tag in tagAry)
+                        {
+                            if (tag.Equals("ROOT_PATH"))
+                            {
+                                if (FileUtil.RootPath.EndsWith(@"\"))
+                                    value = value.Replace("[" + tag + "]", FileUtil.RootPath.Remove(FileUtil.RootPath.Length - 1, 1));
+                                else
+                                    value = value.Replace("[" + tag + "]", FileUtil.RootPath);
+                            }
+                            else if (ConfigurationManager.AppSettings["%" + tag] != null)
+                            {
+                                value = value.Replace("[" + tag + "]", ConfigurationManager.AppSettings["%" + tag].ToString());
+                            }
+                        }
+                    }
+
+
+                    return value;
+                }
+
+                Hashtable dataMap = (Hashtable)MultiProcess.GetGlobalValue("APCONFIG_DATAMAP");
+                Hashtable propMap = (Hashtable)MultiProcess.GetGlobalValue("APCONFIG_PROPMAP");
+
+                //=== å†å–ä¸åˆ°æ™‚é¡¯ç¤ºè¨Šæ¯ ===
+                if (dataMap == null)
+                {
+                    throw new MustSetupEnvException("ç’°å¢ƒè®Šæ•¸è³‡æ–™çµæ§‹ç‚ºç©º " + keyStr);
+                }
+
+                if ( dataMap[keyStr] == null)
+                {                    
+                    throw new MustSetupEnvException("å¿…é ˆè¨­å®šç’°å¢ƒè®Šæ•¸ " + keyStr);                    
+                }
+
+                //string result = dataMap[keyStr].ToString();
+                result = dataMap[keyStr].ToString();
+                if (result.IndexOf("%") != -1)
+                {
+                    //=== ç½®æ›åƒæ•¸è¨­å®š ===
+                    foreach (string key in propMap.Keys)
+                        result = result.Replace("%" + key + "%", propMap[key].ToString());
+                }
+
+            }
+            catch
+            {
+                //å–è¨­å®šå€¼å¤±æ•—
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// å–å¾—ç’°å¢ƒè®Šæ•¸å€¼ï¼Œè‹¥æœªè¨­å®šå‰‡æ¡ç”¨é è¨­å€¼
         /// </summary>
         /// <param name="keyStr"></param>
         /// <param name="default_value"></param>
@@ -149,31 +176,31 @@ namespace Acer.Apps
             }
         }
 
-		/// <summary>
-		/// ¨ú±o°Ñ¼Æ³]©w²M³æ
-		/// </summary>
-		/// <returns>°Ñ¼Æ³]©w²M³æ¦r¦ê &lt;br&gt; ´«¦æ</returns>
-		public static string GetPropertyList()
-		{
-			Hashtable	dataMap	=	(Hashtable)MultiProcess.GetGlobalValue("APCONFIG_DATAMAP");
-			Hashtable	propMap	=	(Hashtable)MultiProcess.GetGlobalValue("APCONFIG_PROPMAP");
-			StringBuilder	tmpBuff	=	new StringBuilder();
+        /// <summary>
+        /// å–å¾—åƒæ•¸è¨­å®šæ¸…å–®
+        /// </summary>
+        /// <returns>åƒæ•¸è¨­å®šæ¸…å–®å­—ä¸² &lt;br&gt; æ›è¡Œ</returns>
+        public static string GetPropertyList()
+        {
+            Hashtable dataMap = (Hashtable)MultiProcess.GetGlobalValue("APCONFIG_DATAMAP");
+            Hashtable propMap = (Hashtable)MultiProcess.GetGlobalValue("APCONFIG_PROPMAP");
+            StringBuilder tmpBuff = new StringBuilder();
 
-			//=== ÅÜ¼Æ ===
-			tmpBuff.Append("<font color=blue>ÅÜ¼Æ</font><br>");
-			foreach (string key in propMap.Keys)
-			{
-				tmpBuff.Append("<font color=red>[" + key + "]:</font> " + propMap[key].ToString() + "<br>");
-			}
+            //=== è®Šæ•¸ ===
+            tmpBuff.Append("<font color=blue>è®Šæ•¸</font><br>");
+            foreach (string key in propMap.Keys)
+            {
+                tmpBuff.Append("<font color=red>[" + key + "]:</font> " + propMap[key].ToString() + "<br>");
+            }
 
-			//=== °Ñ¼Æ ===
-			tmpBuff.Append("<br><font color=blue>°Ñ¼Æ</font><br>");
-			foreach (string key in dataMap.Keys)
-			{
-				tmpBuff.Append("<font color=red>[" + key + "]:</font> " + GetProperty(key) + "<br>");
-			}
+            //=== åƒæ•¸ ===
+            tmpBuff.Append("<br><font color=blue>åƒæ•¸</font><br>");
+            foreach (string key in dataMap.Keys)
+            {
+                tmpBuff.Append("<font color=red>[" + key + "]:</font> " + GetProperty(key) + "<br>");
+            }
 
-			return tmpBuff.ToString();
-		}
-	}
+            return tmpBuff.ToString();
+        }
+    }
 }

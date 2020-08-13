@@ -33,7 +33,7 @@ namespace Demo1.Controllers
             return View();
         }
 
-        [HttpPost]
+        //[HttpPost]
         public ActionResult Init()
         {
             PageModel model = new PageModel();
@@ -48,12 +48,12 @@ namespace Demo1.Controllers
                 model.ID = "";
                 model.PW = "";
                 model.MESSAGE = "";
-                model.ERROR_MESSAGE = "";
+                model.ERROR_MESSAGE = "";               
             }
             finally
             {
             }
-            //return Json(model);
+            //return View();
             return JsonUtil.ToJsonResult(model);
         }
 
@@ -74,6 +74,25 @@ namespace Demo1.Controllers
             //return View();
             //return Json(model);
             return JsonUtil.ToJsonResult(model);
+        }
+
+        /// <summary>
+        /// Init
+        /// 初始化參數
+        /// 包括：env.conf
+        /// </summary>
+        //[HttpPost]
+        public ActionResult DoInit()
+        {
+            try
+            {
+                srv.doInit();
+            }
+            finally
+            {
+            }
+
+            return View();
         }
     }
 }

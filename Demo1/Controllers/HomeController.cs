@@ -46,7 +46,7 @@ namespace Demo1.Controllers
         {
             ViewBag.Message = "Menu";
 
-            //srv.GetMenu();
+            List<MenuModel> menuList = srv.GetMenu();
 
             return View();
         }

@@ -1,21 +1,23 @@
-# 2020/02/26 #
-�W�[���X�d�����, �ݩ� overflow
-�վ�css�Ahtml�Pbody���ҮM��vh,vw
-[/]menu����(controller, view)
+﻿# 2020/02/26 #
+增加溢出範圍機制, 屬性 overflow
+調整css，html與body標籤套用vh,vw
+[]APConfig機制
+	目前嘗試到加在webConfig是有效的，但是APconfig作用是?
+[/]menu部分(controller, view)
 	Load Menu
-	�v������
+	權限控管
 	Menu Perform
-[/]Log����
-	2020/3/5 : Exception�ɨS���L�X�ӿ��~�T��
-	2020/3/6 : �b�A�����ɾ�����DoLog�A�g���e
-	2020/3/17 : ���b��@�n�J
+[/]Log機制
+	2020/3/5 : Exception時沒有印出來錯誤訊息
+	2020/3/6 : 在適當的時機執行DoLog，寫內容
+	2020/3/17 : 正在實作登入
 		logic
 		loading db
 		auth
 		session
 		redirection		
-[/]DB����
-	2002/3/6 : ���ӬO�i�H�F�a		
-[]Grid����
-[]DD�s�]�p
+[/]DB機制
+	2002/3/6 : 應該是可以了吧		
+[]Grid分頁
+[]DD新設計
 	
