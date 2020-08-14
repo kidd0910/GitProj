@@ -1,7 +1,16 @@
 ﻿<div id="BULLITIN" >
-    <div>
+    <div v-if="init" v-show="init">
         <span>{{form.MESSAGE.value}}</span> 
     </div>
 </div>
+
+@* 備註：
+   錯誤訊息
+    Vue.js error [Error when rendering root instance] 
+    通常是指在vue還沒運作完成時，就呼叫value
+    因此通常在外層標籤中會加上v-if，讓接下來Vue要做的事情去等待init=true的時候再動作。
+
+*@
+
 
 <script type="text/javascript" src="~/Scripts/Pages/Home/Bullitin.js" defer></script>

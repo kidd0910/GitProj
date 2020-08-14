@@ -17,10 +17,21 @@ namespace Demo1.Models.Home
     /// </summary>
     public class MenuModel
     {
-        public string Text {get;set;}
+        public string LEVEL { get; set; }
+        public string TEXT {get;set;}
         public string URL {get; set; }
-        public string ChildText { get; set; }
-        public string FatherText { get; set; }
+        public List<MenuModel> CHILD { get; set; }
+        public string FATHER { get; set; }
+
+        public string DIR_ID { get; set; }
+        public string DIR_NM { get; set; }
+        public string DIR_SORT { get; set; }
+        public string SUB_DIR_ID { get; set; }
+        public string SUB_DIR_NM { get; set; }
+        public string SUB_DIR_SORT { get; set; }
+        public string PROG_CD { get; set; }
+        public string PROG_NM { get; set; }
+        public string PROG_SORT { get; set; }
     }
 
 }

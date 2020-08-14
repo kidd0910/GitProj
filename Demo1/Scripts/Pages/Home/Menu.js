@@ -27,6 +27,10 @@
         BaseUtil.Ajax(requestOption);
     },
     methods: {
+        //印Log for Debug
+        log(item) {
+            //console.log(item)
+        },
         addEven: function () {
             $(".menu-node-1 > span").click(function () {
                 if ($(this).hasClass("current")) {

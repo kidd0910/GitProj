@@ -48,7 +48,7 @@ namespace Demo1.Controllers
 
             List<MenuModel> menuList = srv.GetMenu();
 
-            return View();
+            return Json(menuList);
         }
 
         /// <summary>
@@ -64,6 +64,7 @@ namespace Demo1.Controllers
             try
             {
                 model.formColumns = ModelUtil.GetModelKeys<BullitinModel>(new BullitinModel());
+                model.MESSAGE = "Bullitin";
             }
             finally
             {

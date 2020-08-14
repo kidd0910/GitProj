@@ -57,6 +57,9 @@ namespace Demo1.Services.HomeService
             }
         }
 
+        /// <summary>
+        /// 產生測試Munu
+        /// </summary>
         private List<MenuModel> GetMenuList_TEST()
         {
             try
@@ -64,13 +67,39 @@ namespace Demo1.Services.HomeService
                 WriteLogMehtodStart(MethodBase.GetCurrentMethod().Name);
 
                 List<MenuModel> menuList = new List<MenuModel>();
-                MenuModel nodeOfMenu_01 = new MenuModel();
-                nodeOfMenu_01.Text = "首頁";
-                menuList.Add(nodeOfMenu_01);
+                MenuModel mainMenu = new MenuModel();
+                //mainMenu.LEVEL = "0";
+                //mainMenu.TEXT = "首頁";
+                //menuList.Add(mainMenu);
 
-                MenuModel nodeOfMenu_02 = new MenuModel();
-                nodeOfMenu_02.Text = "單檔維護";
-                menuList.Add(nodeOfMenu_02);
+                List<MenuModel> childList = new List<MenuModel>();
+                MenuModel childMenu = new MenuModel();
+
+                mainMenu = new MenuModel();
+                mainMenu.LEVEL = "0";
+                mainMenu.TEXT = "基本功能";
+                childList = new List<MenuModel>();
+                childMenu = new MenuModel();
+                childMenu.LEVEL = "1";
+                childMenu.TEXT = "單檔維護";
+                childList.Add(childMenu);
+                childMenu = new MenuModel();
+                childMenu.LEVEL = "1";
+                childMenu.TEXT = "頁籤";
+                childList.Add(childMenu);
+                mainMenu.CHILD = childList;
+                menuList.Add(mainMenu);
+
+                mainMenu = new MenuModel();
+                mainMenu.LEVEL = "0";
+                mainMenu.TEXT = "Vue功能";
+                childList = new List<MenuModel>();
+                childMenu = new MenuModel();
+                childMenu.LEVEL = "1";
+                childMenu.TEXT = "...";
+                childList.Add(childMenu);
+                mainMenu.CHILD = childList;
+                menuList.Add(mainMenu);
 
                 return menuList;
             }

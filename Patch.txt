@@ -1,16 +1,22 @@
-﻿# 2020/02/26 #
+﻿# 2020/08/14 #
 增加溢出範圍機制, 屬性 overflow
 調整css，html與body標籤套用vh,vw
-[]APConfig機制
+[]APConfig設定檔機制
 	目前嘗試到加在webConfig是有效的，但是APconfig作用是?
-[/]menu部分(controller, view)
-	Load Menu
+	2020/08/14 最後透過env.conf方式去處理，為靜態變數，需透過init機制重刷新值
+[/]menu(controller, view)
+	[/]Load Menu
+		[x]長munu:  2020/08/14：可以透過v-for長出munu階層出來
+		[]URL Link
+		[]CSS樣式
 	權限控管
 	Menu Perform
 [/]Log機制
 	2020/3/5 : Exception時沒有印出來錯誤訊息
 	2020/3/6 : 在適當的時機執行DoLog，寫內容
-	2020/3/17 : 正在實作登入
+	2020/08/14：目前可以寫Log，但AcerLib有些地方不能寫，ex APconfig
+[/]Login	
+	2020/3/17 : 正在實作登入，目前可以假性登入，直接塞值導頁		
 		logic
 		loading db
 		auth
@@ -19,5 +25,6 @@
 [/]DB機制
 	2002/3/6 : 應該是可以了吧		
 []Grid分頁
-[]DD新設計
+[]DD新設計?
+	概念：透過vue實作
 	
